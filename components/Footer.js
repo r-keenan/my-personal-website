@@ -3,6 +3,7 @@ const navigation = {
   main: [
     { name: "Posts", href: "/posts" },
     { name: "Projects", href: "/projects" },
+    { name: "Skills", href: "/skills" },
     { name: "About Me", href: "/about_me" },
     { name: "Contact", href: "/contact" },
   ],
