@@ -57,7 +57,7 @@ export default function Header() {
                           href={item.href}
                           className={classNames(
                             item.current
-                              ? "bg-gray-900 text-white"
+                              ? "bg-gray-900 text-blue-light"
                               : "text-blue-light hover:bg-gray-700 hover:text-white",
                             "px-3 py-2 rounded-md text-sm font-medium"
                           )}
