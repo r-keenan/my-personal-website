@@ -3,18 +3,18 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 
 const navigation = [
-  { name: "Home", href: "#", current: true },
-  { name: "Posts", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "About Me", href: "#", current: false },
-  { name: "Contact", href: "#", current: false },
+  { name: "Home", href: "/", current: true },
+  { name: "Posts", href: "/posts", current: false },
+  { name: "Projects", href: "/projects", current: false },
+  { name: "About Me", href: "/about_me", current: false },
+  { name: "Contact", href: "/contact", current: false },
 ];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+export default function Header() {
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (

@@ -1,10 +1,10 @@
 /* This example requires Tailwind CSS v2.0+ */
 const navigation = {
   main: [
-    { name: "Posts", href: "#" },
-    { name: "Projects", href: "#" },
-    { name: "About Me", href: "#" },
-    { name: "Contact", href: "#" },
+    { name: "Posts", href: "/posts" },
+    { name: "Projects", href: "/projects" },
+    { name: "About Me", href: "/about_me" },
+    { name: "Contact", href: "/contact" },
   ],
   social: [
     {
@@ -71,7 +71,7 @@ const navigation = {
   ],
 };
 
-export default function Example() {
+export default function Footer() {
   return (
     <footer className="bg-white">
       <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
