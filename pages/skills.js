@@ -1,7 +1,9 @@
+import SkillsCard from "@/components/SkillsCard";
+
 export default function Skills() {
   return (
     <div>
-      <h1>Skills</h1>
+      <SkillsCard />
     </div>
   );
 }

@@ -9,7 +9,10 @@ module.exports = {
         dark: "#011439",
       },
       white: {
-        DEFAULT: "##f8f8ff",
+        DEFAULT: "#F1F1F1",
+      },
+      gray: {
+        light: "#E8E8E8",
       },
     },
     extend: {},
