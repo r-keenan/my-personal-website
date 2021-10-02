@@ -15,6 +15,9 @@ module.exports = {
         light: "#E8E8E8",
       },
     },
+    fontFamily: {
+      'roboto' : [],
+    },
     extend: {},
   },
   variants: {

@@ -5,7 +5,7 @@ import Avatar from "@/components/Avatar";
 import Me from "@/public/images/me.jpg";
 
 const navigation = [
-  { name: "Home", href: "/", current: true },
+  { name: "Home", href: "/", current: false },
   { name: "Posts", href: "/posts", current: false },
   { name: "Projects", href: "/projects", current: false },
   { name: "Skills", href: "/skills", current: false },

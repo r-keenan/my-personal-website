@@ -129,6 +129,7 @@ table {
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 #myNameHeader {
   font-family: "Bebas Neue", cursive;
@@ -181,4 +182,7 @@ table {
   -webkit-transform-origin: 50% 50%;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
+}
+body {
+  font-family: "Roboto", sans-serif;
 }

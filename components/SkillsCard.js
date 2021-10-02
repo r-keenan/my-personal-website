@@ -1,19 +1,29 @@
 import {
-  CloudUploadIcon,
   CogIcon,
-  LockClosedIcon,
-  RefreshIcon,
+  DesktopComputerIcon,
   ServerIcon,
-  ShieldCheckIcon,
+  DatabaseIcon,
 } from "@heroicons/react/outline";
 
 const features = [
-  { name: "Push to Deploy", icon: CloudUploadIcon },
-  { name: "SSL Certificates", icon: LockClosedIcon },
-  { name: "Simple Queues", icon: RefreshIcon },
-  { name: "Advanced Security", icon: ShieldCheckIcon },
-  { name: "Powerful API", icon: CogIcon },
-  { name: "Database Backups", icon: ServerIcon },
+  { name: "Front End Development", icon: DesktopComputerIcon, listItems: [] },
+  { name: "Backend Development", icon: ServerIcon, listItems: [] },
+  {
+    name: "Platform Development",
+    icon: CogIcon,
+    listItems: ["Shopify", "WordPress"],
+  },
+  {
+    name: "Data Engineering",
+    icon: DatabaseIcon,
+    listItems: [
+      "Web Scrapers",
+      "Extract, Transform, Load (ETL)",
+      "Data Cleansing",
+      "Data Visualizations",
+      "Reporting Software",
+    ],
+  },
 ];
 
 export default function Example() {
@@ -32,7 +42,7 @@ export default function Example() {
           condimentum id viverra nulla.
         </p>
         <div className="mt-12">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
             {features.map((feature) => (
               <div key={feature.name} className="pt-6">
                 <div className="flow-root bg-gray-light rounded-lg px-6 pb-8">
@@ -48,10 +58,9 @@ export default function Example() {
                     <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">
                       {feature.name}
                     </h3>
-                    <p className="mt-5 text-base text-gray-500">
-                      Ac tincidunt sapien vehicula erat auctor pellentesque
-                      rhoncus. Et magna sit morbi lobortis.
-                    </p>
+                    <ul className="mt-5 text-base text-gray-500">
+                      <li>{feature.listItems}</li>
+                    </ul>
                   </div>
                 </div>
               </div>
