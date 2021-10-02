@@ -12,7 +12,7 @@ const features = [
     listItems: [
       "HTML5",
       "CSS3",
-      "JavaScript",
+      "JavaScript (ES6)",
       "React",
       "Angular",
       "Vue.js",
