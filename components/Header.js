@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import Avatar from "@/components/Avatar";
 import Me from "@/public/images/me.jpg";
 
@@ -17,10 +17,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Header() {
+export default function Header(props) {
+  const headerStyle = `bg-blue-dark text-white ${props.styleConditional}`;
   return (
     <div className="fixed top-0 z-10 w-full">
-      <Disclosure as="nav" className="bg-blue-dark text-white">
+      <Disclosure as="nav" className={headerStyle} id="navbar">
         {({ open }) => (
           <>
             <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">

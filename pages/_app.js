@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Header />
+      <Header styleConditional={"opacity-95 bg-blur-sm"} />
 
       <Component {...pageProps} />
 
