@@ -127,3 +127,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+#myNameHeader {
+  font-family: "Bebas Neue", cursive;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+}
