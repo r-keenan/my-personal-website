@@ -1,7 +1,9 @@
+import Blog from "@/components/Blog";
+
 export default function Posts() {
   return (
     <div>
-      <h1>Posts</h1>
+      <Blog />
     </div>
   );
 }
