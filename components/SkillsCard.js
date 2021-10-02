@@ -6,23 +6,52 @@ import {
 } from "@heroicons/react/outline";
 
 const features = [
-  { name: "Front End Development", icon: DesktopComputerIcon, listItems: [] },
-  { name: "Backend Development", icon: ServerIcon, listItems: [] },
   {
-    name: "Platform Development",
-    icon: CogIcon,
-    listItems: ["Shopify", "WordPress"],
+    name: "Front End Development",
+    icon: DesktopComputerIcon,
+    listItems: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "React",
+      "Angular",
+      "Vue.js",
+      "TailwindCSS",
+    ],
+  },
+  {
+    name: "Backend Development",
+    icon: ServerIcon,
+    listItems: [
+      "Node.js",
+      "Ruby on Rails",
+      "C#/.Net",
+      "PHP",
+      "SQL",
+      "Express.js",
+      "Linux Servers",
+    ],
   },
   {
     name: "Data Engineering",
     icon: DatabaseIcon,
     listItems: [
-      "Web Scrapers",
+      "Web Scrapers (Python)",
       "Extract, Transform, Load (ETL)",
       "Data Cleansing",
       "Data Visualizations",
       "Reporting Software",
     ],
+  },
+  {
+    name: "Database Development",
+    icon: ServerIcon,
+    listItems: ["Postgres", "Microsoft SQL Server", "MySQL"],
+  },
+  {
+    name: "Platform Development",
+    icon: CogIcon,
+    listItems: ["Shopify", "Next.js", "WordPress"],
   },
 ];
 
@@ -30,19 +59,16 @@ export default function Example() {
   return (
     <div className="relative bg-white py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
-        <h2 className="text-base font-semibold tracking-wider text-indigo-600 uppercase">
-          Deploy faster
+        <h2 className="text-3xl tracking-tight font-semibold  text-gray-900 uppercase sm:text-4xl">
+          My Skills
         </h2>
-        <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
-          Everything you need to deploy your app
-        </p>
         <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500">
-          Phasellus lorem quam molestie id quisque diam aenean nulla in.
-          Accumsan in quis quis nunc, ullamcorper malesuada. Eleifend
-          condimentum id viverra nulla.
+          I am a Full Stack Developer with some data engineering and analysis
+          thrown in as well. Continue reading to find out which technologies
+          that I am most experienced with.
         </p>
         <div className="mt-12">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature) => (
               <div key={feature.name} className="pt-6">
                 <div className="flow-root bg-gray-light rounded-lg px-6 pb-8">
@@ -58,8 +84,10 @@ export default function Example() {
                     <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">
                       {feature.name}
                     </h3>
-                    <ul className="mt-5 text-base text-gray-500">
-                      <li>{feature.listItems}</li>
+                    <ul className="mt-5 text-base text-gray-500 text-left ml-8 list-disc">
+                      {feature.listItems.map((feature) => (
+                        <li key="">{feature}</li>
+                      ))}
                     </ul>
                   </div>
                 </div>
