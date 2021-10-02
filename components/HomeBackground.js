@@ -1,5 +1,5 @@
 import Image from "next/image";
-import mainBackground from "../public/images/codeBigBackground.jpg";
+import mainBackground from "public/images/codeBigBackground.jpg";
 
 export default function HomeBackground() {
   return (
