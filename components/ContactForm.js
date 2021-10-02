@@ -1,11 +1,9 @@
-import { MailIcon, PhoneIcon } from "@heroicons/react/outline";
-
 export default function Example() {
   return (
     <div className="bg-gray-100">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <div className="relative bg-white shadow-xl">
-          <h2 className="sr-only">Contact us</h2>
+          <h2 className="sr-only">Contact Me</h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-3">
             {/* Contact information */}
@@ -161,7 +159,7 @@ export default function Example() {
             {/* Contact form */}
             <div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
               <h3 className="text-lg font-medium text-gray-900">
-                Send us a message
+                Send me a message
               </h3>
               <form
                 action="#"
@@ -201,6 +199,52 @@ export default function Example() {
                       autoComplete="family-name"
                       className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                       required
+                    />
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between">
+                    <label
+                      htmlFor="company-name"
+                      className="block text-sm font-medium text-gray-900"
+                    >
+                      Company Name
+                    </label>
+                    <span id="phone-optional" className="text-sm text-gray-500">
+                      Optional
+                    </span>
+                  </div>
+                  <div className="mt-1">
+                    <input
+                      type="text"
+                      name="company-name"
+                      id="company-name"
+                      autoComplete="company-name"
+                      className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                      aria-describedby="company-name-optional"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between">
+                    <label
+                      htmlFor="company-name"
+                      className="block text-sm font-medium text-gray-900"
+                    >
+                      Company Website
+                    </label>
+                    <span id="phone-optional" className="text-sm text-gray-500">
+                      Optional
+                    </span>
+                  </div>
+                  <div className="mt-1">
+                    <input
+                      type="url"
+                      name="company-website"
+                      id="company-website"
+                      autoComplete="company-name"
+                      className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                      aria-describedby="company-website-optional"
                     />
                   </div>
                 </div>

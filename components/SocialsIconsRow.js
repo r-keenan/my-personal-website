@@ -1,15 +1,17 @@
 const navigation = {
   main: [
-    { name: "Posts", href: "/posts" },
-    { name: "Projects", href: "/projects" },
-    { name: "Skills", href: "/skills" },
-    { name: "About Me", href: "/about_me" },
-    { name: "Contact", href: "/contact" },
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/in/ross-k-2123a1201/",
+      target: "_blank",
+    },
   ],
   social: [
     {
       name: "LinkedIn",
-      href: "#",
+      href: "https://www.linkedin.com/in/ross-k-2123a1201/",
+      target: "_blank",
+      rel: "noopener noreferrer",
       icon: (props) => (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +31,9 @@ const navigation = {
     },
     {
       name: "Upwork",
-      href: "#",
+      href: "https://www.upwork.com/freelancers/~0136d18441afe1e7e8",
+      target: "_blank",
+      rel: "noopener noreferrer",
       icon: (props) => (
         <svg
           fill="currentColor"
@@ -46,9 +50,12 @@ const navigation = {
         </svg>
       ),
     },
+    /*
     {
       name: "Twitter",
       href: "#",
+      target: "_blank",
+      rel: "noopener noreferrer",
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -57,10 +64,12 @@ const navigation = {
           />
         </svg>
       ),
-    },
+    },*/
     {
       name: "GitHub",
-      href: "#",
+      href: "https://github.com/r-keenan",
+      target: "_blank",
+      rel: "noopener noreferrer",
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -74,32 +83,21 @@ const navigation = {
   ],
 };
 
-import SocialsIconsRow from "./SocialsIconsRow";
-
-export default function Footer() {
+export default function SocialsIconsRow() {
   return (
-    <footer className="bg-white">
-      <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
-        <nav
-          className="-mx-5 -my-2 flex flex-wrap justify-center"
-          aria-label="Footer"
+    <div className="mt-8 flex justify-center space-x-6">
+      {navigation.social.map((item) => (
+        <a
+          key={item.name}
+          href={item.href}
+          target={item.target}
+          rel={item.rel}
+          className="text-gray-400 hover:text-gray-500"
         >
-          {navigation.main.map((item) => (
-            <div key={item.name} className="px-5 py-2">
-              <a
-                href={item.href}
-                className="text-base text-gray-500 hover:text-gray-900 hover:text-blue-light"
-              >
-                {item.name}
-              </a>
-            </div>
-          ))}
-        </nav>
-        <SocialsIconsRow />
-        <p className="mt-8 text-center text-base text-gray-400">
-          &copy; 2021 Ross Keenan. All rights reserved.
-        </p>
-      </div>
-    </footer>
+          <span className="sr-only">{item.name}</span>
+          <item.icon className="h-6 w-6" aria-hidden="true" />
+        </a>
+      ))}
+    </div>
   );
 }
