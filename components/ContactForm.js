@@ -162,7 +162,7 @@ export default function Example() {
                 Send me a message
               </h3>
               <form
-                action="#"
+                action="mailto:ross.keenan@protonmail.com"
                 method="POST"
                 className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
               >
@@ -330,6 +330,7 @@ export default function Example() {
                     />
                   </div>
                 </div>
+                <div className="mtcaptcha"></div>
                 <div className="grid justify-items-center justify-self-center sm:col-span-2 sm:flex sm:justify-end">
                   <button
                     type="submit"

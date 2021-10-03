@@ -16,12 +16,12 @@ module.exports = {
       },
     },
     fontFamily: {
-      'roboto' : [],
+      roboto: [],
     },
     extend: {},
   },
   variants: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [require("@tailwindcss/forms", "@tailwindcss/typography")],
 };
