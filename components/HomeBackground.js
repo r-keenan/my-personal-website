@@ -8,15 +8,17 @@ const Wrapper = styled.div`
   height: 100%;
   position: fixed;
   justify-content: center;
-  align-items: center;
+  margin-top: 30%;
   display: flex;
 `;
 
 export default function HomeBackground() {
   return (
-    <section className="flex flex-col items-center pt-10">
+    <section className="flex flex-col items-center">
       <Wrapper>
-        <h3 className="text-3xl text-gray-lighter">WELCOME TO MY WEBSITE!</h3>
+        <h3 className="text-6xl text-gray-lighter tracking-wide">
+          WELCOME TO MY WEBSITE!
+        </h3>
       </Wrapper>
 
       <Image
