@@ -6,9 +6,11 @@ import Footer from "../components/Footer";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Header styleConditional={"opacity-95 bg-blur-sm"} />
+      <Header styleConditional={"opacity-90 bg-blur-sm"} />
 
-      <Component {...pageProps} />
+      <div id="componentContainer">
+        <Component {...pageProps} />
+      </div>
 
       <Footer />
     </>
