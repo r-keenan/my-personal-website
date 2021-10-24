@@ -100,7 +100,7 @@ export default function Example() {
   return (
     <>
       <div>
-        <HomeBackground className=" w-full h-full bg-cover" />
+        <HomeBackground />
       </div>
       <div className="bg-white mt-20">
         <main>
