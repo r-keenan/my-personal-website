@@ -99,12 +99,10 @@ function classNames(...classes) {
 export default function Example() {
   return (
     <>
-      <div>
-        <HomeBackground />
-      </div>
+      <HomeBackground />
+      {/*
       <div className="bg-white mt-20">
         <main>
-          {/* Hero section */}
           <div className="relative">
             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100" />
             <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -152,7 +150,6 @@ export default function Example() {
             </div>
           </div>
 
-          {/* Alternating Feature Sections */}
           <div className="relative pt-16 pb-32 overflow-hidden">
             <div
               aria-hidden="true"
@@ -275,7 +272,6 @@ export default function Example() {
             </div>
           </div>
 
-          {/* Gradient Feature Section */}
           <div className="bg-gradient-to-r from-purple-800 to-indigo-700">
             <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:pt-24 lg:px-8">
               <h2 className="text-3xl font-extrabold text-white tracking-tight">
@@ -311,7 +307,6 @@ export default function Example() {
             </div>
           </div>
 
-          {/* Stats section */}
           <div className="relative bg-gray-900">
             <div className="h-80 absolute inset-x-0 bottom-0 xl:top-0 xl:h-full">
               <div className="h-full w-full xl:grid xl:grid-cols-2">
@@ -364,8 +359,6 @@ export default function Example() {
             </div>
           </div>
 
-          {/* CTA Section */}
-          <div className="bg-white">
             <div className="max-w-4xl mx-auto py-16 px-4 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 lg:flex lg:items-center lg:justify-between">
               <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
                 <span className="block">Ready to get started?</span>
@@ -391,6 +384,7 @@ export default function Example() {
           </div>
         </main>
       </div>
+                  */}
     </>
   );
 }
