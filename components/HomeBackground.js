@@ -4,27 +4,54 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   z-index: 1;
-  width: 100%;
-  height: 100%;
   position: fixed;
   justify-content: center;
   margin-top: 30%;
   display: flex;
 `;
 
+const AnimatedText = styled.span`
+  border-right: solid 3px rgba(0, 255, 0, 0.75);
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: "Source Code Pro", monospace;
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.7);
+  animation: animated-text 4s steps(29, end) 1s 1 normal both,
+    animated-cursor 600ms steps(29, end) infinite;
+
+  @keyframes animated-text {
+    from {
+      width: 0;
+    }
+    to {
+      width: 80%;
+    }
+  }
+
+  @keyframes animated-cursor {
+    from {
+      border-right-color: rgba(0, 255, 0, 0.75);
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
+`;
+
 export default function HomeBackground() {
   return (
     <section className="flex flex-col items-center">
       <Wrapper>
-        <h3 className="text-6xl text-gray-lighter tracking-wide">
+        <AnimatedText className="tracking-wide">
           WELCOME TO MY WEBSITE!
-        </h3>
+        </AnimatedText>
       </Wrapper>
-
       <Image
         src={mainBackground}
         alt="Header Background"
-        className="h-full bg-cover"
+        layout="fill"
+        className="bg-cover"
       />
     </section>
   );
