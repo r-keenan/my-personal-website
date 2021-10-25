@@ -25,7 +25,7 @@ const AnimatedText = styled.span`
       width: 0;
     }
     to {
-      width: 80%;
+      width: 100%;
     }
   }
 
