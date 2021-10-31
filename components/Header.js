@@ -56,7 +56,7 @@ export default function Header(props) {
                             item.current
                               ? "bg-gray-900 text-blue-light"
                               : "text-blue-light hover:bg-gray-700 hover:text-white",
-                            "px-3 py-2 rounded-md text-sm font-medium"
+                            "px-3 py-2 rounded-md text-md font-medium"
                           )}
                           aria-current={item.current ? "page" : undefined}
                         >

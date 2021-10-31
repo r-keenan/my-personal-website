@@ -1,21 +1,22 @@
 import Image from "next/image";
 import mainBackground from "public/images/1900w-codeBigBackground.jpg";
+import styles from "./HomeBackground.module.css";
 
 export default function HomeBackground() {
   return (
-    <section className="flex flex-col items-center">
-      <div id="animatedHeroDivHeader">
-        <span id="animatedHeroSpanHeader" className="tracking-wide">
+    <section className="block">
+      <div className={styles.animatedHeroDivHeader}>
+        <Image
+          src={mainBackground}
+          alt="Header Background"
+          className={styles.heroImage}
+          layout="responsive"
+          priority
+        />
+        <div className={styles.animatedHeroSpanHeader}>
           WELCOME TO MY WEBSITE!
-        </span>
+        </div>
       </div>
-
-      <Image
-        src={mainBackground}
-        alt="Header Background"
-        layout="fill"
-        className="bg-cover"
-      />
     </section>
   );
 }

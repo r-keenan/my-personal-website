@@ -14,6 +14,7 @@ import {
   UsersIcon,
 } from "@heroicons/react/outline";
 import HomeBackground from "@/components/HomeBackground";
+import Footer from "./Footer";
 
 const features = [
   {
@@ -98,8 +99,11 @@ function classNames(...classes) {
 
 export default function Example() {
   return (
-    <>
-      <HomeBackground />
+    <div>
+      <div>
+        <HomeBackground />
+      </div>
+
       {/*
       <div className="bg-white mt-20">
         <main>
@@ -385,6 +389,6 @@ export default function Example() {
         </main>
       </div>
                   */}
-    </>
+    </div>
   );
 }
