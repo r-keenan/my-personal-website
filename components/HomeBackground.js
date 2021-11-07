@@ -5,7 +5,7 @@ import styles from "./HomeBackground.module.css";
 export default function HomeBackground() {
   return (
     <div className="heroContainer">
-      <span className="heroText">WELCOME TO MY WEBSITE!</span>
+      <p className="heroText">WELCOME TO MY WEBSITE!</p>
       <Image
         src={mainBackground}
         alt="Header Background"
