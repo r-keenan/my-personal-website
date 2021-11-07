@@ -55,11 +55,11 @@ const features = [
   },
 ];
 
-export default function Example() {
+export default function SkillsCard() {
   return (
-    <div className="relative bg-white py-16 sm:py-24 lg:py-32">
+    <div className="relative bg-white spacing-128 pb-20 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
-        <h2 className="text-3xl tracking-tight font-semibold  text-gray-900 uppercase sm:text-4xl">
+        <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 uppercase sm:text-4xl">
           My Skills
         </h2>
         <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500">
