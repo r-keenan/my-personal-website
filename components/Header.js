@@ -24,7 +24,7 @@ export default function Header(props) {
       <Disclosure as="nav" className={headerStyle} id="navbar">
         {({ open }) => (
           <>
-            <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+            <div className="mx-auto px-2 sm:px-6 lg:px-8">
               <div
                 className="relative flex items-center justify-start h-16"
                 id="nigger"

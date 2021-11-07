@@ -199,7 +199,12 @@ body {
   grid-column: 1;
   grid-row: 1;
   z-index: 0;
-  /*background-size: cover; */
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.8)
+  );
 }
 
 .heroText {
@@ -210,22 +215,28 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 59%;
   border-right: solid 3px rgba(0, 255, 0, 0.75);
   white-space: nowrap;
   overflow: hidden;
   font-family: "Source Code Pro", monospace;
   font-size: 4rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 1.7);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.5);
   animation: animated-text 4s steps(29, end) 1s 1 normal both,
     animated-cursor 600ms steps(29, end) infinite;
 }
 
 @keyframes animated-text {
   from {
-    width: 0;
+    width: 0%;
+    min-width: 0;
   }
   to {
-    width: 73%;
+    width: 75%;
+    max-width: fit-content;
   }
 }
 
