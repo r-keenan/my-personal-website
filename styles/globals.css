@@ -223,6 +223,7 @@ body {
   font-size: 4rem;
   color: rgba(255, 255, 255, 1.7);
   -webkit-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.5);
   animation: animated-text 4s steps(29, end) 1s 1 normal both,
@@ -237,6 +238,7 @@ body {
   to {
     width: 75%;
     max-width: fit-content;
+    border-right: none;
   }
 }
 
