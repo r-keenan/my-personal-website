@@ -19,10 +19,6 @@ module.exports = {
     fontFamily: {
       roboto: [],
     },
-    extend: {},
-  },
-  variants: {
-    extend: {},
   },
   plugins: [require("@tailwindcss/forms", "@tailwindcss/typography")],
 };
