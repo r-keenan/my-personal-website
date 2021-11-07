@@ -205,6 +205,7 @@ body {
     rgba(0, 0, 0, 0.1),
     rgba(0, 0, 0, 0.8)
   );
+  background-size: cover;
 }
 
 .heroText {
@@ -223,11 +224,10 @@ body {
   font-size: 4rem;
   color: rgba(255, 255, 255, 1.7);
   -webkit-backdrop-filter: blur(10px);
-  -moz-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.5);
-  animation: animated-text 4s steps(29, end) 1s 1 normal both,
-    animated-cursor 600ms steps(29, end) infinite;
+  animation: animated-text 4s steps(30, end) 1s 1 normal both,
+    animated-cursor 600ms steps(30, end) infinite;
 }
 
 @keyframes animated-text {
@@ -236,9 +236,9 @@ body {
     min-width: 0;
   }
   to {
-    width: 75%;
+    width: 73%;
     max-width: fit-content;
-    border-right: none;
+    border-right-color: transparent;
   }
 }
 

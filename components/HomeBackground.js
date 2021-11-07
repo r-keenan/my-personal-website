@@ -12,9 +12,11 @@ export default function HomeBackground() {
         src={mainBackground}
         alt="Header Background"
         className="heroImage"
-        layout="fill"
         priority
       />
+      <span>
+        <p className="heroText break-words">WELCOME TO MY WEBSITE!</p>
+      </span>
     </div>
   );
 }
