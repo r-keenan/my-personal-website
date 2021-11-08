@@ -1,7 +1,9 @@
+import AboutMe from "@/components/AboutMe";
+
 export default function About_Me() {
   return (
     <div>
-      <h1>About Me</h1>
+      <AboutMe />
     </div>
   );
 }
