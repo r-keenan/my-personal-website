@@ -1,5 +1,6 @@
 import Image from "next/image";
 import aboutMePic2 from "public/images/meQuarterHeight.jpg";
+import Link from "next/link";
 
 const stats = [
   { label: "Founded", value: "2021" },
@@ -141,13 +142,12 @@ export default function AboutMe() {
               ))}
             </dl>
             <div className="mt-10">
-              <a
-                href="/contact"
-                className="text-base font-medium text-indigo-600"
-              >
-                {" "}
-                Reach out to me <span aria-hidden="true">&rarr;</span>{" "}
-              </a>
+              <Link href="/contact">
+                <a className="text-base font-medium text-indigo-600">
+                  {" "}
+                  Reach out to me <span aria-hidden="true">&rarr;</span>{" "}
+                </a>
+              </Link>
             </div>
           </div>
         </div>
