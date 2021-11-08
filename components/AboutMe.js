@@ -1,5 +1,5 @@
 import Image from "next/image";
-import aboutMePic from "public/images/me.jpg";
+import aboutMePic2 from "public/images/meQuarterHeight.jpg";
 
 const stats = [
   { label: "Founded", value: "2021" },
@@ -56,20 +56,13 @@ export default function AboutMe() {
             <div className="relative py-1 rounded-2xl shadow-xl overflow-hidden">
               <Image
                 className="absolute inset-0 h-full w-full object-cover"
-                src={aboutMePic}
+                src={aboutMePic2}
                 alt="Me"
                 priority
               />
               <div className="absolute inset-0 bg-indigo-500 mix-blend-multiply" />
               <div className="absolute inset-0 bg-gradient-to-t from-indigo-600 via-indigo-600 opacity-90" />
               <div className="relative px-8">
-                <div>
-                  <img
-                    className="h-12"
-                    src="https://tailwindui.com/img/logos/workcation.svg?color=white"
-                    alt="Workcation"
-                  />
-                </div>
                 <blockquote className="mt-8">
                   <div className="relative text-lg font-medium text-white md:flex-grow">
                     <svg
