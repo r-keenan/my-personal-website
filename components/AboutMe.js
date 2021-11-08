@@ -53,7 +53,7 @@ export default function AboutMe() {
           </div>
           <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0 lg:max-w-none lg:py-20">
             {/* Testimonial card*/}
-            <div className="relative pt-8 pb-10 rounded-2xl shadow-xl overflow-hidden">
+            <div className="relative py-1 rounded-2xl shadow-xl overflow-hidden">
               <Image
                 className="absolute inset-0 h-full w-full object-cover"
                 src={aboutMePic}
