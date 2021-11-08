@@ -1,8 +1,6 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
-import Avatar from "@/components/Avatar";
-import Me from "@/public/images/me.jpg";
 
 const navigation = [
   { name: "Home", href: "/", current: false },
