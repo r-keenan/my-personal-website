@@ -1,4 +1,6 @@
-/* This example requires Tailwind CSS v2.0+ */
+import Image from "next/image";
+import aboutMePic from "public/images/me.jpg";
+
 const stats = [
   { label: "Founded", value: "2021" },
   { label: "Employees", value: "5" },
@@ -6,9 +8,9 @@ const stats = [
   { label: "Raised", value: "$25M" },
 ];
 
-export default function Example() {
+export default function AboutMe() {
   return (
-    <div className="relative bg-white py-16 sm:py-24">
+    <div className="relative bg-white py-16 sm:py-24 lg:py-32">
       <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-24 lg:items-start">
         <div className="relative sm:py-16 lg:py-0">
           <div
@@ -51,11 +53,12 @@ export default function Example() {
           </div>
           <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0 lg:max-w-none lg:py-20">
             {/* Testimonial card*/}
-            <div className="relative pt-64 pb-10 rounded-2xl shadow-xl overflow-hidden">
-              <img
+            <div className="relative pt-8 pb-10 rounded-2xl shadow-xl overflow-hidden">
+              <Image
                 className="absolute inset-0 h-full w-full object-cover"
-                src="https://images.unsplash.com/photo-1521510895919-46920266ddb3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&fp-x=0.5&fp-y=0.6&fp-z=3&width=1440&height=1440&sat=-100"
-                alt=""
+                src={aboutMePic}
+                alt="Me"
+                priority
               />
               <div className="absolute inset-0 bg-indigo-500 mix-blend-multiply" />
               <div className="absolute inset-0 bg-gradient-to-t from-indigo-600 via-indigo-600 opacity-90" />

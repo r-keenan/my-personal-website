@@ -14,9 +14,6 @@ export default function HomeBackground() {
         className="heroImage"
         priority
       />
-      <span>
-        <p className="heroText break-words">WELCOME TO MY WEBSITE!</p>
-      </span>
     </div>
   );
 }
