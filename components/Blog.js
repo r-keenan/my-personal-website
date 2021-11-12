@@ -1,4 +1,5 @@
-import avi from "public/images/myAvi.jpg";
+import avatar from "public/images/myAvi.jpg";
+import Avatar from "./Avatar";
 
 const posts = [
   {
@@ -15,7 +16,7 @@ const posts = [
     author: {
       name: "Ross Keenan",
       href: "/about_me",
-      imageUrl: avi,
+      imageUrl: avatar,
     },
   },
   {
@@ -104,11 +105,7 @@ export default function BlogList() {
                   <div className="flex-shrink-0">
                     <a href={post.author.href}>
                       <span className="sr-only">{post.author.name}</span>
-                      <img
-                        className="h-10 w-10 rounded-full"
-                        src={post.author.imageUrl}
-                        alt=""
-                      />
+                      <Avatar />
                     </a>
                   </div>
                   <div className="ml-3">

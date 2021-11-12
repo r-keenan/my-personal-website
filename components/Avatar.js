@@ -1,12 +1,15 @@
 import Image from "next/image";
+import avi from "public/images/myAvi.jpg";
 
-export default function Avatar(props) {
+export default function Avatar() {
   return (
     <>
       <Image
-        className="inline-block h-6 w-6 rounded-md"
-        src={props.source}
+        src={avi}
+        height="40px"
+        width="40px"
         alt="me"
+        className="rounded-full"
       />
     </>
   );
