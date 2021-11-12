@@ -4,7 +4,7 @@ const posts = [
     href: "#",
     category: { name: "Article", href: "#" },
     description:
-      "Here is my Upwork profile if you want to hire me for freelancing.",
+      "Here is my Upwork profile if you want to hire me for freelancing or consulting.",
     date: "Nov 1, 2021",
     datetime: "2021-11-01",
     imageUrl:
