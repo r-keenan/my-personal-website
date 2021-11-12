@@ -1,4 +1,7 @@
-export default function Example() {
+import ReCAPTCHA from "react-google-recaptcha";
+
+export default function ContactForm() {
+  const sitekey = "6Ld46yMdAAAAAP26QSFzpw3zzMeSEzkWDaR589z8";
   return (
     <div className="bg-white mt-10">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:py-32">
@@ -295,7 +298,9 @@ export default function Example() {
                     />
                   </div>
                 </div>
-                <div className="mtcaptcha"></div>
+                <div className="grid justify-items-center justify-self-center sm:col-span-2 sm:flex sm:justify-end">
+                  <ReCAPTCHA size="normal" sitekey={sitekey} />
+                </div>
                 <div className="grid justify-items-center justify-self-center sm:col-span-2 sm:flex sm:justify-end">
                   <button
                     type="submit"
