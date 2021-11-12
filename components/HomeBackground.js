@@ -1,6 +1,5 @@
 import Image from "next/image";
 import mainBackground from "public/images/codeHeroImage2kW.jpeg";
-import styles from "./HomeBackground.module.css";
 
 export default function HomeBackground() {
   return (
