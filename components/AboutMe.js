@@ -41,7 +41,7 @@ export default function AboutMe() {
             <h3 className="text-2xl text-gray-dark font-bold tracking-tight pt-2 sm:text-2xl">
               Full Stack Developer
             </h3>
-            <div className="mt-6 text-gray-500 space-y-6">
+            <div className="mt-6 text-gray-medium space-y-6">
               <p className="text-base leading-7">
                 I develop in everything from Content Management Systems (CMSs)
                 to web sites and web apps. I am interested in everything from

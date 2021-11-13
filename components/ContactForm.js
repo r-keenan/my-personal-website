@@ -9,7 +9,6 @@ export default function ContactForm() {
           <h2 className="sr-only">Contact Me</h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-3">
-            {/* Contact information */}
             <div className="relative overflow-hidden py-10 px-6 bg-blue-light sm:px-10 xl:p-12">
               <div
                 className="absolute inset-0 pointer-events-none sm:hidden"
@@ -113,12 +112,12 @@ export default function ContactForm() {
               <h3 className="text-xl font-medium text-white text-center tracking-wide">
                 Contact Me
               </h3>
-              <p className="mt-6 text-base text-indigo-50 max-w-3xl">
+              <p className="mt-6 text-base text-gray-dark max-w-3xl">
                 Please fill out this contact form, and let me know what I can
                 help you with. Turn around time for email responses is usually
                 one to two business days.
               </p>
-              <p className="mt-6 text-base text-indigo-50 max-w-3xl">
+              <p className="mt-6 text-base text-gray-dark max-w-3xl">
                 I can do everything from consulting, to new development, or
                 overhauling your current site or web app.
               </p>
@@ -126,7 +125,7 @@ export default function ContactForm() {
 
             {/* Contact form */}
             <div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
-              <h3 className="text-lg font-medium text-gray-900 tracking-wide">
+              <h3 className="text-lg font-medium text-gray-dark tracking-wide">
                 Send Me a Message
               </h3>
               <form
@@ -137,7 +136,7 @@ export default function ContactForm() {
                 <div>
                   <label
                     htmlFor="first-name"
-                    className="block text-sm font-medium text-gray-900"
+                    className="block text-sm font-medium text-gray-dark"
                   >
                     First name
                   </label>
@@ -147,7 +146,7 @@ export default function ContactForm() {
                       name="first-name"
                       id="first-name"
                       autoComplete="given-name"
-                      className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                      className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                       required
                     />
                   </div>
@@ -155,7 +154,7 @@ export default function ContactForm() {
                 <div>
                   <label
                     htmlFor="last-name"
-                    className="block text-sm font-medium text-gray-900"
+                    className="block text-sm font-medium text-gray-dark"
                   >
                     Last name
                   </label>
@@ -165,7 +164,7 @@ export default function ContactForm() {
                       name="last-name"
                       id="last-name"
                       autoComplete="family-name"
-                      className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                      className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                       required
                     />
                   </div>
@@ -174,11 +173,14 @@ export default function ContactForm() {
                   <div className="flex justify-between">
                     <label
                       htmlFor="company-name"
-                      className="block text-sm font-medium text-gray-900"
+                      className="block text-sm font-medium text-gray-dark"
                     >
                       Company Name
                     </label>
-                    <span id="phone-optional" className="text-sm text-gray-500">
+                    <span
+                      id="phone-optional"
+                      className="text-sm text-gray-medium"
+                    >
                       Optional
                     </span>
                   </div>
@@ -188,7 +190,7 @@ export default function ContactForm() {
                       name="company-name"
                       id="company-name"
                       autoComplete="company-name"
-                      className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                      className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                       aria-describedby="company-name-optional"
                     />
                   </div>
@@ -197,11 +199,14 @@ export default function ContactForm() {
                   <div className="flex justify-between">
                     <label
                       htmlFor="company-name"
-                      className="block text-sm font-medium text-gray-900"
+                      className="block text-sm font-medium text-gray-dark"
                     >
                       Company Website
                     </label>
-                    <span id="phone-optional" className="text-sm text-gray-500">
+                    <span
+                      id="phone-optional"
+                      className="text-sm text-gray-medium"
+                    >
                       Optional
                     </span>
                   </div>
@@ -211,7 +216,7 @@ export default function ContactForm() {
                       name="company-website"
                       id="company-website"
                       autoComplete="company-name"
-                      className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                      className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                       aria-describedby="company-website-optional"
                     />
                   </div>
@@ -219,7 +224,7 @@ export default function ContactForm() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-900"
+                    className="block text-sm font-medium text-gray-dark"
                   >
                     Email
                   </label>
@@ -229,7 +234,7 @@ export default function ContactForm() {
                       name="email"
                       type="email"
                       autoComplete="email"
-                      className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                      className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                       required
                     />
                   </div>
@@ -238,11 +243,14 @@ export default function ContactForm() {
                   <div className="flex justify-between">
                     <label
                       htmlFor="phone"
-                      className="block text-sm font-medium text-gray-900"
+                      className="block text-sm font-medium text-gray-dark"
                     >
                       Phone
                     </label>
-                    <span id="phone-optional" className="text-sm text-gray-500">
+                    <span
+                      id="phone-optional"
+                      className="text-sm text-gray-medium"
+                    >
                       Optional
                     </span>
                   </div>
@@ -252,7 +260,7 @@ export default function ContactForm() {
                       name="phone"
                       id="phone"
                       autoComplete="tel"
-                      className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                      className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                       aria-describedby="phone-optional"
                     />
                   </div>
@@ -260,7 +268,7 @@ export default function ContactForm() {
                 <div className="sm:col-span-2">
                   <label
                     htmlFor="subject"
-                    className="block text-sm font-medium text-gray-900"
+                    className="block text-sm font-medium text-gray-dark"
                   >
                     Subject
                   </label>
@@ -269,7 +277,7 @@ export default function ContactForm() {
                       type="text"
                       name="subject"
                       id="subject"
-                      className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                      className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                       required
                     />
                   </div>
@@ -278,11 +286,11 @@ export default function ContactForm() {
                   <div className="flex justify-between">
                     <label
                       htmlFor="message"
-                      className="block text-sm font-medium text-gray-900"
+                      className="block text-sm font-medium text-gray-dark"
                     >
                       Message
                     </label>
-                    <span id="message-max" className="text-sm text-gray-500">
+                    <span id="message-max" className="text-sm text-gray-medium">
                       Max. 500 characters
                     </span>
                   </div>
@@ -291,7 +299,7 @@ export default function ContactForm() {
                       id="message"
                       name="message"
                       rows={4}
-                      className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"
+                      className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"
                       aria-describedby="message-max"
                       defaultValue={""}
                       required
