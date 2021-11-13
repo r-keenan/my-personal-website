@@ -86,7 +86,7 @@ export default function SkillsCard() {
                     </h3>
                     <ul className="mt-5 text-base text-gray-500 text-left ml-8 list-disc">
                       {feature.listItems.map((feature) => (
-                        <li key="">{feature}</li>
+                        <li key={feature}>{feature}</li>
                       ))}
                     </ul>
                   </div>
