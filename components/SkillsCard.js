@@ -57,7 +57,7 @@ const features = [
 
 export default function SkillsCard() {
   return (
-    <div className="relative bg-white pb-20 sm:py-24 lg:pt-32 lg:pb-48">
+    <div className="relative bg-white pb-20 sm:py-24 lg:pt-32 lg:pb-60">
       <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
         <h2 className="text-3xl tracking-tight font-extrabold text-gray-dark uppercase sm:text-4xl">
           My Skills
