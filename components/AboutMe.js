@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function AboutMe() {
   return (
-    <div className="relative bg-white py-16 sm:py-24 lg:pt-32 lg:pb-56">
+    <div className="relative bg-white py-16 sm:py-24 lg:py-56">
       <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-24 lg:items-start">
         <div className="relative sm:py-16 lg:py-0">
           <div
@@ -42,9 +42,13 @@ export default function AboutMe() {
                 and data engineering.
               </p>
               <p className="text-base leading-7">
-                Feel free to reach out to me with any consultations or sites
-                that you want to develop or update. I am not looking for
-                full-time employment, but I am open to outside contract work.
+                Feel free to reach out to me for any consultations or sites that
+                you want to develop or update. I am not looking for full-time
+                employment, but I am open to outside contract work. I am
+                available hired for hourly or fixed-priced contracts.
+              </p>
+              <p className="text-base leading-7">
+                Let's make something great together!
               </p>
             </div>
           </div>
