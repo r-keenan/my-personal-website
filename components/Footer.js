@@ -88,7 +88,7 @@ export default function Footer() {
             <div key={item.name} className="px-5 py-2">
               <a
                 href={item.href}
-                className="text-base text-gray-500 hover:text-gray-900 hover:text-blue-light"
+                className="text-base text-gray-dark hover:text-blue-light"
               >
                 {item.name}
               </a>
@@ -96,7 +96,7 @@ export default function Footer() {
           ))}
         </nav>
         <SocialsIconsRow />
-        <p className="mt-8 text-center text-base text-gray-400">
+        <p className="mt-8 text-center text-base text-gray-dark">
           &copy; 2021 Ross Keenan. All rights reserved.
         </p>
       </div>
