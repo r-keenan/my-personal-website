@@ -62,7 +62,7 @@ export default function SkillsCard() {
         <h2 className="text-3xl tracking-tight font-extrabold text-gray-dark uppercase sm:text-4xl">
           My Skills
         </h2>
-        <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500">
+        <p className="mt-5 max-w-prose mx-auto text-xl text-gray-medium">
           I am a Full Stack Developer with some data engineering and analysis
           thrown in as well. Continue reading to find out which technologies
           that I am most experienced with.
@@ -81,10 +81,10 @@ export default function SkillsCard() {
                         />
                       </span>
                     </div>
-                    <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">
+                    <h3 className="mt-8 text-lg font-medium text-gray-dark tracking-tight">
                       {feature.name}
                     </h3>
-                    <ul className="mt-5 text-base text-gray-500 text-left ml-8 list-disc">
+                    <ul className="mt-5 text-base text-gray-medium text-left ml-8 list-disc">
                       {feature.listItems.map((feature) => (
                         <li key={feature}>{feature}</li>
                       ))}
