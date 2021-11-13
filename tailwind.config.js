@@ -14,6 +14,8 @@ module.exports = {
       gray: {
         lighter: "#F9FAFB",
         light: "#E8E8E8",
+        medium: "#6b7280",
+        dark: "#1F2937",
       },
     },
     fontFamily: {

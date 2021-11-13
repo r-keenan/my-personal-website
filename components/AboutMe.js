@@ -35,31 +35,23 @@ export default function AboutMe() {
         <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0">
           {/* Content area */}
           <div className="pt-12 sm:pt-16 lg:pt-20">
-            <h2 className="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-4xl">
-              On a mission to empower teams
+            <h2 className="text-3xl text-gray-dark font-extrabold tracking-tight sm:text-4xl">
+              Ross Keenan
             </h2>
+            <h3 className="text-2xl text-gray-dark font-bold tracking-tight pt-2 sm:text-2xl">
+              Full Stack Developer
+            </h3>
             <div className="mt-6 text-gray-500 space-y-6">
-              <p className="text-lg">
-                Sagittis scelerisque nulla cursus in enim consectetur quam.
-                Dictum urna sed consectetur neque tristique pellentesque.
-                Blandit amet, sed aenean erat arcu morbi. Cursus faucibus nunc
-                nisl netus morbi vel porttitor vitae ut. Amet vitae fames
-                senectus vitae.
+              <p className="text-base leading-7">
+                I develop in everything from Content Management Systems (CMSs)
+                to web sites and web apps. I am interested in everything from
+                the hot, new JavaScript frameworks, to backend code, databases,
+                and data engineering.
               </p>
               <p className="text-base leading-7">
-                Sollicitudin tristique eros erat odio sed vitae, consequat
-                turpis elementum. Lorem nibh vel, eget pretium arcu vitae. Eros
-                eu viverra donec ut volutpat donec laoreet quam urna.
-                Sollicitudin tristique eros erat odio sed vitae, consequat
-                turpis elementum. Lorem nibh vel, eget pretium arcu vitae. Eros
-                eu viverra donec ut volutpat donec laoreet quam urna.
-              </p>
-              <p className="text-base leading-7">
-                Rhoncus nisl, libero egestas diam fermentum dui. At quis
-                tincidunt vel ultricies. Vulputate aliquet velit faucibus
-                semper. Pellentesque in venenatis vestibulum consectetur nibh
-                id. In id ut tempus egestas. Enim sit aliquam nec, a. Morbi enim
-                fermentum lacus in. Viverra.
+                Feel free to reach out to me with any consultations or sites
+                that you want to develop or update. I am not looking for
+                full-time employment, but I am open to outside contract work.
               </p>
             </div>
           </div>
@@ -67,7 +59,7 @@ export default function AboutMe() {
           <div className="mt-10">
             <div className="mt-10">
               <Link href="/contact">
-                <a className="text-base font-medium text-indigo-600">
+                <a className="text-base font-medium text-blue-light">
                   {" "}
                   Reach out to me <span aria-hidden="true">&rarr;</span>{" "}
                 </a>
