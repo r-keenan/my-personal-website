@@ -52,7 +52,7 @@ const posts = [
 
 export default function BlogList() {
   return (
-    <div className="relative bg-white pb-20 px-4 min-h-screen sm:px-6 sm:py-24 lg:py-32 lg:px-8">
+    <div className="relative bg-white pb-20 px-4 sm:px-6 sm:py-24 lg:pt-32 lg:px-8 lg:pb-72">
       <div className="absolute inset-0">
         <div className="bg-white h-1/3 sm:h-2/3" />
       </div>
