@@ -20,10 +20,10 @@ export default function AboutMe() {
           >
             <div className="absolute inset-y-0 right-1/2 w-full bg-gray-50 rounded-r-3xl lg:right-72" />
           </div>
-          <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-20 lg:max-w-none lg:py-20">
-            <div className="relative rounded-2xl shadow-xl overflow-hidden">
+          <div className="relative mx-auto max-w-md px-10 py-4 sm:max-w-max sm:px-6 lg:px-16 lg:max-w-max lg:py-20">
+            <div className="grid justify-items-center rounded-2xl shadow-xl overflow-hidden">
               <Image
-                className="absolute inset-0 h-full w-full object-cover"
+                className="absolute inset-0 h-full w-full object-cover rounded-2xl"
                 src={aboutMePic2}
                 alt="Me"
                 priority
