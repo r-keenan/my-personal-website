@@ -2,16 +2,9 @@ import Image from "next/image";
 import aboutMePic2 from "public/images/meQuarterHeight.jpg";
 import Link from "next/link";
 
-const stats = [
-  { label: "Founded", value: "2021" },
-  { label: "Employees", value: "5" },
-  { label: "Beta Users", value: "521" },
-  { label: "Raised", value: "$25M" },
-];
-
 export default function AboutMe() {
   return (
-    <div className="relative bg-white py-16 sm:py-24 lg:py-32">
+    <div className="relative bg-white py-16 sm:py-24 lg:pt-32 lg:pb-56">
       <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-24 lg:items-start">
         <div className="relative sm:py-16 lg:py-0">
           <div

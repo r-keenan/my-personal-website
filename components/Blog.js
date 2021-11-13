@@ -1,4 +1,3 @@
-import avatar from "public/images/myAvi.jpg";
 import Avatar from "./Avatar";
 
 const posts = [
@@ -16,7 +15,6 @@ const posts = [
     author: {
       name: "Ross Keenan",
       href: "/about_me",
-      imageUrl: avatar,
     },
   },
   {
@@ -33,8 +31,6 @@ const posts = [
     author: {
       name: "Ross Keenan",
       href: "/about_me",
-      imageUrl:
-        "https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
     },
   },
   {
@@ -50,15 +46,13 @@ const posts = [
     author: {
       name: "Ross Keenan",
       href: "/about_me",
-      imageUrl:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
     },
   },
 ];
 
 export default function BlogList() {
   return (
-    <div className="relative bg-white pb-20 px-4 sm:px-6  sm:py-24 lg:py-32 lg:px-8">
+    <div className="relative bg-white pb-20 px-4 min-h-screen sm:px-6 sm:py-24 lg:py-32 lg:px-8">
       <div className="absolute inset-0">
         <div className="bg-white h-1/3 sm:h-2/3" />
       </div>
