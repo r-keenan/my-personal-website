@@ -47,7 +47,7 @@ export default function AboutMe() {
                 available hired for hourly or fixed-priced contracts.
               </p>
               <p className="text-base leading-7">
-                Let's make something great together!
+                <span>Let&apos;s make something great together!</span>
               </p>
             </div>
           </div>
