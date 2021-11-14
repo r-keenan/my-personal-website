@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function AboutMe() {
   return (
-    <div className="relative bg-white py-16 sm:py-24 lg:py-56">
+    <div className="relative bg-white py-16 sm:py-24 lg:pt-56 lg:pb-72">
       <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-24 lg:items-start">
         <div className="relative sm:py-16 lg:py-0">
           <div
