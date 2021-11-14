@@ -65,6 +65,8 @@ const posts = [
   },
 ];
 
+let counter = 0;
+
 function createSlug(title) {
   return `posts/${title.replace(/ /g, "-").toLowerCase()}`;
 }
@@ -88,7 +90,7 @@ export default function BlogList({ slug }) {
           </p>
         </div>
         <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-          {posts.map((post) => (
+          {posts.map((post, counter) => (
             <div
               key={post.title}
               className="flex flex-col rounded-lg shadow-lg overflow-hidden"
@@ -107,13 +109,14 @@ export default function BlogList({ slug }) {
                       {post.category.name}
                     </a>
                   </p>
-                  <a href={post.href} className="block mt-2">
+                  <a href={titlesArray[counter]} className="block mt-2">
                     <p className="text-xl font-semibold text-gray-dark">
                       {post.title}
                     </p>
                     <p className="mt-3 text-base text-gray-medium">
                       {post.description}
                     </p>
+                    <p className="hidden">{counter++}</p>
                   </a>
                 </div>
                 <div className="mt-6 flex items-center">
