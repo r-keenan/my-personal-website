@@ -70,8 +70,7 @@ function createSlug(title) {
 }
 
 export default function BlogList({ slug }) {
-  const titlesArray = [];
-  titlesArray.push(posts.map((post) => createSlug(post.title)));
+  const titlesArray = posts.map(({ title }) => createSlug(title));
   console.log(titlesArray);
   return (
     <div className="relative bg-white pb-20 px-4 sm:px-6 sm:py-24 lg:pt-32 lg:px-8 lg:pb-">
