@@ -1,29 +1,5 @@
 import Avatar from "./Avatar";
 
-function createSlug(title) {
-  const root = "posts/";
-  let newTitleArray = [];
-  newTitleArray.push(...title);
-  console.log(`New: ${newTitleArray}`);
-  //title.find(function (value, index) {
-  //  if (index === count) {
-  //    let titleStr = value;
-  //    count++;
-  //    console.log(`title: ${titleStr}`);
-  //  }
-  //});
-  //let titleStrFinal = newTitleArray.replace(" ", "_").toLowerCase();
-  //const createdSlug = root + titleStrFinal;
-  //count++;
-  //return createdSlug;
-}
-
-function logTitle(title) {
-  console.log(`test title: ${title}`);
-}
-
-let count = 0;
-
 const posts = [
   {
     title: "Find Me on LinkedIn",
@@ -89,10 +65,14 @@ const posts = [
   },
 ];
 
+function createSlug(title) {
+  return title.replace(/ /g, "-").toLowerCase();
+}
+
 export default function BlogList({ slug }) {
   const titlesArray = [];
-  titlesArray.push(posts.map((post) => post.title));
-  console.log(createSlug(titlesArray));
+  titlesArray.push(posts.map((post) => createSlug(post.title)));
+  console.log(titlesArray);
   //console.log(`Titles Array: ${titlesArray}`);
   return (
     <div className="relative bg-white pb-20 px-4 sm:px-6 sm:py-24 lg:pt-32 lg:px-8 lg:pb-">
