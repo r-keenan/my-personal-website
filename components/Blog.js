@@ -66,14 +66,13 @@ const posts = [
 ];
 
 function createSlug(title) {
-  return title.replace(/ /g, "-").toLowerCase();
+  return `posts/${title.replace(/ /g, "-").toLowerCase()}`;
 }
 
 export default function BlogList({ slug }) {
   const titlesArray = [];
   titlesArray.push(posts.map((post) => createSlug(post.title)));
   console.log(titlesArray);
-  //console.log(`Titles Array: ${titlesArray}`);
   return (
     <div className="relative bg-white pb-20 px-4 sm:px-6 sm:py-24 lg:pt-32 lg:px-8 lg:pb-">
       <div className="absolute inset-0">
