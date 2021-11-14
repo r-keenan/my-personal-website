@@ -3,7 +3,7 @@ import Avatar from "./Avatar";
 const posts = [
   {
     title: "Find Me on LinkedIn",
-    href: "#",
+    href: "posts/test",
     category: { name: "Article", href: "#" },
     description: "Connect with me on LinkedIn!",
     date: "Nov 1, 2021",
