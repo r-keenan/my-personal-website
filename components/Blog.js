@@ -69,10 +69,10 @@ const posts = [
 let counter = 0;
 
 function createSlug(title) {
-  return `posts/${title.replace(/ /g, "-").toLowerCase()}`;
+  return `/posts/${title.replace(/ /g, "-").toLowerCase()}`;
 }
 
-export default function BlogList({ slug }) {
+export default function BlogList() {
   const titlesArray = posts.map(({ title }) => createSlug(title));
   console.log(titlesArray);
   return (
@@ -110,15 +110,22 @@ export default function BlogList({ slug }) {
                       <a>{post.category.name}</a>
                     </Link>
                   </p>
-                  <a href={titlesArray[counter]} className="block mt-2">
-                    <p className="text-xl font-semibold text-gray-dark">
-                      {post.title}
-                    </p>
-                    <p className="mt-3 text-base text-gray-medium">
-                      {post.description}
-                    </p>
-                    <p className="hidden">{counter++}</p>
-                  </a>
+                  <Link
+                    href={{
+                      pathname: titlesArray[counter].toString(),
+                      query: { title: "test" },
+                    }}
+                  >
+                    <a className="block mt-2">
+                      <p className="text-xl font-semibold text-gray-dark">
+                        {post.title}
+                      </p>
+                      <p className="mt-3 text-base text-gray-medium">
+                        {post.description}
+                      </p>
+                      <p className="hidden">{counter++}</p>
+                    </a>
+                  </Link>
                 </div>
                 <div className="mt-6 flex items-center">
                   <div className="flex-shrink-0">

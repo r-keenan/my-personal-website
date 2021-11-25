@@ -1,5 +1,5 @@
 export default function BlogDetail(props) {
-  console.log(props);
+  console.log(props.title);
   return (
     <div className="relative py-16 bg-white overflow-hidden">
       <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
