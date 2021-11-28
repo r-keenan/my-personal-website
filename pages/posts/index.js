@@ -9,12 +9,12 @@ export default function Posts() {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch(`${API_URL}/api/posts`);
-  const events = await res.json();
+  const posts = await res.json();
 
   return {
-    props: { events },
+    props: { posts },
     //revalidate: 1,
   };
 }
