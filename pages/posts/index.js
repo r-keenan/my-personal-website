@@ -1,4 +1,3 @@
-import Blog from "@/components/Blog";
 import { API_URL } from "@/config/index";
 import Avatar from "@/components/Avatar";
 import Link from "next/link";
@@ -11,7 +10,7 @@ function createSlug(title) {
 
 export default function Posts({ posts }) {
   const titlesArray = posts.map(({ title }) => createSlug(title));
-  console.log(titlesArray);
+  //console.log(titlesArray);
   return (
     <div className="relative bg-white pb-20 px-4 sm:px-6 sm:py-24 lg:pt-32 lg:px-8 lg:pb-">
       <div className="absolute inset-0">
@@ -50,7 +49,7 @@ export default function Posts({ posts }) {
                   <Link
                     href={{
                       pathname: titlesArray[counter].toString(),
-                      query: { slug: "test" },
+                      query: { slug: post.slug },
                     }}
                   >
                     <a className="block mt-2">
