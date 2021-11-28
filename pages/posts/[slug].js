@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function BlogPost() {
   return (
     <div className="relative py-16 bg-white overflow-hidden">
@@ -193,6 +195,16 @@ export default function BlogPost() {
             praesent donec est. Odio penatibus risus viverra tellus varius sit
             neque erat velit.
           </p>
+        </div>
+        <div className="mt-10">
+          <div className="mt-10">
+            <Link href="/posts">
+              <a className="text-base font-medium text-blue-light">
+                {" "}
+                <span aria-hidden="true"> &larr;</span> Back to Posts{" "}
+              </a>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
