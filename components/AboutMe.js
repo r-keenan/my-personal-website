@@ -19,7 +19,7 @@ export default function AboutMe() {
                 className="absolute inset-0 h-full w-full object-cover rounded-2xl"
                 src={aboutMePic2}
                 alt="Me"
-                priority
+                priority={true}
               />
             </div>
           </div>
