@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { API_URL } from "@/config/index";
+import { useRouter } from "next/router";
 
-export default function BlogPost() {
+export default function BlogPost({ post }) {
+  const router = useRouter();
   return (
     <div className="relative py-16 bg-white overflow-hidden">
       <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
@@ -109,8 +112,8 @@ export default function BlogPost() {
       <div className="relative px-4 sm:px-6 lg:px-8">
         <div className="text-lg max-w-prose mx-auto">
           <h1>
-            <span className="block text-base text-center text-indigo-600 font-semibold tracking-wide uppercase">
-              Introducing
+            <span className="block mt-12 text-base text-center text-indigo-600 font-semibold tracking-wide uppercase">
+              {post.title}
             </span>
             <span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
               JavaScript for Beginners
@@ -209,4 +212,15 @@ export default function BlogPost() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps({ query: { slug } }) {
+  const res = await fetch(`${API_URL}/api/posts?slug=${slug}`);
+  const posts = await res.json();
+
+  return {
+    props: {
+      post: posts[0],
+    },
+  };
 }
