@@ -2,6 +2,7 @@
   "posts": [
     {
       "title": "Find Me on LinkedIn",
+      "slug": "find-me-on-linkedin",
       "href": "#",
       "category": { "name": "Article", "href": "#" },
       "description": "Connect with me on LinkedIn!",
@@ -16,6 +17,7 @@
     },
     {
       "title": "Find Me on Upwork",
+      "slug": "find-me-on-upwork",
       "href": "#",
       "category": { "name": "Article", "href": "#" },
       "description": "Here is my Upwork profile if you want to hire me for freelancing or consulting.",
@@ -30,6 +32,7 @@
     },
     {
       "title": "Checkout My GitHub",
+      "slug": "checkout-my-github",
       "href": "#",
       "category": { "name": "Article", "href": "#" },
       "description": "Here is my GitHub. Please check it out to get the most update to information for what I am currently working on.",
@@ -44,6 +47,7 @@
     },
     {
       "title": "Welcome to My New Website",
+      "slug": "welcome-to-my-new-website",
       "href": "#",
       "category": { "name": "Article", "href": "#" },
       "description": "Built with Next.js, Tailwind CSS, and Tailwind UI.",
