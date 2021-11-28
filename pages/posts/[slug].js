@@ -112,11 +112,9 @@ export default function BlogPost({ post }) {
       <div className="relative px-4 sm:px-6 lg:px-8">
         <div className="text-lg max-w-prose mx-auto">
           <h1>
-            <span className="block mt-12 text-base text-center text-indigo-600 font-semibold tracking-wide uppercase">
-              {post.title}
-            </span>
+            <span className="block mt-12 text-base text-center text-indigo-600 font-semibold tracking-wide uppercase"></span>
             <span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              JavaScript for Beginners
+              {post.title}
             </span>
           </h1>
           <p className="mt-8 text-xl text-gray-500 leading-8">
@@ -215,7 +213,7 @@ export default function BlogPost({ post }) {
 }
 
 export async function getServerSideProps({ query: { slug } }) {
-  const res = await fetch(`${API_URL}/api/posts?slug=${slug}`);
+  const res = await fetch(`${API_URL}/api/posts/${slug}`);
   const posts = await res.json();
 
   return {

@@ -43,7 +43,6 @@ export default function Posts({ posts }) {
                   <Link
                     href={{
                       pathname: `/posts/${post.slug}`,
-                      query: { slug: post.slug },
                     }}
                   >
                     <a className="block mt-2">
@@ -87,10 +86,10 @@ export default function Posts({ posts }) {
 
 export async function getServerSideProps() {
   const res = await fetch(`${API_URL}/api/posts`);
-  const posts = await res.json();
+  const allPosts = await res.json();
 
   return {
-    props: { posts },
+    props: { posts: allPosts },
     //revalidate: 1,
   };
 }
