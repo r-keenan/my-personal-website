@@ -155,10 +155,3 @@ export default function BlogList() {
     </div>
   );
 }
-
-export async function getStaticPaths() {
-  return {
-    //paths: [{ params: { slug: "test" } }],
-    //props: { posts },
-  };
-}
