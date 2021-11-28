@@ -3,4 +3,7 @@ module.exports = {
   env: {
     NEXT_PUBLIC_API_URL: "https://my-personal-website-jade.vercel.app",
   },
+  images: {
+    domains: ["images.unsplash.com"],
+  },
 };
