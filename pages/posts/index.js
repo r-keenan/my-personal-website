@@ -93,7 +93,7 @@ export default function Posts({ posts }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(`${API_URL}/api/posts`);
   const posts = await res.json();
 
