@@ -3,6 +3,7 @@ import {
   DesktopComputerIcon,
   ServerIcon,
   DatabaseIcon,
+  TerminalIcon,
 } from "@heroicons/react/outline";
 
 const features = [
@@ -33,8 +34,13 @@ const features = [
     ],
   },
   {
+    name: "API/API Integrations",
+    icon: TerminalIcon,
+    listItems: ["RESTful APIs", "GraphQL APIs"],
+  },
+  {
     name: "Data Engineering",
-    icon: DatabaseIcon,
+    icon: ServerIcon,
     listItems: [
       "Web Scrapers (Python)",
       "Extract, Transform, Load (ETL)",
@@ -45,7 +51,7 @@ const features = [
   },
   {
     name: "Database Development",
-    icon: ServerIcon,
+    icon: DatabaseIcon,
     listItems: ["Postgres", "Microsoft SQL Server", "MySQL"],
   },
   {
