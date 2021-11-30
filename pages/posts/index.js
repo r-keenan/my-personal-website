@@ -2,6 +2,7 @@ import { API_URL } from "@/config/index";
 import Avatar from "@/components/Avatar";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 export default function Posts({ posts }) {
   const router = useRouter();
@@ -27,10 +28,16 @@ export default function Posts({ posts }) {
               className="flex flex-col rounded-lg shadow-lg overflow-hidden"
             >
               <div className="flex-shrink-0">
-                <img
-                  className="h-48 w-full object-cover"
+                <Image
+                  className="object-cover"
                   src={post.imageUrl}
                   alt=""
+                  width={413}
+                  height={192}
+                  maxWidth={413}
+                  maxHeight={192}
+                  layout="responsive"
+                  priority={true}
                 />
               </div>
               <div className="flex-1 bg-white p-6 flex flex-col justify-between">

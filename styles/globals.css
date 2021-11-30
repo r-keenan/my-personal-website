@@ -233,6 +233,7 @@ body {
   }
   to {
     width: 73%;
+    max-width: -moz-fit-content;
     max-width: fit-content;
     border-right-color: transparent;
   }
