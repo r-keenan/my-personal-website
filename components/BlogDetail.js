@@ -1,3 +1,5 @@
+import Breadcrumb from "@/components/Breadcrumb";
+
 export default function BlogDetail(props) {
   console.log(props.title);
   return (
@@ -106,6 +108,7 @@ export default function BlogDetail(props) {
         </div>
       </div>
       <div className="relative px-4 sm:px-6 lg:px-8">
+        <Breadcrumb />
         <div className="text-lg max-w-prose mx-auto">
           <h1>
             <span className="block text-base text-center text-indigo-600 font-semibold tracking-wide uppercase">

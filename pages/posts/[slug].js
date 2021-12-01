@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { API_URL } from "@/config/index";
 import { useRouter } from "next/router";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export default function BlogPost({ post }) {
   const router = useRouter();
@@ -109,7 +110,8 @@ export default function BlogPost({ post }) {
           </svg>
         </div>
       </div>
-      <div className="relative px-4 sm:px-6 lg:px-8">
+      <div className="relative px-4 sm:px-6 lg:px-8 lg:py-5">
+        <Breadcrumb title={post.title} />
         <div className="text-lg max-w-prose mx-auto">
           <h1>
             <span className="block mt-12 text-base text-center text-indigo-600 font-semibold tracking-wide uppercase"></span>
