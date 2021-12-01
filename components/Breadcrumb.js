@@ -5,8 +5,8 @@ export default function Breadcrumb(title) {
   console.log(title);
   //const titleStr = `${title}`;
   const pages = [
-    { name: "Posts", href: "/", current: false },
-    { name: "Project Nero", href: "/posts", current: false },
+    { name: "Posts", href: "/posts", current: false },
+    { name: "test", href: "/posts", current: false },
   ];
   return (
     <nav className="flex" aria-label="Breadcrumb">
