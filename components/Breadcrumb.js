@@ -3,11 +3,10 @@ import Link from "next/link";
 
 export default function Breadcrumb(title) {
   console.log(title);
-  const titleStr = `${title}`;
+  //const titleStr = `${title}`;
   const pages = [
     { name: "Posts", href: "/", current: false },
     { name: "Project Nero", href: "/posts", current: false },
-    { name: title, href: "#", current: false },
   ];
   return (
     <nav className="flex" aria-label="Breadcrumb">
@@ -43,7 +42,7 @@ export default function Breadcrumb(title) {
               </svg>
               <a
                 href={page.href}
-                className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
+                className="ml-4 text-sm font-medium text-blue-light hover:text-gray-700"
                 aria-current={page.current ? "page" : undefined}
               >
                 {page.name}
