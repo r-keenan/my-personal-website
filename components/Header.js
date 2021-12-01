@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import Link from "next/link";
 
 const navigation = [
   { name: "Home", href: "/", current: false },
@@ -40,9 +41,13 @@ export default function Header(props) {
                 </div>
                 <div className="flex-1 flex items-center justify-start sm:items-stretch sm:justify-start">
                   <div className="flex-shrink-0 flex items-center">
-                    <h1 id="myNameHeader" className="shake">
-                      Ross Keenan
-                    </h1>
+                    <Link href="/" passHref>
+                      <a>
+                        <h1 id="myNameHeader" className="shake">
+                          Ross Keenan
+                        </h1>
+                      </a>
+                    </Link>
                   </div>
                   <div className="hidden sm:block sm:ml-6">
                     <div className="flex space-x-4">
