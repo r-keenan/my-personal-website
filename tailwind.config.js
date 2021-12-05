@@ -19,7 +19,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      roboto: [],
+      roboto: ["Roboto"],
     },
   },
   plugins: [require("@tailwindcss/forms", "@tailwindcss/typography")],
