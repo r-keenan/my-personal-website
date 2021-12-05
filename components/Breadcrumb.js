@@ -1,12 +1,10 @@
 import { HomeIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 
-export default function Breadcrumb(title) {
-  console.log(title);
-  //const titleStr = `${title}`;
+export default function Breadcrumb({ title, slug }) {
   const pages = [
     { name: "Posts", href: "/posts", current: false },
-    { name: "test", href: "/posts", current: false },
+    { name: title, href: slug, current: false },
   ];
   return (
     <nav className="flex" aria-label="Breadcrumb">
