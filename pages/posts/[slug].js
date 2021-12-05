@@ -2,6 +2,7 @@ import Link from "next/link";
 import { API_URL } from "@/config/index";
 import { useRouter } from "next/router";
 import Breadcrumb from "@/components/Breadcrumb";
+import Image from "next/image";
 
 export default function BlogPost({ post }) {
   const router = useRouter();
@@ -113,6 +114,18 @@ export default function BlogPost({ post }) {
       <div className="relative px-4 sm:px-6 lg:px-8 lg:py-5">
         <Breadcrumb title={post.title} slug={post.slug} />
         <div className="text-lg max-w-prose mx-auto">
+          <div className="mt-10">
+            <Image
+              className="object-cover"
+              src={post.imageUrl}
+              alt=""
+              priority={true}
+              width={1239}
+              height={576}
+              layout="responsive"
+            />
+          </div>
+
           <h1>
             <span className="block mt-12 text-base text-center text-indigo-600 font-semibold tracking-wide uppercase"></span>
             <span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
@@ -172,13 +185,6 @@ export default function BlogPost({ post }) {
             neque erat velit.
           </p>
           <figure>
-            <img
-              className="w-full rounded-lg"
-              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&w=1310&h=873&q=80&facepad=3"
-              alt=""
-              width={1310}
-              height={873}
-            />
             <figcaption>
               Sagittis scelerisque nulla cursus in enim consectetur quam.
             </figcaption>

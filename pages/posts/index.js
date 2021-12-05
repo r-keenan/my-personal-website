@@ -34,8 +34,6 @@ export default function Posts({ posts }) {
                   alt=""
                   width={413}
                   height={192}
-                  maxWidth={413}
-                  maxHeight={192}
                   layout="responsive"
                   priority={true}
                 />
