@@ -19,7 +19,7 @@ export default function BlogPost({ post }) {
         <div className="text-lg max-w-prose mx-auto">
           <div className="mt-10">
             <Image
-              className="object-cover"
+              className="object-cover rounded-md"
               src={post.imageUrl}
               alt=""
               priority={true}
@@ -35,10 +35,10 @@ export default function BlogPost({ post }) {
             </span>
           </h1>
         </div>
-        <div className="w-4/5">
-          <div className="grid grid-cols-1 grid-rows-2 justify-items-center place-content-center">
-            <div className="mt-10 prose prose-indigo prose-lg text-gray-500 mx-auto">
-              <p>
+        <div className="grid grid-cols-1 grid-rows-2 justify-items-center place-content-center">
+          <div>
+            <div className="grid grid-cols-1 place-content-center mt-10 prose prose-indigo prose-lg text-gray-500 w-4/5 mx-10 sm:mx-20 lg:mx-40">
+              <p className="justify-self-center">
                 Faucibus commodo massa rhoncus, volutpat.{" "}
                 <strong>Dignissim</strong> sed <strong>eget risus enim</strong>.
                 Mattis mauris semper sed amet vitae sed turpis id. Id dolor
@@ -48,13 +48,6 @@ export default function BlogPost({ post }) {
                 <a href="#">Mattis mauris semper</a> sed amet vitae sed turpis
                 id.
               </p>
-              <ul role="list">
-                <li>Quis elit egestas venenatis mattis dignissim.</li>
-                <li>
-                  Cras cras lobortis vitae vivamus ultricies facilisis tempus.
-                </li>
-                <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>
-              </ul>
               <p>
                 Quis semper vulputate aliquam venenatis egestas sagittis quisque
                 orci. Donec commodo sit viverra aliquam porttitor ultrices
@@ -106,7 +99,7 @@ export default function BlogPost({ post }) {
               </p>
             </div>
             <div className="mt-10">
-              <div className="mt-10">
+              <div className="mt-10 grid grid-cols-1 justify-items-center">
                 <Link href="/posts">
                   <a className="text-base font-medium text-blue-light">
                     {" "}
