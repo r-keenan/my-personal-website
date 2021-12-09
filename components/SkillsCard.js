@@ -4,6 +4,7 @@ import {
   ServerIcon,
   DatabaseIcon,
   TerminalIcon,
+  CodeIcon,
 } from "@heroicons/react/outline";
 
 const features = [
@@ -59,6 +60,19 @@ const features = [
     name: "Platform Development",
     icon: CogIcon,
     listItems: ["Shopify", "Next.js", "WordPress"],
+  },
+  {
+    name: "Tools",
+    icon: CodeIcon,
+    listItems: [
+      "Visual Studio Code",
+      "Visual Studio",
+      "IntelliJ",
+      "Microsoft SQL Server Management Studio",
+      "Azure Data Studio",
+      "Jira",
+      "Kanban",
+    ],
   },
 ];
 
