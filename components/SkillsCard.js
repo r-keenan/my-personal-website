@@ -72,6 +72,9 @@ const features = [
       "Azure Data Studio",
       "Jira",
       "Kanban",
+      "Git",
+      "Github",
+      "BitBucket",
     ],
   },
 ];
