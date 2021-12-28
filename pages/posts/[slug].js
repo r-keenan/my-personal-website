@@ -50,7 +50,7 @@ export default function BlogPost({ post }) {
                 id.
               </p>
             </div>
-            <div className="mt-10">
+            <div className="my-10">
               <div className="mt-10 grid grid-cols-1 justify-items-center">
                 <Link href="/posts">
                   <a className="text-base font-medium text-blue-light">
