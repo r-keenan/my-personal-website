@@ -62,7 +62,7 @@ const features = [
     listItems: ["Shopify", "Next.js", "WordPress"],
   },
   {
-    name: "Tools",
+    name: "IDEs/Text Editors/SQL",
     icon: CodeIcon,
     listItems: [
       "Visual Studio Code",
@@ -70,12 +70,12 @@ const features = [
       "IntelliJ",
       "Microsoft SQL Server Management Studio",
       "Azure Data Studio",
-      "Jira",
-      "Kanban",
-      "Git",
-      "Github",
-      "BitBucket",
     ],
+  },
+  {
+    name: "Tools/Applications",
+    icon: CodeIcon,
+    listItems: ["Jira", "Kanban", "Git", "Github", "BitBucket"],
   },
 ];
 
