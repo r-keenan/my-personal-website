@@ -36,11 +36,6 @@ const features = [
     ],
   },
   {
-    name: "API/API Integrations",
-    icon: TerminalIcon,
-    listItems: ["RESTful APIs", "GraphQL APIs"],
-  },
-  {
     name: "Data Engineering",
     icon: ServerIcon,
     listItems: [
@@ -50,6 +45,11 @@ const features = [
       "Data Visualizations",
       "Reporting Software",
     ],
+  },
+  {
+    name: "API/API Integrations",
+    icon: TerminalIcon,
+    listItems: ["RESTful APIs", "GraphQL APIs"],
   },
   {
     name: "Database Development",
@@ -95,7 +95,7 @@ export default function SkillsCard() {
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature) => (
               <div key={feature.name} className="pt-6">
-                <div className="flow-root bg-gray-light rounded-lg px-6 pb-8">
+                <div className="flow-root bg-gray-light rounded-lg px-6 pb-8 h-full">
                   <div className="-mt-6">
                     <div>
                       <span className="inline-flex items-center justify-center p-3 bg-blue-light rounded-md shadow-lg">
