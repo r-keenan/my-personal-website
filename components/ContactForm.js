@@ -1,7 +1,18 @@
 import ReCAPTCHA from "react-google-recaptcha";
+import { useState } from "react";
 
 export default function ContactForm() {
   const sitekey = "6Ld46yMdAAAAAP26QSFzpw3zzMeSEzkWDaR589z8";
+  const [state, setState] = useState({
+    firstName: "",
+    lastName: "",
+    companyName: "",
+    companyWebsite: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
   return (
     <div className="bg-white mt-10">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:py-32">
@@ -129,8 +140,8 @@ export default function ContactForm() {
                 Send Me a Message
               </h3>
               <form
-                action="mailto:ross.keenan@protonmail.com"
-                method="POST"
+                action="/api/handleContactForm"
+                method="post"
                 className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
               >
                 <div>
@@ -138,11 +149,13 @@ export default function ContactForm() {
                     htmlFor="first-name"
                     className="block text-sm font-medium text-gray-dark"
                   >
-                    First name
+                    First Name
                   </label>
                   <div className="mt-1">
                     <input
                       type="text"
+                      value={state.firstName}
+                      onChange={(e) => setState({ firstName: e.target.value })}
                       name="first-name"
                       id="first-name"
                       autoComplete="given-name"
@@ -156,11 +169,13 @@ export default function ContactForm() {
                     htmlFor="last-name"
                     className="block text-sm font-medium text-gray-dark"
                   >
-                    Last name
+                    Last Name
                   </label>
                   <div className="mt-1">
                     <input
                       type="text"
+                      value={state.lastName}
+                      onChange={(e) => setState({ lastName: e.target.value })}
                       name="last-name"
                       id="last-name"
                       autoComplete="family-name"
@@ -187,6 +202,10 @@ export default function ContactForm() {
                   <div className="mt-1">
                     <input
                       type="text"
+                      value={state.companyName}
+                      onChange={(e) =>
+                        setState({ companyName: e.target.value })
+                      }
                       name="company-name"
                       id="company-name"
                       autoComplete="company-name"
@@ -213,6 +232,10 @@ export default function ContactForm() {
                   <div className="mt-1">
                     <input
                       type="url"
+                      value={state.companyWebsite}
+                      onChange={(e) =>
+                        setState({ companyWebsite: e.target.value })
+                      }
                       name="company-website"
                       id="company-website"
                       autoComplete="company-name"
@@ -231,6 +254,8 @@ export default function ContactForm() {
                   <div className="mt-1">
                     <input
                       id="email"
+                      value={state.email}
+                      onChange={(e) => setState({ email: e.target.value })}
                       name="email"
                       type="email"
                       autoComplete="email"
@@ -257,6 +282,8 @@ export default function ContactForm() {
                   <div className="mt-1">
                     <input
                       type="text"
+                      value={state.phone}
+                      onChange={(e) => setState({ phone: e.target.value })}
                       name="phone"
                       id="phone"
                       autoComplete="tel"
@@ -275,6 +302,8 @@ export default function ContactForm() {
                   <div className="mt-1">
                     <input
                       type="text"
+                      value={state.subject}
+                      onChange={(e) => setState({ subject: e.target.value })}
                       name="subject"
                       id="subject"
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
@@ -298,10 +327,11 @@ export default function ContactForm() {
                     <textarea
                       id="message"
                       name="message"
+                      value={state.message}
+                      onChange={(e) => setState({ message: e.target.value })}
                       rows={4}
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"
                       aria-describedby="message-max"
-                      defaultValue={""}
                       required
                     />
                   </div>
