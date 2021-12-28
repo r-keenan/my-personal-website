@@ -1,5 +1,6 @@
 import ReCAPTCHA from "react-google-recaptcha";
 import { useState } from "react";
+import { supabase } from "supabaseClient";
 
 export default function ContactForm() {
   const sitekey = "6Ld46yMdAAAAAP26QSFzpw3zzMeSEzkWDaR589z8";
@@ -13,6 +14,11 @@ export default function ContactForm() {
     subject: "",
     message: "",
   });
+  const handleForm = async (firstName) => {
+    const { data } = await supabase
+      .from("ContactForm")
+      .insert([{ firstName: firstName }]);
+  };
   return (
     <div className="bg-white mt-10">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:py-32">
@@ -343,6 +349,10 @@ export default function ContactForm() {
                   <button
                     type="submit"
                     className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-light hover:bg-blue-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleForm(state.firstName);
+                    }}
                   >
                     Send Message
                   </button>
