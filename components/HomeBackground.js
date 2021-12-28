@@ -11,6 +11,8 @@ export default function HomeBackground() {
         src={mainBackground}
         alt="Header Background"
         className="heroImage"
+        layout="intrinsic"
+        loading="eager"
         priority={true}
       />
     </div>
