@@ -75,7 +75,7 @@ const features = [
   {
     name: "Tools/Applications",
     icon: CodeIcon,
-    listItems: ["Jira", "Kanban", "Git", "Github", "BitBucket"],
+    listItems: ["Jira", "Kanban", "Git", "Github", "BitBucket", "Postman"],
   },
 ];
 
