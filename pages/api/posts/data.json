@@ -50,7 +50,7 @@
       "slug": "welcome-to-my-new-website",
       "href": "#",
       "category": { "name": "Article", "href": "#" },
-      "description": "Built with Next.js, Tailwind CSS, and Tailwind UI.",
+      "description": "Built with Next.js, Tailwind CSS, Tailwind UI, and Supabase. Hosted on Vercel.",
       "date": "Oct 31, 2021",
       "datetime": "2021-11-14",
       "imageUrl": "https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",
