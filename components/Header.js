@@ -39,7 +39,7 @@ export default function Header(props) {
                     )}
                   </Disclosure.Button>
                 </div>
-                <div className="flex-1 flex items-center justify-start sm:items-stretch sm:justify-start">
+                <div className="flex-1 flex items-center text-center justify-center sm:items-stretch sm:justify-start">
                   <div className="flex-shrink-0 flex items-center">
                     <Link href="/" passHref>
                       <a>
