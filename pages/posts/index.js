@@ -7,11 +7,11 @@ import Image from "next/image";
 export default function Posts({ posts }) {
   const router = useRouter();
   return (
-    <div className="relative bg-white pb-20 px-4 sm:px-6 sm:py-24 lg:pt-32 lg:px-8 lg:pb-">
+    <div className="relative bg-white pb-20 px-4 sm:px-6 sm:py-24 lg:pt-12 lg:px-8 lg:pb-">
       <div className="absolute inset-0">
         <div className="bg-white h-1/3 sm:h-2/3" />
       </div>
-      <div className="relative max-w-7xl mx-auto">
+      <div className="relative max-w-7xl mx-auto pt-20">
         <div className="text-center">
           <h2 className="text-3xl tracking-tight font-extrabold text-gray-dark sm:text-4xl">
             From the blog
