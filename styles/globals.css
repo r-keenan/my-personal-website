@@ -247,3 +247,51 @@ body {
     border-right-color: transparent;
   }
 }
+
+@media screen and (max-width: 700px) {
+  .heroText {
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 1;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 59%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-right: solid 3px rgba(0, 255, 0, 0.75);
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: "Source Code Pro", monospace;
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 1.7);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    background-color: rgba(64, 64, 64, 0.5);
+    animation: animated-text 4s steps(29, end) 1s 1 normal both,
+      animated-cursor 600ms steps(29, end) infinite;
+  }
+
+  @keyframes animated-text {
+    from {
+      width: 0%;
+      min-width: 15px;
+    }
+    to {
+      width: 77%;
+      max-width: -moz-fit-content;
+      max-width: fit-content;
+      border-right-color: transparent;
+    }
+  }
+
+  @keyframes animated-cursor {
+    from {
+      border-right-color: rgba(0, 255, 0, 0.75);
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
+}
