@@ -22,6 +22,7 @@ const features = [
       "Angular",
       "Vue.js",
       "Tailwind CSS",
+      "Next.js",
     ],
   },
   {
@@ -62,7 +63,7 @@ const features = [
   {
     name: "Platform Development",
     icon: CogIcon,
-    listItems: ["Shopify", "Next.js", "WordPress"],
+    listItems: ["Shopify", "WordPress"],
   },
   {
     name: "IDEs/Text Editors/SQL",

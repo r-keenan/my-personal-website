@@ -3,44 +3,41 @@ import Link from "next/link";
 
 const features = [
   {
-    name: "Invite team members",
+    name: "Front End Development",
     description:
-      "Tempor tellus in aliquet eu et sit nulla tellus. Suspendisse est, molestie blandit quis ac. Lacus.",
+      "Working with plain straight HTML5 and CSS3, or a component based framework like React, Vue, or Angular.",
   },
   {
-    name: "Notifications",
+    name: "Backend Development",
     description:
-      "Ornare donec rhoncus vitae nisl velit, neque, mauris dictum duis. Nibh urna non parturient.",
+      "Writing server side code to meet project and business requirements.",
   },
   {
-    name: "List view",
+    name: "Data Engineering",
     description:
-      "Etiam cras augue ornare pretium sit malesuada morbi orci, venenatis. Dictum lacus.",
+      "Cleaning and transforming data from sources like CSV, Excel, or PDF files. Scripting clean data into the database.",
   },
   {
-    name: "Boards",
+    name: "API/API Integrations",
     description:
-      "Interdum quam pulvinar turpis tortor, egestas quis diam amet, natoque. Mauris sagittis.",
+      "Developing APIs or API Integration solutions. Staying up to date on API documentation changes.",
   },
   {
-    name: "Keyboard shortcuts",
-    description:
-      "Ullamcorper in ipsum ac feugiat. Senectus at aliquam vulputate mollis nec. In at risus odio.",
+    name: "Database Development",
+    description: "Creating and updating tables. Scripting in data when needed.",
   },
   {
-    name: "Reporting",
+    name: "Cloud Providers",
     description:
-      "Magna a vel sagittis aliquam eu amet. Et lorem auctor quam nunc odio. Sed bibendum.",
+      "Working with large ecosystems like AWS or smaller ones such as Digital Ocean or Vercel.",
   },
   {
-    name: "Calendars",
-    description:
-      "Sed mi, dapibus turpis orci posuere integer. A porta viverra posuere adipiscing turpis.",
+    name: "Programming Methodologies",
+    description: "Working primarily in Agile or Waterfall environments.",
   },
   {
-    name: "Mobile app",
-    description:
-      "Quisque sapien nunc nisl eros. Facilisis sagittis maecenas id dignissim tristique proin sed.",
+    name: "Platform Development",
+    description: "Working with new and older Content Management Systems.",
   },
 ];
 
@@ -53,8 +50,8 @@ export default function Qualifications() {
             Full Stack Developer
           </h2>
           <p className="mt-4 text-lg text-gray-medium">
-            Here is a quick overview of skills that I have acquired throughout
-            my career.
+            Here is a quick overview of the skills that I have acquired
+            throughout my career.
           </p>
         </div>
         <dl className="mt-12 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4 lg:gap-x-8">
