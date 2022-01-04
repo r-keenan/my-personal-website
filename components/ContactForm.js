@@ -3,7 +3,7 @@ import { useState } from "react";
 import { supabase } from "supabaseClient";
 
 export default function ContactForm() {
-  const sitekey = "6Ld46yMdAAAAAP26QSFzpw3zzMeSEzkWDaR589z8";
+  const sitekey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
   const [state, setState] = useState({
     firstName: "",
     lastName: "",
