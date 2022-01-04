@@ -35,10 +35,10 @@ export default function AboutMe() {
             </h3>
             <div className="mt-6 text-gray-medium space-y-6">
               <p className="text-base leading-7">
-                I develop in everything from Content Management Systems (CMSs)
-                to web sites and web apps. I am interested in everything from
-                the hot, new JavaScript frameworks, to backend code, databases,
-                and data engineering.
+                I develop in everything from Content Management Systems (CMS) to
+                web sites and web apps. I am interested in everything from the
+                hot, new JavaScript frameworks, to backend code, databases, and
+                data engineering.
               </p>
               <p className="text-base leading-7">
                 Feel free to reach out to me for any consultations or sites that

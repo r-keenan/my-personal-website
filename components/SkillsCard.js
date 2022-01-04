@@ -5,6 +5,9 @@ import {
   DatabaseIcon,
   TerminalIcon,
   CodeIcon,
+  CloudIcon,
+  BeakerIcon,
+  CursorClickIcon,
 } from "@heroicons/react/outline";
 
 const features = [
@@ -74,8 +77,18 @@ const features = [
   },
   {
     name: "Tools/Applications",
-    icon: CodeIcon,
+    icon: CursorClickIcon,
     listItems: ["Jira", "Kanban", "Git", "Github", "BitBucket", "Postman"],
+  },
+  {
+    name: "Cloud Platforms",
+    icon: CloudIcon,
+    listItems: ["AWS", "Digital Ocean", "Vercel"],
+  },
+  {
+    name: "Methodologies",
+    icon: BeakerIcon,
+    listItems: ["Agile", "Waterfall"],
   },
 ];
 
