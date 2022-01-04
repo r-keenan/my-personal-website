@@ -21,7 +21,7 @@ const features = [
       "React",
       "Angular",
       "Vue.js",
-      "TailwindCSS",
+      "Tailwind CSS",
     ],
   },
   {
