@@ -5,7 +5,7 @@ const features = [
   {
     name: "Front End Development",
     description:
-      "Working with plain straight HTML5 and CSS3, or a component based framework like React, Vue, or Angular.",
+      "Working with straight HTML5 and CSS3, or a component based framework like React, Vue, or Angular.",
   },
   {
     name: "Backend Development",
