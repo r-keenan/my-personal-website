@@ -80,7 +80,7 @@ export default function Qualifications() {
             <Link href="/about_me">
               <a className="text-base font-medium text-blue-light">
                 {" "}
-                Check out the details about my skills{" "}
+                Check out the details of my skills{" "}
                 <span aria-hidden="true">&rarr;</span>{" "}
               </a>
             </Link>
