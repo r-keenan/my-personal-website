@@ -44,7 +44,7 @@ export default function AboutMe() {
                 Feel free to reach out to me for any consultations or sites that
                 you want to develop or update. I am not looking for full-time
                 employment, but I am open to outside contract work. I am
-                available hired for hourly or fixed-priced contracts.
+                available to hire for hourly or fixed-priced contracts.
               </p>
               <p className="text-base leading-7">
                 <span>Let&apos;s make something great together!</span>
