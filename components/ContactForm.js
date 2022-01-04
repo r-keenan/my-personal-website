@@ -1,10 +1,11 @@
 import ReCAPTCHA from "react-google-recaptcha";
 import { useState } from "react";
 import { supabase } from "supabaseClient";
+import Link from "next/link";
 
 export default function ContactForm() {
   const sitekey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-  const [state, setState] = useState({
+  const initialFormState = {
     firstName: "",
     lastName: "",
     companyName: "",
@@ -13,11 +14,25 @@ export default function ContactForm() {
     phone: "",
     subject: "",
     message: "",
-  });
-  const handleForm = async (firstName) => {
-    const { data } = await supabase
-      .from("ContactForm")
-      .insert([{ firstName: firstName }]);
+  };
+  const [state, setState] = useState(initialFormState);
+  const handleChange = (e) => {
+    setState((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    //e.preventDefault();
+  };
+  const handleForm = async (formObject) => {
+    const { data } = await supabase.from("ContactForm").insert([
+      {
+        firstName: state.firstName,
+        lastName: state.lastName,
+        companyName: state.companyName,
+        companyWebsite: state.companyWebsite,
+        email: state.email,
+        phone: state.phone,
+        subject: state.subject,
+        message: state.message,
+      },
+    ]);
   };
   return (
     <div className="bg-white mt-10">
@@ -161,8 +176,8 @@ export default function ContactForm() {
                     <input
                       type="text"
                       value={state.firstName}
-                      onChange={(e) => setState({ firstName: e.target.value })}
-                      name="first-name"
+                      onChange={handleChange}
+                      name="firstName"
                       id="first-name"
                       autoComplete="given-name"
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
@@ -181,8 +196,8 @@ export default function ContactForm() {
                     <input
                       type="text"
                       value={state.lastName}
-                      onChange={(e) => setState({ lastName: e.target.value })}
-                      name="last-name"
+                      onChange={handleChange}
+                      name="lastName"
                       id="last-name"
                       autoComplete="family-name"
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
@@ -209,10 +224,8 @@ export default function ContactForm() {
                     <input
                       type="text"
                       value={state.companyName}
-                      onChange={(e) =>
-                        setState({ companyName: e.target.value })
-                      }
-                      name="company-name"
+                      onChange={handleChange}
+                      name="companyName"
                       id="company-name"
                       autoComplete="company-name"
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
@@ -239,10 +252,8 @@ export default function ContactForm() {
                     <input
                       type="url"
                       value={state.companyWebsite}
-                      onChange={(e) =>
-                        setState({ companyWebsite: e.target.value })
-                      }
-                      name="company-website"
+                      onChange={handleChange}
+                      name="companyWebsite"
                       id="company-website"
                       autoComplete="company-name"
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
@@ -261,7 +272,7 @@ export default function ContactForm() {
                     <input
                       id="email"
                       value={state.email}
-                      onChange={(e) => setState({ email: e.target.value })}
+                      onChange={handleChange}
                       name="email"
                       type="email"
                       autoComplete="email"
@@ -289,7 +300,7 @@ export default function ContactForm() {
                     <input
                       type="text"
                       value={state.phone}
-                      onChange={(e) => setState({ phone: e.target.value })}
+                      onChange={handleChange}
                       name="phone"
                       id="phone"
                       autoComplete="tel"
@@ -309,7 +320,7 @@ export default function ContactForm() {
                     <input
                       type="text"
                       value={state.subject}
-                      onChange={(e) => setState({ subject: e.target.value })}
+                      onChange={handleChange}
                       name="subject"
                       id="subject"
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
@@ -334,7 +345,7 @@ export default function ContactForm() {
                       id="message"
                       name="message"
                       value={state.message}
-                      onChange={(e) => setState({ message: e.target.value })}
+                      onChange={handleChange}
                       rows={4}
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"
                       aria-describedby="message-max"
@@ -346,16 +357,18 @@ export default function ContactForm() {
                   <ReCAPTCHA size="normal" sitekey={sitekey} />
                 </div>
                 <div className="grid justify-items-center justify-self-center sm:col-span-2 sm:flex sm:justify-end">
-                  <button
-                    type="submit"
-                    className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-light hover:bg-blue-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleForm(state.firstName);
-                    }}
-                  >
-                    Send Message
-                  </button>
+                  <Link href="/" passHref>
+                    <button
+                      type="submit"
+                      className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-light hover:bg-blue-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleForm(state);
+                      }}
+                    >
+                      Send Message
+                    </button>
+                  </Link>
                 </div>
               </form>
             </div>
