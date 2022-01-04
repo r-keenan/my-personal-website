@@ -167,7 +167,7 @@ export default function ContactForm() {
               >
                 <div>
                   <label
-                    htmlFor="first-name"
+                    htmlFor="firstName"
                     className="block text-sm font-medium text-gray-dark"
                   >
                     First Name
@@ -187,7 +187,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <label
-                    htmlFor="last-name"
+                    htmlFor="lastName"
                     className="block text-sm font-medium text-gray-dark"
                   >
                     Last Name
@@ -208,7 +208,7 @@ export default function ContactForm() {
                 <div>
                   <div className="flex justify-between">
                     <label
-                      htmlFor="company-name"
+                      htmlFor="companyName"
                       className="block text-sm font-medium text-gray-dark"
                     >
                       Company Name
@@ -236,7 +236,7 @@ export default function ContactForm() {
                 <div>
                   <div className="flex justify-between">
                     <label
-                      htmlFor="company-name"
+                      htmlFor="companyWebsite"
                       className="block text-sm font-medium text-gray-dark"
                     >
                       Company Website
