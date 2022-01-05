@@ -130,7 +130,6 @@ export default function Posts() {
                       pathname: `/posts/${post.slug}`,
                       query: { slug: post.slug },
                     }}
-                    as={`/posts/${post.slug}`}
                   >
                     <a className="block mt-2">
                       <p className="text-xl font-semibold text-gray-dark">
