@@ -21,6 +21,10 @@ const posts = [
       name: "Ross Keenan",
       href: "/about_me",
     },
+    postBody:
+      "Connect with me on LinkedIn. You see the projects that I am currently working on and what new technologies I am trying out. Click below to connect.",
+    insertURL: "https://www.linkedin.com/in/ross-k-2123a1201",
+    linkText: "Connect on LinkedIn",
   },
   {
     title: "Find Me on Upwork",
@@ -38,6 +42,10 @@ const posts = [
       name: "Ross Keenan",
       href: "/about_me",
     },
+    postBody:
+      "Check out my Upwork. I do not really do freelance work anymore, but I might be open to it if you have an interesting project in mind. Click the link below to contact me on Upwork.",
+    insertURL: "https://www.upwork.com/freelancers/~0136d18441afe1e7e8",
+    linkText: "Upwork Profile",
   },
   {
     title: "Checkout My GitHub",
@@ -55,13 +63,17 @@ const posts = [
       name: "Ross Keenan",
       href: "/about_me",
     },
+    postBody:
+      "Look into my GitHub to see what I have worked on, and what I am currently working on. I have really been enjoying Next.js right now. I hope get deeper into Vue.js, Typescript, and Supabase in the near future.",
+    insertURL: "https://github.com/r-keenan",
+    linkText: "Checkout My GitHub",
   },
   {
     title: "Welcome to My New Website",
     slug: "welcome-to-my-new-website",
     href: "#",
     category: { name: "Article", href: "#" },
-    description: "Built with Next.js, Tailwind CSS, and Tailwind UI.",
+    description: "Built with Next.js, Tailwind CSS, Tailwind UI, and Supabase.",
     date: "Oct 31, 2021",
     datetime: "2021-11-14",
     imageUrl:
@@ -71,6 +83,10 @@ const posts = [
       name: "Ross Keenan",
       href: "/about_me",
     },
+    postBody:
+      "Welcome to my new website! I felt like it was finally time for me to replace my old WordPress site. This website built on Next.js, Tailwind CSS, Tailwind UI, and Supabase. It is hosted on Vercel. Click the link to see the GitHub repo for it.",
+    insertURL: "https://github.com/r-keenan/my-personal-website",
+    linkText: "This website's GitHub Repo",
   },
 ];
 
@@ -84,7 +100,7 @@ export default function BlogPost({ urlSlug }) {
     posts.filter((pst) => pst.slug === slugArr[0])
   );
   console.log(post);
-  const { title, imageUrl, slug, postBody } = post[0];
+  const { title, imageUrl, slug, postBody, insertURL, linkText } = post[0];
   console.log(title);
   //console.log(post.title);
   //const router = useRouter();
@@ -121,11 +137,19 @@ export default function BlogPost({ urlSlug }) {
         <div className="flex">
           <div className="flex-1 items-center justify-center">
             <div className="flex mt-10 prose prose-indigo prose-lg text-gray-medium sm:mx-20 lg:mx-80">
-              <p>
-                {postBody}
-                <a href="#">Mattis mauris semper</a> sed amet vitae sed turpis
-                id.
-              </p>
+              <p>{postBody}</p>
+            </div>
+            <div className="my-10">
+              <div className="mt-10 grid grid-cols-1 justify-items-center">
+                <a
+                  href={insertURL}
+                  className="text-base font-medium text-blue-light"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {linkText}
+                </a>
+              </div>
             </div>
             <div className="my-10">
               <div className="mt-10 grid grid-cols-1 justify-items-center">
