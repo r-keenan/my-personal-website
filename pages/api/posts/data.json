@@ -9,11 +9,13 @@
       "date": "Nov 1, 2021",
       "datetime": "2021-11-17",
       "imageUrl": "https://images.unsplash.com/photo-1585288766827-c62e98d70191?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
-      "readingTime": "4 min",
+      "readingTime": "4 mins",
+
       "author": {
         "name": "Ross Keenan",
         "href": "/about_me"
-      }
+      },
+      "postBody": "Connect with me on LinkedIn to find out what I am currently working on, and which new technologies I am playing with. Just click the link <here> and send me a connection request."
     },
     {
       "title": "Find Me on Upwork",
@@ -28,7 +30,8 @@
       "author": {
         "name": "Ross Keenan",
         "href": "/about_me"
-      }
+      },
+      "postBody": ""
     },
     {
       "title": "Checkout My GitHub",
@@ -43,7 +46,8 @@
       "author": {
         "name": "Ross Keenan",
         "href": "/about_me"
-      }
+      },
+      "postBody": ""
     },
     {
       "title": "Welcome to My New Website",
@@ -58,7 +62,8 @@
       "author": {
         "name": "Ross Keenan",
         "href": "/about_me"
-      }
+      },
+      "postBody": ""
     }
   ]
 }

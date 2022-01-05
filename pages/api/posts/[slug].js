@@ -1,4 +1,4 @@
-const { posts } = require("./data.json");
+let { posts } = require("./data.json");
 
 export default function handler(req, res) {
   const evt = posts.filter((ev) => ev.slug === req.query.slug);

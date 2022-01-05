@@ -1,4 +1,4 @@
-const { posts } = require("./data.json");
+let { posts } = require("./data.json");
 
 export default function handler(req, res) {
   if (req.method === "GET") {

@@ -113,7 +113,7 @@ export default function BlogList() {
                   <Link
                     href={{
                       pathname: titlesArray[counter].toString(),
-                      query: { title: "test" },
+                      query: { slug: post.slug },
                     }}
                   >
                     <a className="block mt-2">
