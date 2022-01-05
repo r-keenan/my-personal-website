@@ -2,6 +2,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { useState } from "react";
 import { supabase } from "supabaseClient";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function ContactForm() {
   const sitekey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
@@ -359,12 +360,11 @@ export default function ContactForm() {
                 </div>
                 {*/}
                 <div className="grid justify-items-center justify-self-center sm:col-span-2 sm:flex sm:justify-end">
-                  <Link href="/" passHref>
+                  <Link href="/thank_you" passHref>
                     <button
                       type="submit"
                       className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-light hover:bg-blue-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                       onClick={(e) => {
-                        e.preventDefault();
                         handleForm(state);
                       }}
                     >
