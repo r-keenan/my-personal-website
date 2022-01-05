@@ -15,7 +15,7 @@ const posts = [
     datetime: "2021-11-17",
     imageUrl:
       "https://images.unsplash.com/photo-1585288766827-c62e98d70191?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
-    readingTime: "4 min",
+    readingTime: "3 min",
     author: {
       name: "Ross Keenan",
       href: "/about_me",
@@ -32,7 +32,7 @@ const posts = [
     datetime: "2021-11-16",
     imageUrl:
       "https://images.unsplash.com/photo-1522252234503-e356532cafd5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1625&q=80",
-    readingTime: "4 min",
+    readingTime: "3 min",
     author: {
       name: "Ross Keenan",
       href: "/about_me",
@@ -49,7 +49,7 @@ const posts = [
     datetime: "2021-11-15",
     imageUrl:
       "https://images.unsplash.com/photo-1566837945700-30057527ade0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",
-    readingTime: "4 min",
+    readingTime: "3 min",
     author: {
       name: "Ross Keenan",
       href: "/about_me",
@@ -60,12 +60,12 @@ const posts = [
     slug: "welcome-to-my-new-website",
     href: "#",
     category: { name: "Article", href: "#" },
-    description: "Built with Next.js, Tailwind CSS, and Tailwind UI.",
-    date: "Oct 31, 2021",
+    description: "Built with Next.js, Tailwind CSS, Tailwind UI, and Supabase.",
+    date: "Dec 31, 2021",
     datetime: "2021-11-14",
     imageUrl:
       "https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",
-    readingTime: "6 min",
+    readingTime: "3 min",
     author: {
       name: "Ross Keenan",
       href: "/about_me",
