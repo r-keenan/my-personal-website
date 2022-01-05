@@ -91,20 +91,12 @@ const posts = [
 ];
 
 export default function BlogPost({ urlSlug }) {
-  //console.log(slug);
-  //const propsSlug = slug;
   const slugArr = urlSlug.split("/posts/");
-  //console.log(slugArr[0]);
   const post = Object.assign(
     {},
     posts.filter((pst) => pst.slug === slugArr[0])
   );
-  console.log(post);
   const { title, imageUrl, slug, postBody, insertURL, linkText } = post[0];
-  console.log(title);
-  //console.log(post.title);
-  //const router = useRouter();
-  //console.log(slug);
   return (
     <div className="relative pt-20 bg-white overflow-hidden sm:mt-10 md:pt-10">
       <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
