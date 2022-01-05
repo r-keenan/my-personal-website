@@ -353,9 +353,11 @@ export default function ContactForm() {
                     />
                   </div>
                 </div>
+                {/*}
                 <div className="grid justify-items-center justify-self-center sm:col-span-2 sm:flex sm:justify-end">
                   <ReCAPTCHA size="normal" sitekey={sitekey} />
                 </div>
+                {*/}
                 <div className="grid justify-items-center justify-self-center sm:col-span-2 sm:flex sm:justify-end">
                   <Link href="/" passHref>
                     <button
