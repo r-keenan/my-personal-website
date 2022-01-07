@@ -120,7 +120,7 @@ export default function BlogPost({ urlSlug }) {
             />
           </div>
           <h1>
-            <span className="block mt-12 text-base text-center text-indigo-600 font-semibold tracking-wide uppercase"></span>
+            <span className="block mt-12 text-base text-center text-gray-dark font-semibold tracking-wide uppercase"></span>
             <span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
               {title}
             </span>
