@@ -172,7 +172,7 @@ export default function BlogPost({ urlSlug }) {
 //}
 
 export async function getServerSideProps(context) {
-  console.log(context.query);
+  //console.log(context.query);
 
   return {
     props: {
