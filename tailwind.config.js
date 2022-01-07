@@ -1,3 +1,5 @@
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 module.exports = {
   mode: "jit",
   purge: ["./pages/**/*.{js,jsx}", "./components/**/*.{js,jsx}"],
@@ -19,7 +21,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      roboto: ["Roboto"],
+      ...fontFamily,
+      sans: ["Roboto", "ui-sans-serif", "system-ui"],
     },
   },
   plugins: [require("@tailwindcss/forms", "@tailwindcss/typography")],
