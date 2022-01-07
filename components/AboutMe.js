@@ -20,6 +20,7 @@ export default function AboutMe() {
                 src={aboutMePic2}
                 alt="Me"
                 priority={true}
+                loading="eager"
               />
             </div>
           </div>
