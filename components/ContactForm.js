@@ -39,7 +39,6 @@ export default function ContactForm() {
   function handleRecaptcha(value) {
     if (value !== null && value !== "") {
       captchaValue = value;
-      return captchaValue;
     }
   }
   return (
