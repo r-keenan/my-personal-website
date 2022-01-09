@@ -6,6 +6,7 @@ import { useEffect } from "react";
 
 export default function ContactForm() {
   const sitekey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+  let captchaValue = "";
   const initialFormState = {
     firstName: "",
     lastName: "",
@@ -35,6 +36,12 @@ export default function ContactForm() {
       },
     ]);
   };
+  function handleRecaptcha(value) {
+    if (value !== null && value !== "") {
+      captchaValue = value;
+      return captchaValue;
+    }
+  }
   return (
     <div className="bg-white mt-10">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:py-32">
@@ -354,18 +361,28 @@ export default function ContactForm() {
                     />
                   </div>
                 </div>
-                {/*}
                 <div className="grid justify-items-center justify-self-center sm:col-span-2 sm:flex sm:justify-end">
-                  <ReCAPTCHA size="normal" sitekey={sitekey} />
+                  <ReCAPTCHA
+                    size="normal"
+                    sitekey={sitekey}
+                    onChange={handleRecaptcha}
+                  />
                 </div>
-                {*/}
                 <div className="grid justify-items-center justify-self-center sm:col-span-2 sm:flex sm:justify-end">
                   <Link href="/thank_you" passHref>
                     <button
                       type="submit"
                       className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-light hover:bg-blue-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                       onClick={(e) => {
-                        handleForm(state);
+                        if (captchaValue !== null && captchaValue !== "") {
+                          handleForm(state);
+                        } else {
+                          e.preventDefault();
+                          document.getElementById(
+                            "recaptchaError"
+                          ).style.display = "block";
+                          return;
+                        }
                       }}
                     >
                       Send Message
@@ -373,6 +390,12 @@ export default function ContactForm() {
                   </Link>
                 </div>
               </form>
+              <div
+                id="recaptchaError"
+                className="grid grid-cols-1 text-center pt-5 text-red-warning text-sm hidden"
+              >
+                <p>You must pass the captcha before submitting the form.</p>
+              </div>
             </div>
           </div>
         </div>

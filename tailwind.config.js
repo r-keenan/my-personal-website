@@ -19,6 +19,9 @@ module.exports = {
         medium: "#6b7280",
         dark: "#1F2937",
       },
+      red: {
+        warning: "#dc143c",
+      },
     },
     fontFamily: {
       ...fontFamily,
