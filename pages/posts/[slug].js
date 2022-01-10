@@ -64,7 +64,7 @@ const posts = [
       href: "/about_me",
     },
     postBody:
-      "Look into my GitHub to see what I have worked on, and what I am currently working on. I have really been enjoying Next.js right now. I hope get deeper into Vue.js, Typescript, and Supabase in the near future.",
+      "Look into my GitHub to see what I have worked on, and what I am currently working on. I have really been enjoying Next.js right now. I hope to get deeper into Vue.js, Typescript, and Supabase in the near future.",
     insertURL: "https://github.com/r-keenan",
     linkText: "Checkout My GitHub",
   },
