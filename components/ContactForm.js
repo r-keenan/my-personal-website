@@ -17,6 +17,29 @@ export default function ContactForm() {
     subject: "",
     message: "",
   };
+  function cleanPhone(phoneNumber) {
+    const regexPattern = /[^0-9]+/g;
+    const newPhoneNumber = phoneNumber.replace(regexPattern, "");
+    let desiredPhoneFormat = "";
+    if (newPhoneNumber.length == 10) {
+      const areaCode = newPhoneNumber.slice(0, 3);
+      const cityCode = newPhoneNumber.slice(3, 6);
+      const lastFour = newPhoneNumber.slice(6);
+      desiredPhoneFormat = `(${areaCode}) ${cityCode}-${lastFour}`;
+    } else if (newPhoneNumber.length == 11) {
+      const countryCode = newPhoneNumber.slice(0, 1);
+      const areaCode = newPhoneNumber.slice(1, 4);
+      const cityCode = newPhoneNumber.slice(4, 7);
+      const lastFour = newPhoneNumber.slice(7);
+      desiredPhoneFormat = `${countryCode} (${areaCode}) ${cityCode}-${lastFour}`;
+    }
+
+    if (desiredPhoneFormat.length > newPhoneNumber.length) {
+      return desiredPhoneFormat;
+    } else {
+      return newPhoneNumber;
+    }
+  }
   const [state, setState] = useState(initialFormState);
   const handleChange = (e) => {
     setState((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -30,7 +53,7 @@ export default function ContactForm() {
         companyName: state.companyName,
         companyWebsite: state.companyWebsite,
         email: state.email,
-        phone: state.phone,
+        phone: cleanPhone(state.phone),
         subject: state.subject,
         message: state.message,
       },
