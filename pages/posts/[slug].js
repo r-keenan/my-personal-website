@@ -7,6 +7,26 @@ import Avatar from "@/components/Avatar";
 
 const posts = [
   {
+    title: "Check Out the PWA",
+    slug: "check-out-the-PWA",
+    href: "#",
+    category: { name: "Article", href: "#" },
+    description: "I added PWA support for this site!",
+    date: "Jan 11, 2022",
+    datetime: "2022-1-11",
+    imageUrl:
+      "https://images.unsplash.com/photo-1455894127589-22f75500213a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1687&q=80",
+    readingTime: "3 min",
+    author: {
+      name: "Ross Keenan",
+      href: "/about_me",
+    },
+    postBody:
+      'I have added Progressive Web App (PWA) support using the NPM package, "next-pwa". Try it out on your desktop or mobile device to see how it performs! If you want to integrate it into your site, check out the tutorial below to integrate it into your Next.js website.',
+    insertURL: "https://blog.avneesh.tech/how-to-create-a-pwa-with-nextjs",
+    linkText: "Next.js with PWA Tutorial",
+  },
+  {
     title: "Find Me on LinkedIn",
     slug: "find-me-on-linkedin",
     href: "#",
