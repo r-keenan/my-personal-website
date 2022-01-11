@@ -1,4 +1,6 @@
-module.exports = {
+const withPWA = require("next-pwa");
+
+module.exports = withPWA({
   reactStrictMode: true,
   env: {
     NEXT_PUBLIC_API_URL: "https://my-personal-website-jade.vercel.app",
@@ -6,4 +8,9 @@ module.exports = {
   images: {
     domains: ["images.unsplash.com"],
   },
-};
+  pwa: {
+    dest: "public",
+    register: true,
+    skipWaiting: true,
+  },
+});
