@@ -5,7 +5,7 @@ export default function ThankYou() {
   return (
     <div className="bg-white mt-10">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:py-24 sm:px-6 lg:px-8 lg:py-20">
-        <div className="my-10 sm:my-20 lg:my-16">
+        <div className="my-10 sm:my-20 lg:my-10">
           <Image
             className="object-cover rounded-md"
             src={thankYou}
