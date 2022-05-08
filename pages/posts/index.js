@@ -3,6 +3,7 @@ import Avatar from "@/components/Avatar";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import client from "../../lib/sanity";
 
 const posts = [
   {
@@ -89,7 +90,10 @@ const posts = [
   },
 ];
 
-export default function Posts() {
+export default function Posts({ data }) {
+  const { postsPreviewData } = data;
+
+  console.log(postsPreviewData);
   //const router = useRouter();
   //const refreshData = () => {
   //  router.replace(router.asPath);
@@ -126,7 +130,7 @@ export default function Posts() {
               <div className="flex-shrink-0">
                 <Image
                   className="object-cover"
-                  src={post.imageUrl}
+                  src={postsPreviewData[0].mainImage}
                   alt=""
                   width={413}
                   height={192}
@@ -152,7 +156,7 @@ export default function Posts() {
                         {post.title}
                       </p>
                       <p className="mt-3 text-base text-gray-medium">
-                        {post.description}
+                        {post.excerpt}
                       </p>
                     </a>
                   </Link>
@@ -186,11 +190,23 @@ export default function Posts() {
   );
 }
 
-//export async function getServerSideProps() {
-//  const result = await fetch(`${API_URL}/api/posts`);
-//  const allPosts = await result.json();
-//
-//  return {
-//    props: { posts: allPosts },
-//  };
-//}
+const postsPreviewQuery = `*\[_type == "post"\] {
+  title,
+  slug,
+  excerpt,
+  mainImage,
+  author
+}`;
+
+export async function getStaticProps() {
+  const postsPreviewData = await client.fetch(postsPreviewQuery);
+
+  const data = { postsPreviewData };
+
+  return {
+    props: {
+      data,
+    },
+    revalidate: 1,
+  };
+}
