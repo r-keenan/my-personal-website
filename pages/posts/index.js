@@ -122,33 +122,37 @@ export default function Posts({ data }) {
           </p>
         </div>
         <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-          {posts.map((post) => (
+          {postsPreviewData.map((post) => (
             <div
               key={post.title}
               className="flex flex-col rounded-lg shadow-lg overflow-hidden"
             >
               <div className="flex-shrink-0">
+                {/* 
                 <Image
                   className="object-cover"
-                  src={postsPreviewData[0].mainImage}
+                  src={post.mainImage.asset}
                   alt=""
                   width={413}
                   height={192}
                   layout="responsive"
                   priority={true}
                 />
+                */}
               </div>
               <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                 <div className="flex-1">
                   <p className="text-sm font-medium text-blue-light">
+                    {/* 
                     <Link href={post.category.href} className="hover:underline">
                       <a>{post.category.name}</a>
                     </Link>
+                    */}
                   </p>
                   <Link
                     href={{
-                      pathname: `/posts/${post.slug}`,
-                      query: { slug: post.slug },
+                      pathname: `/posts/${post.slug.current}`,
+                      query: { slug: post.slug.current },
                     }}
                   >
                     <a className="block mt-2">
@@ -170,9 +174,11 @@ export default function Posts({ data }) {
                   </div>
                   <div className="ml-3">
                     <p className="text-sm font-medium text-gray-dark">
+                      {/*
                       <Link href={post.author.href} className="hover:underline">
                         <a>{post.author.name}</a>
                       </Link>
+                       */}
                     </p>
                     <div className="flex space-x-1 text-sm text-gray-medium">
                       <time dateTime={post.datetime}>{post.date}</time>
