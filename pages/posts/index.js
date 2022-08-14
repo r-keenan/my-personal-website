@@ -1,7 +1,6 @@
 import { API_URL } from "@/config/index";
 import Avatar from "@/components/Avatar";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import Image from "next/image";
 import client from "../../lib/sanity";
 
@@ -35,100 +34,12 @@ function formatBlogDate(dateTime) {
     console.log(error);
   }
 
-  console.log(month);
-
   return dateStr;
 }
-
-const posts = [
-  {
-    title: "Check Out the PWA",
-    slug: "check-out-the-PWA",
-    href: "#",
-    category: { name: "Article", href: "#" },
-    description: "I added PWA support for this site!",
-    date: "Jan 11, 2022",
-    datetime: "2022-1-11",
-    imageUrl:
-      "https://images.unsplash.com/photo-1455894127589-22f75500213a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1687&q=80",
-    readingTime: "3 min",
-    author: {
-      name: "Ross Keenan",
-      href: "/about_me",
-    },
-  },
-  {
-    title: "Find Me on LinkedIn",
-    slug: "find-me-on-linkedin",
-    href: "#",
-    category: { name: "Article", href: "#" },
-    description: "Connect with me on LinkedIn!",
-    date: "Nov 1, 2021",
-    datetime: "2021-11-17",
-    imageUrl:
-      "https://images.unsplash.com/photo-1585288766827-c62e98d70191?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
-    readingTime: "3 min",
-    author: {
-      name: "Ross Keenan",
-      href: "/about_me",
-    },
-  },
-  {
-    title: "Find Me on Upwork",
-    slug: "find-me-on-upwork",
-    href: "#",
-    category: { name: "Article", href: "#" },
-    description:
-      "Here is my Upwork profile if you want to hire me for freelancing or consulting.",
-    date: "Nov 1, 2021",
-    datetime: "2021-11-16",
-    imageUrl:
-      "https://images.unsplash.com/photo-1522252234503-e356532cafd5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1625&q=80",
-    readingTime: "3 min",
-    author: {
-      name: "Ross Keenan",
-      href: "/about_me",
-    },
-  },
-  {
-    title: "Checkout My GitHub",
-    slug: "checkout-my-github",
-    href: "#",
-    category: { name: "Article", href: "#" },
-    description:
-      "Here is my GitHub. Please check it out to get the most update to information for what I am currently working on.",
-    date: "Nov 1, 2021",
-    datetime: "2021-11-15",
-    imageUrl:
-      "https://images.unsplash.com/photo-1566837945700-30057527ade0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",
-    readingTime: "3 min",
-    author: {
-      name: "Ross Keenan",
-      href: "/about_me",
-    },
-  },
-  {
-    title: "Welcome to My New Website",
-    slug: "welcome-to-my-new-website",
-    href: "#",
-    category: { name: "Article", href: "#" },
-    description: "Built with Next.js, Tailwind CSS, Tailwind UI, and Supabase.",
-    date: "Dec 31, 2021",
-    datetime: "2021-11-14",
-    imageUrl:
-      "https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",
-    readingTime: "3 min",
-    author: {
-      name: "Ross Keenan",
-      href: "/about_me",
-    },
-  },
-];
 
 export default function Posts({ data }) {
   const { postsPreviewData } = data;
 
-  console.log(postsPreviewData);
   return (
     <div className="relative bg-white pb-20 px-4 sm:px-6 sm:py-24 lg:pt-12 lg:px-8 lg:pb-">
       <div className="absolute inset-0">
@@ -153,7 +64,7 @@ export default function Posts({ data }) {
               <div className="flex-shrink-0">
                 <Image
                   className="object-cover"
-                  src={`https://cdn.sanity.io/images/60fsmc42/production/${post.mainImage.asset._ref}`
+                  src={`${process.env.NEXT_PUBLIC_SANITY_CDN_URL}${post.mainImage.asset._ref}`
                     .replace("-jpg", ".jpg")
                     .replace("image-", "")}
                   alt="BlogPhoto"
@@ -166,16 +77,13 @@ export default function Posts({ data }) {
               <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                 <div className="flex-1">
                   <p className="text-sm font-medium text-blue-light">
-                    {/* 
-                    <Link href={post.categories} className="hover:underline">
-                      <a>{post.category.categories}</a>
+                    <Link href={"#"} className="hover:underline">
+                      <a>Article</a>
                     </Link>
-                    */}
                   </p>
                   <Link
                     href={{
                       pathname: `/posts/${post.slug.current}`,
-                      query: { slug: post.slug.current },
                     }}
                   >
                     <a className="block mt-2">
