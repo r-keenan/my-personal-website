@@ -5,6 +5,41 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import client from "../../lib/sanity";
 
+function formatBlogDate(dateTime) {
+  var months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  var dateStr = "";
+
+  try {
+    var dtSplit = dateTime.split("-");
+    var dateSplit = dtSplit[2].split("T");
+    var month = months[parseInt(dtSplit[1] - 1)];
+    var day = dateSplit[0];
+    var year = dtSplit[0];
+
+    dateStr = `${month} ${day}, ${year}`;
+  } catch (error) {
+    console.log(error);
+  }
+
+  console.log(month);
+
+  return dateStr;
+}
+
 const posts = [
   {
     title: "Check Out the PWA",
@@ -94,20 +129,6 @@ export default function Posts({ data }) {
   const { postsPreviewData } = data;
 
   console.log(postsPreviewData);
-  var { mainImage } = postsPreviewData;
-  console.log(mainImage);
-  //const router = useRouter();
-  //const refreshData = () => {
-  //  router.replace(router.asPath);
-  //};
-  //async function handleNewData() {
-  //  const res = await fetch(`${API_URL}/api/posts`);
-  //  if (res.status < 300) {
-  //    refreshData();
-  //  }
-  //}
-  //handleNewData();
-  //console.log(posts);
   return (
     <div className="relative bg-white pb-20 px-4 sm:px-6 sm:py-24 lg:pt-12 lg:px-8 lg:pb-">
       <div className="absolute inset-0">
@@ -169,21 +190,21 @@ export default function Posts({ data }) {
                 </div>
                 <div className="mt-6 flex items-center">
                   <div className="flex-shrink-0">
-                    <a href={post.author.ref}>
-                      <span className="sr-only">{post.author.name}</span>
+                    <a href={"/about_me"}>
+                      <span className="sr-only">Ross Keenan</span>
                       <Avatar />
                     </a>
                   </div>
                   <div className="ml-3">
                     <p className="text-sm font-medium text-gray-dark">
-                      {/*
-                      <Link href={post.author.href} className="hover:underline">
-                        <a>{post.author.name}</a>
+                      <Link href={"/about_me"} className="hover:underline">
+                        <a>Ross Keenan</a>
                       </Link>
-                       */}
                     </p>
                     <div className="flex space-x-1 text-sm text-gray-medium">
-                      <time dateTime={post.datetime}>{post.publishedAt}</time>
+                      <time dateTime={post.datetime}>
+                        {formatBlogDate(post.publishedAt)}
+                      </time>
                       <span aria-hidden="true">&middot;</span>
                       <span>{post.readingTime} read</span>
                     </div>
