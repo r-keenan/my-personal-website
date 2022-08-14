@@ -8,7 +8,7 @@ import Avatar from "@/components/Avatar";
 const posts = [
   {
     title: "Check Out the PWA",
-    slug: "check-out-the-PWA",
+    slug: "check-out-the-pwa",
     href: "#",
     category: { name: "Article", href: "#" },
     description: "I added PWA support for this site!",
