@@ -94,6 +94,8 @@ export default function Posts({ data }) {
   const { postsPreviewData } = data;
 
   console.log(postsPreviewData);
+  var { mainImage } = postsPreviewData;
+  console.log(mainImage);
   //const router = useRouter();
   //const refreshData = () => {
   //  router.replace(router.asPath);
@@ -128,24 +130,24 @@ export default function Posts({ data }) {
               className="flex flex-col rounded-lg shadow-lg overflow-hidden"
             >
               <div className="flex-shrink-0">
-                {/* 
                 <Image
                   className="object-cover"
-                  src={post.mainImage.asset}
-                  alt=""
+                  src={`https://cdn.sanity.io/images/60fsmc42/production/${post.mainImage.asset._ref}`
+                    .replace("-jpg", ".jpg")
+                    .replace("image-", "")}
+                  alt="BlogPhoto"
                   width={413}
                   height={192}
                   layout="responsive"
                   priority={true}
                 />
-                */}
               </div>
               <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                 <div className="flex-1">
                   <p className="text-sm font-medium text-blue-light">
                     {/* 
-                    <Link href={post.category.href} className="hover:underline">
-                      <a>{post.category.name}</a>
+                    <Link href={post.categories} className="hover:underline">
+                      <a>{post.category.categories}</a>
                     </Link>
                     */}
                   </p>
@@ -167,7 +169,7 @@ export default function Posts({ data }) {
                 </div>
                 <div className="mt-6 flex items-center">
                   <div className="flex-shrink-0">
-                    <a href={post.author.href}>
+                    <a href={post.author.ref}>
                       <span className="sr-only">{post.author.name}</span>
                       <Avatar />
                     </a>
@@ -181,7 +183,7 @@ export default function Posts({ data }) {
                        */}
                     </p>
                     <div className="flex space-x-1 text-sm text-gray-medium">
-                      <time dateTime={post.datetime}>{post.date}</time>
+                      <time dateTime={post.datetime}>{post.publishedAt}</time>
                       <span aria-hidden="true">&middot;</span>
                       <span>{post.readingTime} read</span>
                     </div>
@@ -196,13 +198,7 @@ export default function Posts({ data }) {
   );
 }
 
-const postsPreviewQuery = `*\[_type == "post"\] {
-  title,
-  slug,
-  excerpt,
-  mainImage,
-  author
-}`;
+const postsPreviewQuery = `*\[_type == "post"\] | order(_createdAt desc)`;
 
 export async function getStaticProps() {
   const postsPreviewData = await client.fetch(postsPreviewQuery);
