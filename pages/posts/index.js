@@ -83,7 +83,8 @@ export default function Posts({ data }) {
                   </p>
                   <Link
                     href={{
-                      pathname: `/posts/${post.slug.current}`,
+                      pathname: `/posts/[slug]`,
+                      query: { slug: post.slug.current },
                     }}
                   >
                     <a className="block mt-2">
