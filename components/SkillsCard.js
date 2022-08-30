@@ -18,6 +18,7 @@ const features = [
       "HTML5",
       "CSS3",
       "JavaScript (ES6)",
+      "TypeScript",
       "React",
       "Angular",
       "Vue.js",
@@ -53,7 +54,7 @@ const features = [
   {
     name: "API/API Integrations",
     icon: TerminalIcon,
-    listItems: ["RESTful APIs", "GraphQL APIs"],
+    listItems: ["RESTful APIs", "Microservices", "GraphQL APIs"],
   },
   {
     name: "Database Development",
@@ -70,6 +71,7 @@ const features = [
     icon: CodeIcon,
     listItems: [
       "Visual Studio Code",
+      "JetBrains Rider",
       "Visual Studio",
       "IntelliJ",
       "Microsoft SQL Server Management Studio",
@@ -79,7 +81,16 @@ const features = [
   {
     name: "Tools/Applications",
     icon: CursorClickIcon,
-    listItems: ["Jira", "Kanban", "Git", "Github", "BitBucket", "Postman"],
+    listItems: [
+      "Jira",
+      "Confluence",
+      "Kanban",
+      "Git",
+      "Github",
+      "BitBucket",
+      "Swagger",
+      "Postman",
+    ],
   },
   {
     name: "Cloud Platforms",
