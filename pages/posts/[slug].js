@@ -44,7 +44,7 @@ export default function BlogPost({ post }) {
               {post.body.map((el, counter) => (
                 <>
                   <div className="grid grid-cols-1">
-                    <p key={counter}>{el.children[0].text}</p>
+                    <div key={counter}>{el.children[0].text}</div>
                     <br />
                   </div>
                 </>
@@ -63,8 +63,8 @@ export default function BlogPost({ post }) {
                 </a>
               </div>
             </div>
-            <div className="my-10">
-              <div className="mt-10 grid grid-cols-1 justify-items-center">
+            <div className="my-1">
+              <div className="grid grid-cols-1 justify-items-center">
                 <Link href="/posts">
                   <a className="text-base font-medium text-blue-light">
                     {" "}
