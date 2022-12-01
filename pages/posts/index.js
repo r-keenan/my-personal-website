@@ -62,17 +62,26 @@ export default function Posts({ data }) {
               className="flex flex-col rounded-lg shadow-lg overflow-hidden"
             >
               <div className="flex-shrink-0">
-                <Image
-                  className="object-cover"
-                  src={`${process.env.NEXT_PUBLIC_SANITY_CDN_URL}${post.mainImage.asset._ref}`
-                    .replace("-jpg", ".jpg")
-                    .replace("image-", "")}
-                  alt="BlogPhoto"
-                  width={413}
-                  height={192}
-                  layout="responsive"
-                  priority={true}
-                />
+                <Link
+                  href={{
+                    pathname: `/posts/[slug]`,
+                    query: { slug: post.slug.current },
+                  }}
+                >
+                  <a>
+                    <Image
+                      className="object-cover"
+                      src={`${process.env.NEXT_PUBLIC_SANITY_CDN_URL}${post.mainImage.asset._ref}`
+                        .replace("-jpg", ".jpg")
+                        .replace("image-", "")}
+                      alt="BlogPhoto"
+                      width={413}
+                      height={192}
+                      layout="responsive"
+                      priority={true}
+                    />
+                  </a>
+                </Link>
               </div>
               <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                 <div className="flex-1">
