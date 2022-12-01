@@ -115,7 +115,7 @@ export default function Posts({ data }) {
                   </div>
                   <div className="ml-3">
                     <p className="text-sm font-medium text-gray-dark">
-                      <Link href={"/about_me"} className="hover:underline">
+                      <Link href={"/about-me"} className="hover:underline">
                         <a>Ross Keenan</a>
                       </Link>
                     </p>
