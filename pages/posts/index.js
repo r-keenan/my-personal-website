@@ -1,4 +1,3 @@
-import { API_URL } from "@/config/index";
 import Avatar from "@/components/Avatar";
 import Link from "next/link";
 import Image from "next/image";
