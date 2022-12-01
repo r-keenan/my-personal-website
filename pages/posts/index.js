@@ -108,7 +108,7 @@ export default function Posts({ data }) {
                 </div>
                 <div className="mt-6 flex items-center">
                   <div className="flex-shrink-0">
-                    <a href={"/about_me"}>
+                    <a href={"/about-me"}>
                       <span className="sr-only">Ross Keenan</span>
                       <Avatar />
                     </a>

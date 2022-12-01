@@ -391,7 +391,7 @@ export default function ContactForm() {
                   />
                 </div>
                 <div className="grid justify-items-center justify-self-center sm:col-span-2 sm:flex sm:justify-end">
-                  <Link href="/thank_you" passHref>
+                  <Link href="/thank-you" passHref>
                     <button
                       type="submit"
                       className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-light hover:bg-blue-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
