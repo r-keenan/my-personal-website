@@ -38,10 +38,17 @@ export default function BlogPost({ post }) {
             </span>
           </h1>
         </div>
-        <div className="flex">
-          <div className="flex-1 items-center justify-center">
-            <div className="flex mt-10 prose prose-indigo prose-lg text-gray-medium sm:mx-20 lg:mx-80">
-              <p>{post.body[0].children[0].text}</p>
+        <div className="grid">
+          <div className="grid-1 items-center justify-center">
+            <div className="grid mt-10 prose prose-indigo prose-lg text-gray-medium sm:mx-20 lg:mx-80">
+              {post.body.map((el, counter) => (
+                <>
+                  <div className="grid grid-cols-1">
+                    <p key={counter}>{el.children[0].text}</p>
+                    <br />
+                  </div>
+                </>
+              ))}
             </div>
 
             <div className="my-10">
