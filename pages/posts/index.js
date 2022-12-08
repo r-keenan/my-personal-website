@@ -37,7 +37,7 @@ function formatBlogDate(dateTime) {
 }
 
 export default function Posts({ data }) {
-  const { postsPreviewData } = data;
+  const { posts } = data;
   return (
     <div className="relative bg-white pb-20 px-4 sm:px-6 sm:py-24 lg:pt-12 lg:px-8 lg:pb-">
       <div className="absolute inset-0">
@@ -54,7 +54,7 @@ export default function Posts({ data }) {
           </p>
         </div>
         <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-          {postsPreviewData.map((post) => (
+          {posts.map((post) => (
             <div
               key={post.title}
               className="flex flex-col rounded-lg shadow-lg overflow-hidden"
@@ -140,9 +140,9 @@ const postsPreviewQuery = `*[_type == "post"] {
 } | order(_createdAt desc)`;
 
 export async function getStaticProps() {
-  const postsPreviewData = await client.fetch(postsPreviewQuery);
+  const posts = await client.fetch(postsPreviewQuery);
 
-  const data = { postsPreviewData };
+  const data = { posts };
 
   return {
     props: {
