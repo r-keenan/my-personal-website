@@ -56,7 +56,7 @@ export default function Posts({ data }) {
         <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
           {posts.map((post) => (
             <div
-              key={post.title}
+              key={post._id}
               className="flex flex-col rounded-lg shadow-lg overflow-hidden"
             >
               <div className="flex-shrink-0">
@@ -136,7 +136,7 @@ export default function Posts({ data }) {
 }
 
 const postsPreviewQuery = `*[_type == "post"] {
-  slug, title, excerpt, dateTime, publishedAt, readingTime, mainImage, "author": author->name, mainImage
+  slug, title, excerpt, dateTime, publishedAt, readingTime, mainImage, "author": author->name, mainImage, _id
 } | order(_createdAt desc)`;
 
 export async function getStaticProps() {

@@ -3,6 +3,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import Image from "next/image";
 import Avatar from "@/components/Avatar";
 import client from "../../lib/sanity";
+import React from "react";
 
 export default function BlogPost({ post }) {
   return (
@@ -41,13 +42,13 @@ export default function BlogPost({ post }) {
         <div className="grid">
           <div className="grid-1 items-center justify-center">
             <div className="grid mt-10 prose prose-indigo prose-lg text-gray-medium sm:mx-20 lg:mx-80">
-              {post.body.map((el, counter) => (
-                <>
+              {post.body.map((el) => (
+                <React.Fragment key={el._key}>
                   <div className="grid grid-cols-1">
-                    <div key={counter}>{el.children[0].text}</div>
+                    <div>{el.children[0].text}</div>
                     <br />
                   </div>
-                </>
+                </React.Fragment>
               ))}
             </div>
 
