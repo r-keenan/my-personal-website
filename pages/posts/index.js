@@ -38,7 +38,7 @@ function formatBlogDate(dateTime) {
 
 export default function Posts({ data }) {
   const { postsPreviewData } = data;
-
+  console.log(postsPreviewData);
   return (
     <div className="relative bg-white pb-20 px-4 sm:px-6 sm:py-24 lg:pt-12 lg:px-8 lg:pb-">
       <div className="absolute inset-0">
@@ -108,14 +108,14 @@ export default function Posts({ data }) {
                 <div className="mt-6 flex items-center">
                   <div className="flex-shrink-0">
                     <a href={"/about-me"}>
-                      <span className="sr-only">Ross Keenan</span>
+                      <span className="sr-only">{post.author}</span>
                       <Avatar />
                     </a>
                   </div>
                   <div className="ml-3">
                     <p className="text-sm font-medium text-gray-dark">
                       <Link href={"/about-me"} className="hover:underline">
-                        <a>Ross Keenan</a>
+                        <a>{post.author}</a>
                       </Link>
                     </p>
                     <div className="flex space-x-1 text-sm text-gray-medium">
@@ -136,7 +136,9 @@ export default function Posts({ data }) {
   );
 }
 
-const postsPreviewQuery = `*\[_type == "post"\] | order(_createdAt desc)`;
+const postsPreviewQuery = `*[_type == "post"] {
+  slug, title, excerpt, dateTime, publishedAt, readingTime, mainImage, "author": author->name
+} | order(_createdAt desc)`;
 
 export async function getStaticProps() {
   const postsPreviewData = await client.fetch(postsPreviewQuery);
