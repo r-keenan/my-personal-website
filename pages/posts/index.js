@@ -38,6 +38,7 @@ function formatBlogDate(dateTime) {
 
 export default function Posts({ data }) {
   const { posts } = data;
+  console.log(posts);
   return (
     <div className="relative bg-white pb-20 px-4 sm:px-6 sm:py-24 lg:pt-12 lg:px-8 lg:pb-">
       <div className="absolute inset-0">
@@ -107,14 +108,14 @@ export default function Posts({ data }) {
                 <div className="mt-6 flex items-center">
                   <div className="flex-shrink-0">
                     <a href={"/about-me"}>
-                      <span className="sr-only">{post.author}</span>
+                      <span className="sr-only">post.author</span>
                       <Avatar />
                     </a>
                   </div>
                   <div className="ml-3">
                     <p className="text-sm font-medium text-gray-dark">
                       <Link href={"/about-me"} className="hover:underline">
-                        <a>{post.author}</a>
+                        <a>post.author</a>
                       </Link>
                     </p>
                     <div className="flex space-x-1 text-sm text-gray-medium">
@@ -135,8 +136,8 @@ export default function Posts({ data }) {
   );
 }
 
-const postsPreviewQuery = `*[_type == "post"] {
-  slug, title, excerpt, dateTime, publishedAt, readingTime, mainImage, "author": author->name, mainImage, _id
+const postsPreviewQuery = `*[_type == "post" && !(_id in path('drafts.**'))] {
+  slug, title, excerpt, dateTime, publishedAt, readingTime, mainImage, "author": author->name, mainImage, _id, createdAt
 } | order(_createdAt desc)`;
 
 export async function getStaticProps() {
