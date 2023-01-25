@@ -58,15 +58,14 @@ export default function ContactForm() {
     email: Yup.string()
       .required("Please provide your email address")
       .min(8, "Email Address must be at least 2 characters")
-      .max(100, "Email Address must not exceed 10 characters"),
+      .max(75, "Email Address must not exceed 75 characters"),
     phone: Yup.string()
       .min(8, "Email Address must be at least 10 characters")
       .max(20, "Email Address must be at least 10 characters"),
-    subject: Yup.string().required(
-      "Please provide the subject of your message."
-        .min(10, "Subject must be at least 10 characters")
-        .max(100, "Subject must be at least 100 characters")
-    ),
+    subject: Yup.string()
+      .required("Please provide the subject of your message.")
+      .min(10, "Subject must be at least 10 characters")
+      .max(100, "Subject must be at least 100 characters"),
     message: Yup.string()
       .required("Please provide the body of your message.")
       .min(50, "Message body must be at least 50 characters")
@@ -251,27 +250,20 @@ export default function ContactForm() {
                       type="text"
                       value={formik.values.firstName}
                       onChange={formik.handleChange}
-                      error={
-                        formik.touched.firstName &&
-                        Boolean(formik.errors.firstName)
-                      }
+                      {...formik.getFieldProps("firstName")}
                       name="firstName"
                       id="first-name"
                       autoComplete="given-name"
-                      className={
-                        "py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md" +
-                        "form-control" +
-                        (formik.errors.firstName && formik.touched.firstName
-                          ? " is-invalid"
-                          : "")
-                      }
+                      className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                       required
                     />
-                    <div className="invalid-feedback color-red">
-                      {formik.errors.firstName && formik.touched.firstName
-                        ? formik.errors.firstName
-                        : null}
-                    </div>
+                    {formik.touched.firstName && formik.errors.firstName ? (
+                      <div>
+                        <p style={{ color: "red", fontSize: ".75rem" }}>
+                          {formik.errors.firstName}
+                        </p>
+                      </div>
+                    ) : null}
                   </div>
                 </div>
                 <div>
@@ -286,12 +278,20 @@ export default function ContactForm() {
                       type="text"
                       value={formik.values.lastName}
                       onChange={formik.handleChange}
+                      {...formik.getFieldProps("lastName")}
                       name="lastName"
                       id="last-name"
                       autoComplete="family-name"
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                       required
                     />
+                    {formik.touched.lastName && formik.errors.lastName ? (
+                      <div>
+                        <p style={{ color: "red", fontSize: ".75rem" }}>
+                          {formik.errors.lastName}
+                        </p>
+                      </div>
+                    ) : null}
                   </div>
                 </div>
                 <div>
@@ -314,12 +314,20 @@ export default function ContactForm() {
                       type="text"
                       value={formik.values.companyName}
                       onChange={formik.handleChange}
+                      {...formik.getFieldProps("companyName")}
                       name="companyName"
                       id="company-name"
                       autoComplete="company-name"
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                       aria-describedby="company-name-optional"
                     />
+                    {formik.touched.companyName && formik.errors.companyName ? (
+                      <div>
+                        <p style={{ color: "red", fontSize: ".75rem" }}>
+                          {formik.errors.companyName}
+                        </p>
+                      </div>
+                    ) : null}
                   </div>
                 </div>
                 <div>
@@ -342,12 +350,21 @@ export default function ContactForm() {
                       type="url"
                       value={formik.values.companyWebsite}
                       onChange={formik.handleChange}
+                      {...formik.getFieldProps("companyWebsite")}
                       name="companyWebsite"
                       id="company-website"
                       autoComplete="company-name"
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                       aria-describedby="company-website-optional"
                     />
+                    {formik.touched.companyWebsite &&
+                    formik.errors.companyWebsite ? (
+                      <div>
+                        <p style={{ color: "red", fontSize: ".75rem" }}>
+                          {formik.errors.companyWebsite}
+                        </p>
+                      </div>
+                    ) : null}
                   </div>
                 </div>
                 <div>
@@ -362,12 +379,20 @@ export default function ContactForm() {
                       id="email"
                       value={formik.values.email}
                       onChange={formik.handleChange}
+                      {...formik.getFieldProps("email")}
                       name="email"
                       type="email"
                       autoComplete="email"
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                       required
                     />
+                    {formik.touched.email && formik.errors.email ? (
+                      <div>
+                        <p style={{ color: "red", fontSize: ".75rem" }}>
+                          {formik.errors.email}
+                        </p>
+                      </div>
+                    ) : null}
                   </div>
                 </div>
                 <div>
@@ -390,12 +415,20 @@ export default function ContactForm() {
                       type="text"
                       value={formik.values.phone}
                       onChange={formik.handleChange}
+                      {...formik.getFieldProps("phone")}
                       name="phone"
                       id="phone"
                       autoComplete="tel"
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                       aria-describedby="phone-optional"
                     />
+                    {formik.touched.phone && formik.errors.phone ? (
+                      <div>
+                        <p style={{ color: "red", fontSize: ".75rem" }}>
+                          {formik.errors.phone}
+                        </p>
+                      </div>
+                    ) : null}
                   </div>
                 </div>
                 <div className="sm:col-span-2">
@@ -410,11 +443,19 @@ export default function ContactForm() {
                       type="text"
                       value={formik.values.subject}
                       onChange={formik.handleChange}
+                      {...formik.getFieldProps("subject")}
                       name="subject"
                       id="subject"
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                       required
                     />
+                    {formik.touched.subject && formik.errors.subject ? (
+                      <div>
+                        <p style={{ color: "red", fontSize: ".75rem" }}>
+                          {formik.errors.subject}
+                        </p>
+                      </div>
+                    ) : null}
                   </div>
                 </div>
                 <div className="sm:col-span-2">
@@ -435,11 +476,19 @@ export default function ContactForm() {
                       name="message"
                       value={formik.values.message}
                       onChange={formik.handleChange}
+                      {...formik.getFieldProps("message")}
                       rows={4}
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"
                       aria-describedby="message-max"
                       required
                     />
+                    {formik.touched.message && formik.errors.message ? (
+                      <div>
+                        <p style={{ color: "red", fontSize: ".75rem" }}>
+                          {formik.errors.message}
+                        </p>
+                      </div>
+                    ) : null}
                   </div>
                 </div>
                 <div className="grid justify-items-center justify-self-center sm:col-span-2 sm:flex sm:justify-end">
