@@ -467,7 +467,7 @@ export default function ContactForm() {
                       Message
                     </label>
                     <span id="message-max" className="text-sm text-gray-medium">
-                      Max. 500 characters
+                      Max. 1000 characters
                     </span>
                   </div>
                   <div className="mt-1">
