@@ -41,16 +41,36 @@ export default function ContactForm() {
   }
 
   const validationSchema = Yup.object({
-    firstName: Yup.string().required("Please provide your first name"),
-    lastName: Yup.string().required("Please provide your last name"),
-    companyName: Yup.string(),
-    companyWebsite: Yup.string(),
-    email: Yup.string().required("Please provide your email address"),
-    phone: Yup.string(),
+    firstName: Yup.string()
+      .required("Please provide your first name")
+      .min(2, "First Name must be at least 2 characters")
+      .max(50, "First Name must not exceed 50 characters"),
+    lastName: Yup.string()
+      .required("Please provide your last name")
+      .min(2, "Last Name must be at least 2 characters")
+      .max(50, "Last Name must not exceed 50 characters"),
+    companyName: Yup.string()
+      .min(2, "Company Name must be at least 2 characters")
+      .max(100, "Last Name must not exceed 10 characters"),
+    companyWebsite: Yup.string()
+      .min(6, "Company Website must be at least 2 characters")
+      .max(100, "Company Website must not exceed 10 characters"),
+    email: Yup.string()
+      .required("Please provide your email address")
+      .min(8, "Email Address must be at least 2 characters")
+      .max(100, "Email Address must not exceed 10 characters"),
+    phone: Yup.string()
+      .min(8, "Email Address must be at least 10 characters")
+      .max(20, "Email Address must be at least 10 characters"),
     subject: Yup.string().required(
       "Please provide the subject of your message."
+        .min(10, "Subject must be at least 10 characters")
+        .max(100, "Subject must be at least 100 characters")
     ),
-    message: Yup.string().required("Please provide the body of your message."),
+    message: Yup.string()
+      .required("Please provide the body of your message.")
+      .min(50, "Message body must be at least 50 characters")
+      .max(1000, "Message body be at least 1000 characters"),
   });
 
   async function postToDb(values) {
@@ -79,6 +99,7 @@ export default function ContactForm() {
       subject: "",
       message: "",
     },
+    validationSchema,
     onSubmit: (values) => {
       postToDb(values);
     },
@@ -230,12 +251,27 @@ export default function ContactForm() {
                       type="text"
                       value={formik.values.firstName}
                       onChange={formik.handleChange}
+                      error={
+                        formik.touched.firstName &&
+                        Boolean(formik.errors.firstName)
+                      }
                       name="firstName"
                       id="first-name"
                       autoComplete="given-name"
-                      className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                      className={
+                        "py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md" +
+                        "form-control" +
+                        (formik.errors.firstName && formik.touched.firstName
+                          ? " is-invalid"
+                          : "")
+                      }
                       required
                     />
+                    <div className="invalid-feedback color-red">
+                      {formik.errors.firstName && formik.touched.firstName
+                        ? formik.errors.firstName
+                        : null}
+                    </div>
                   </div>
                 </div>
                 <div>
