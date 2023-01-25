@@ -42,34 +42,36 @@ export default function ContactForm() {
 
   const validationSchema = Yup.object({
     firstName: Yup.string()
-      .required("Please provide your first name")
       .min(2, "First Name must be at least 2 characters")
-      .max(50, "First Name must not exceed 50 characters"),
+      .max(50, "First Name must not exceed 50 characters")
+      .required("Please provide your first name"),
     lastName: Yup.string()
-      .required("Please provide your last name")
       .min(2, "Last Name must be at least 2 characters")
-      .max(50, "Last Name must not exceed 50 characters"),
+      .max(50, "Last Name must not exceed 50 characters")
+      .required("Please provide your last name"),
     companyName: Yup.string()
       .min(2, "Company Name must be at least 2 characters")
       .max(100, "Last Name must not exceed 10 characters"),
     companyWebsite: Yup.string()
+      .url("Invalid URL. Format must be: https://www.yourwebsite.com")
       .min(6, "Company Website must be at least 2 characters")
       .max(100, "Company Website must not exceed 10 characters"),
     email: Yup.string()
-      .required("Please provide your email address")
+      .email("Must be formatted like: hello@email.com")
       .min(8, "Email Address must be at least 2 characters")
-      .max(75, "Email Address must not exceed 75 characters"),
+      .max(75, "Email Address must not exceed 75 characters")
+      .required("Please provide your email address"),
     phone: Yup.string()
       .min(8, "Email Address must be at least 10 characters")
       .max(20, "Email Address must be at least 10 characters"),
     subject: Yup.string()
-      .required("Please provide the subject of your message.")
       .min(10, "Subject must be at least 10 characters")
-      .max(100, "Subject must be at least 100 characters"),
+      .max(100, "Subject must be at least 100 characters")
+      .required("Please provide the subject of your message."),
     message: Yup.string()
-      .required("Please provide the body of your message.")
       .min(50, "Message body must be at least 50 characters")
-      .max(1000, "Message body be at least 1000 characters"),
+      .max(1000, "Message body be at least 1000 characters")
+      .required("Please provide the body of your message."),
   });
 
   async function postToDb(values) {
@@ -104,7 +106,6 @@ export default function ContactForm() {
     },
   });
 
-  const renderError = (message) => <p className="help is-danger">{message}</p>;
   return (
     <div className="bg-white mt-10">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:py-32">
