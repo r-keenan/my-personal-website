@@ -7,20 +7,6 @@ import * as Yup from "yup";
 import { Formik, useFormik, Field, ErrorMessage } from "formik";
 
 export default function ContactForm() {
-  const validationSchema = Yup.object({
-    firstName: Yup.string().required("Please provide your first name"),
-    lastName: Yup.string().required("Please provide your last name"),
-    companyName: Yup.string(),
-    companyWebsite: Yup.string(),
-    email: Yup.string().required("Please provide your email address"),
-    phone: Yup.string(),
-    subject: Yup.string().required(
-      "Please provide the subject of your message."
-    ),
-    message: Yup.string().required("Please provide the body of your message."),
-  });
-  const sitekey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-  let captchaValue = "";
   function cleanPhone(phoneNumber) {
     const regexPattern = /[^0-9]+/g;
     const newPhoneNumber = phoneNumber.replace(regexPattern, "");
@@ -45,11 +31,27 @@ export default function ContactForm() {
     }
   }
 
+  const sitekey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+  let captchaValue = "";
+
   function handleRecaptcha(value) {
     if (value !== null && value !== "") {
       captchaValue = value;
     }
   }
+
+  const validationSchema = Yup.object({
+    firstName: Yup.string().required("Please provide your first name"),
+    lastName: Yup.string().required("Please provide your last name"),
+    companyName: Yup.string(),
+    companyWebsite: Yup.string(),
+    email: Yup.string().required("Please provide your email address"),
+    phone: Yup.string(),
+    subject: Yup.string().required(
+      "Please provide the subject of your message."
+    ),
+    message: Yup.string().required("Please provide the body of your message."),
+  });
 
   async function postToDb(values) {
     const { data } = await supabase.from("ContactForm").insert([
@@ -81,6 +83,8 @@ export default function ContactForm() {
       postToDb(values);
     },
   });
+
+  const renderError = (message) => <p className="help is-danger">{message}</p>;
   return (
     <div className="bg-white mt-10">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:py-32">
@@ -209,6 +213,7 @@ export default function ContactForm() {
               </h3>
               <form
                 onSubmit={formik.handleSubmit}
+                validationSchema={validationSchema}
                 action="/api/handleContactForm"
                 method="post"
                 className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
@@ -414,9 +419,7 @@ export default function ContactForm() {
                       type="submit"
                       className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-light hover:bg-blue-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                       onClick={(e) => {
-                        if (captchaValue !== null && captchaValue !== "") {
-                          formik.handleSubmit(state);
-                        } else {
+                        if (captchaValue === null || captchaValue === "") {
                           e.preventDefault();
                           document.getElementById(
                             "recaptchaError"
