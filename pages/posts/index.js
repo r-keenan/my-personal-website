@@ -107,14 +107,14 @@ export default function Posts({ data }) {
                 <div className="mt-6 flex items-center">
                   <div className="flex-shrink-0">
                     <a href={"/about-me"}>
-                      <span className="sr-only">post.author</span>
+                      <span className="sr-only">{post.author}</span>
                       <Avatar />
                     </a>
                   </div>
                   <div className="ml-3">
                     <p className="text-sm font-medium text-gray-dark">
                       <Link href={"/about-me"} className="hover:underline">
-                        <a>post.author</a>
+                        <a>{post.author}</a>
                       </Link>
                     </p>
                     <div className="flex space-x-1 text-sm text-gray-medium">
