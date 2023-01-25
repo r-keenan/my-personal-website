@@ -3,20 +3,24 @@ import { useState } from "react";
 import { supabase } from "supabaseClient";
 import Link from "next/link";
 import { useEffect } from "react";
+import * as Yup from "yup";
+import { Formik, useFormik, Field, ErrorMessage } from "formik";
 
 export default function ContactForm() {
+  const validationSchema = Yup.object({
+    firstName: Yup.string().required("Please provide your first name"),
+    lastName: Yup.string().required("Please provide your last name"),
+    companyName: Yup.string(),
+    companyWebsite: Yup.string(),
+    email: Yup.string().required("Please provide your email address"),
+    phone: Yup.string(),
+    subject: Yup.string().required(
+      "Please provide the subject of your message."
+    ),
+    message: Yup.string().required("Please provide the body of your message."),
+  });
   const sitekey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
   let captchaValue = "";
-  const initialFormState = {
-    firstName: "",
-    lastName: "",
-    companyName: "",
-    companyWebsite: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-  };
   function cleanPhone(phoneNumber) {
     const regexPattern = /[^0-9]+/g;
     const newPhoneNumber = phoneNumber.replace(regexPattern, "");
@@ -40,30 +44,43 @@ export default function ContactForm() {
       return newPhoneNumber;
     }
   }
-  const [state, setState] = useState(initialFormState);
-  const handleChange = (e) => {
-    setState((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-    //e.preventDefault();
-  };
-  const handleForm = async (formObject) => {
-    const { data } = await supabase.from("ContactForm").insert([
-      {
-        firstName: state.firstName,
-        lastName: state.lastName,
-        companyName: state.companyName,
-        companyWebsite: state.companyWebsite,
-        email: state.email,
-        phone: cleanPhone(state.phone),
-        subject: state.subject,
-        message: state.message,
-      },
-    ]);
-  };
+
   function handleRecaptcha(value) {
     if (value !== null && value !== "") {
       captchaValue = value;
     }
   }
+
+  async function postToDb(values) {
+    const { data } = await supabase.from("ContactForm").insert([
+      {
+        firstName: formik.values.firstName,
+        lastName: formik.values.lastName,
+        companyName: formik.values.companyName,
+        companyWebsite: formik.values.companyWebsite,
+        email: formik.values.email,
+        phone: cleanPhone(formik.values.phone),
+        subject: formik.values.subject,
+        message: formik.values.message,
+      },
+    ]);
+  }
+
+  const formik = useFormik({
+    initialValues: {
+      firstName: "",
+      lastName: "",
+      companyName: "",
+      companyWebsite: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+    },
+    onSubmit: (values) => {
+      postToDb(values);
+    },
+  });
   return (
     <div className="bg-white mt-10">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:py-32">
@@ -191,6 +208,7 @@ export default function ContactForm() {
                 Send Me a Message
               </h3>
               <form
+                onSubmit={formik.handleSubmit}
                 action="/api/handleContactForm"
                 method="post"
                 className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
@@ -205,8 +223,8 @@ export default function ContactForm() {
                   <div className="mt-1">
                     <input
                       type="text"
-                      value={state.firstName}
-                      onChange={handleChange}
+                      value={formik.values.firstName}
+                      onChange={formik.handleChange}
                       name="firstName"
                       id="first-name"
                       autoComplete="given-name"
@@ -225,8 +243,8 @@ export default function ContactForm() {
                   <div className="mt-1">
                     <input
                       type="text"
-                      value={state.lastName}
-                      onChange={handleChange}
+                      value={formik.values.lastName}
+                      onChange={formik.handleChange}
                       name="lastName"
                       id="last-name"
                       autoComplete="family-name"
@@ -253,8 +271,8 @@ export default function ContactForm() {
                   <div className="mt-1">
                     <input
                       type="text"
-                      value={state.companyName}
-                      onChange={handleChange}
+                      value={formik.values.companyName}
+                      onChange={formik.handleChange}
                       name="companyName"
                       id="company-name"
                       autoComplete="company-name"
@@ -281,8 +299,8 @@ export default function ContactForm() {
                   <div className="mt-1">
                     <input
                       type="url"
-                      value={state.companyWebsite}
-                      onChange={handleChange}
+                      value={formik.values.companyWebsite}
+                      onChange={formik.handleChange}
                       name="companyWebsite"
                       id="company-website"
                       autoComplete="company-name"
@@ -301,8 +319,8 @@ export default function ContactForm() {
                   <div className="mt-1">
                     <input
                       id="email"
-                      value={state.email}
-                      onChange={handleChange}
+                      value={formik.values.email}
+                      onChange={formik.handleChange}
                       name="email"
                       type="email"
                       autoComplete="email"
@@ -329,8 +347,8 @@ export default function ContactForm() {
                   <div className="mt-1">
                     <input
                       type="text"
-                      value={state.phone}
-                      onChange={handleChange}
+                      value={formik.values.phone}
+                      onChange={formik.handleChange}
                       name="phone"
                       id="phone"
                       autoComplete="tel"
@@ -349,8 +367,8 @@ export default function ContactForm() {
                   <div className="mt-1">
                     <input
                       type="text"
-                      value={state.subject}
-                      onChange={handleChange}
+                      value={formik.values.subject}
+                      onChange={formik.handleChange}
                       name="subject"
                       id="subject"
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
@@ -374,8 +392,8 @@ export default function ContactForm() {
                     <textarea
                       id="message"
                       name="message"
-                      value={state.message}
-                      onChange={handleChange}
+                      value={formik.values.message}
+                      onChange={formik.handleChange}
                       rows={4}
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"
                       aria-describedby="message-max"
@@ -397,7 +415,7 @@ export default function ContactForm() {
                       className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-light hover:bg-blue-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                       onClick={(e) => {
                         if (captchaValue !== null && captchaValue !== "") {
-                          handleForm(state);
+                          formik.handleSubmit(state);
                         } else {
                           e.preventDefault();
                           document.getElementById(
