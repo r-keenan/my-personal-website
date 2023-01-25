@@ -75,14 +75,14 @@ export default function ContactForm() {
   async function postToDb(values) {
     const { data } = await supabase.from("ContactForm").insert([
       {
-        firstName: formik.values.firstName,
-        lastName: formik.values.lastName,
-        companyName: formik.values.companyName,
-        companyWebsite: formik.values.companyWebsite,
-        email: formik.values.email,
-        phone: cleanPhone(formik.values.phone),
-        subject: formik.values.subject,
-        message: formik.values.message,
+        firstName: values.firstName,
+        lastName: values.lastName,
+        companyName: values.companyName,
+        companyWebsite: values.companyWebsite,
+        email: values.email,
+        phone: cleanPhone(values.phone),
+        subject: values.subject,
+        message: values.message,
       },
     ]);
   }
@@ -511,6 +511,7 @@ export default function ContactForm() {
                           ).style.display = "block";
                           return;
                         }
+                        postToDb(formik.values);
                       }}
                     >
                       Send Message
