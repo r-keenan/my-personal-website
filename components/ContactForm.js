@@ -5,8 +5,12 @@ import Link from "next/link";
 import { useEffect } from "react";
 import * as Yup from "yup";
 import { Formik, useFormik, Field, ErrorMessage } from "formik";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function ContactForm() {
+  const notifySuccess = () => toast("Your information has been submitted!");
+
   function cleanPhone(phoneNumber) {
     const regexPattern = /[^0-9]+/g;
     const newPhoneNumber = phoneNumber.replace(regexPattern, "");
@@ -40,40 +44,6 @@ export default function ContactForm() {
     }
   }
 
-  const validationSchema = Yup.object({
-    firstName: Yup.string()
-      .min(2, "First Name must be at least 2 characters")
-      .max(50, "First Name must not exceed 50 characters")
-      .required("Required"),
-    lastName: Yup.string()
-      .min(2, "Last Name must be at least 2 characters")
-      .max(50, "Last Name must not exceed 50 characters")
-      .required("Required"),
-    companyName: Yup.string()
-      .min(2, "Company Name must be at least 2 characters")
-      .max(100, "Last Name must not exceed 10 characters"),
-    companyWebsite: Yup.string()
-      .url("Invalid URL. Format must be: https://www.yourwebsite.com")
-      .min(6, "Company Website must be at least 2 characters")
-      .max(100, "Company Website must not exceed 10 characters"),
-    email: Yup.string()
-      .email("Must be formatted like: hello@email.com")
-      .min(8, "Email Address must be at least 2 characters")
-      .max(75, "Email Address must not exceed 75 characters")
-      .required("Required"),
-    phone: Yup.string()
-      .min(8, "Email Address must be at least 10 characters")
-      .max(20, "Email Address must be at least 10 characters"),
-    subject: Yup.string()
-      .min(10, "Subject must be at least 10 characters")
-      .max(100, "Subject must be at least 100 characters")
-      .required("Required"),
-    message: Yup.string()
-      .min(50, "Message body must be at least 50 characters")
-      .max(1000, "Message body be at least 1000 characters")
-      .required("Required"),
-  });
-
   async function postToDb(values) {
     const { data } = await supabase.from("ContactForm").insert([
       {
@@ -100,9 +70,42 @@ export default function ContactForm() {
       subject: "",
       message: "",
     },
-    validationSchema,
+    validationSchema: Yup.object({
+      firstName: Yup.string()
+        .min(2, "First Name must be at least 2 characters")
+        .max(50, "First Name must not exceed 50 characters")
+        .required("Required"),
+      lastName: Yup.string()
+        .min(2, "Last Name must be at least 2 characters")
+        .max(50, "Last Name must not exceed 50 characters")
+        .required("Required"),
+      companyName: Yup.string()
+        .min(2, "Company Name must be at least 2 characters")
+        .max(100, "Last Name must not exceed 10 characters"),
+      companyWebsite: Yup.string()
+        .url("Invalid URL. Format must be: https://www.yourwebsite.com")
+        .min(6, "Company Website must be at least 2 characters")
+        .max(100, "Company Website must not exceed 10 characters"),
+      email: Yup.string()
+        .email("Must be formatted like: hello@email.com")
+        .min(8, "Email Address must be at least 2 characters")
+        .max(75, "Email Address must not exceed 75 characters")
+        .required("Required"),
+      phone: Yup.string()
+        .min(8, "Email Address must be at least 10 characters")
+        .max(20, "Email Address must be at least 10 characters"),
+      subject: Yup.string()
+        .min(10, "Subject must be at least 10 characters")
+        .max(100, "Subject must be at least 100 characters")
+        .required("Required"),
+      message: Yup.string()
+        .min(50, "Message body must be at least 50 characters")
+        .max(1000, "Message body be at least 1000 characters")
+        .required("Required"),
+    }),
     onSubmit: (values) => {
       postToDb(values);
+      notifySuccess();
     },
   });
 
@@ -111,7 +114,7 @@ export default function ContactForm() {
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:py-32">
         <div className="relative bg-white shadow-xl">
           <h2 className="sr-only">Contact Me</h2>
-
+          <ToastContainer toastClassName="bg-green-success" />
           <div className="grid grid-cols-1 lg:grid-cols-3">
             <div className="relative overflow-hidden py-10 px-6 bg-blue-light sm:px-10 xl:p-12">
               <div
@@ -234,9 +237,6 @@ export default function ContactForm() {
               </h3>
               <form
                 onSubmit={formik.handleSubmit}
-                validationSchema={validationSchema}
-                action="/api/handleContactForm"
-                method="post"
                 className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
               >
                 <div>
@@ -500,24 +500,21 @@ export default function ContactForm() {
                   />
                 </div>
                 <div className="grid justify-items-center justify-self-center sm:col-span-2 sm:flex sm:justify-end">
-                  <Link href="/thank-you" passHref>
-                    <button
-                      type="submit"
-                      className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-light hover:bg-blue-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                      onClick={(e) => {
-                        if (captchaValue === null || captchaValue === "") {
-                          e.preventDefault();
-                          document.getElementById(
-                            "recaptchaError"
-                          ).style.display = "block";
-                          return;
-                        }
-                        postToDb(formik.values);
-                      }}
-                    >
-                      Send Message
-                    </button>
-                  </Link>
+                  <button
+                    type="submit"
+                    className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-light hover:bg-blue-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    onClick={(e) => {
+                      if (captchaValue === null || captchaValue === "") {
+                        e.preventDefault();
+                        document.getElementById(
+                          "recaptchaError"
+                        ).style.display = "block";
+                        return;
+                      }
+                    }}
+                  >
+                    Send Message
+                  </button>
                 </div>
               </form>
               <div

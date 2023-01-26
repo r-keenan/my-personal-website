@@ -22,6 +22,9 @@ module.exports = {
       red: {
         warning: "#dc143c",
       },
+      green: {
+        success: "#4BB543",
+      },
     },
     fontFamily: {
       ...fontFamily,
