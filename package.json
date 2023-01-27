@@ -14,7 +14,6 @@
     "@prismicio/client": "^5.1.0",
     "@sanity/client": "^3.3.0",
     "@supabase/supabase-js": "^1.29.1",
-    "@tailwindcss/forms": "^0.3.3",
     "axios": "^0.24.0",
     "formik": "^2.2.9",
     "next": "^13.1.5",
@@ -27,10 +26,12 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "autoprefixer": "^10.3.5",
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/typography": "^0.5.9",
+    "autoprefixer": "^10.4.13",
     "eslint": "7.32.0",
     "eslint-config-next": "^13.1.5",
-    "postcss": "^8.3.7",
-    "tailwindcss": "^2.2.15"
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.4"
   }
 }

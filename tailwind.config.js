@@ -1,9 +1,7 @@
 const { fontFamily } = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  mode: "jit",
-  purge: ["./pages/**/*.{js,jsx}", "./components/**/*.{js,jsx}"],
-  darkMode: false, // or 'media' or 'class'
+  content: ["./pages/**/*.{js,jsx}", "./components/**/*.{js,jsx}"],
   theme: {
     colors: {
       blue: {
