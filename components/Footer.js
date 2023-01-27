@@ -97,7 +97,7 @@ export default function Footer() {
         </nav>
         <SocialsIconsRow />
         <p className="mt-8 text-center text-base text-gray-dark">
-          &copy; 2021 Ross Keenan. All rights reserved.
+          &copy; {new Date().getFullYear()} Ross Keenan. All rights reserved.
         </p>
       </div>
     </footer>
