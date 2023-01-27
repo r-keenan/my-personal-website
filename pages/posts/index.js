@@ -1,6 +1,6 @@
 import Avatar from "@/components/Avatar";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import client from "../../lib/sanity";
 
 function formatBlogDate(dateTime) {

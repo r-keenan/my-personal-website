@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import thankYou from "@/public/images/thank_you.jpeg";
 
 export default function ThankYou() {

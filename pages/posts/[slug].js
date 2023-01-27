@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Avatar from "@/components/Avatar";
 import client from "../../lib/sanity";
 import React from "react";

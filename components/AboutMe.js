@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import aboutMePic2 from "public/images/meQuarterHeight.jpg";
 import Link from "next/link";
 
