@@ -41,12 +41,10 @@ export default function Header(props) {
                 </div>
                 <div className="flex-1 flex items-center text-center justify-center sm:items-stretch sm:justify-start">
                   <div className="flex-shrink-0 flex items-center">
-                    <Link href="/" passHref legacyBehavior>
-                      <a>
-                        <h1 id="myNameHeader" className="shake">
-                          Ross Keenan
-                        </h1>
-                      </a>
+                    <Link href="/" passHref>
+                      <h1 id="myNameHeader" className="shake">
+                        Ross Keenan
+                      </h1>
                     </Link>
                   </div>
                   <div className="hidden sm:block sm:ml-6">

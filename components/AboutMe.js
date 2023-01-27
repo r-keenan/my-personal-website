@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function AboutMe() {
   return (
-    <div className="relative bg-white py-16 sm:py-24 lg:pt-56 lg:pb-72">
+    <div className="relative bg-white py-8 sm:py-20 lg:pt-50 lg:pb-72">
       <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-24 lg:items-start">
         <div className="relative sm:py-16 lg:py-0">
           <div
@@ -54,12 +54,13 @@ export default function AboutMe() {
           </div>
 
           <div className="mt-10">
-            <div className="mt-10">
-              <Link href="/contact" legacyBehavior>
-                <a className="text-base font-medium text-blue-light">
-                  {" "}
-                  Reach out to me <span aria-hidden="true">&rarr;</span>{" "}
-                </a>
+            <div>
+              <Link
+                href="/contact"
+                className="text-base font-medium text-blue-light"
+                passHref
+              >
+                Reach out to me <span aria-hidden="true">&rarr;</span>
               </Link>
             </div>
           </div>

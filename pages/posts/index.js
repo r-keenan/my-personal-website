@@ -65,28 +65,26 @@ export default function Posts({ data }) {
                     pathname: `/posts/[slug]`,
                     query: { slug: post.slug.current },
                   }}
-                  legacyBehavior
+                  passHref
                 >
-                  <a>
-                    <Image
-                      className="object-cover"
-                      src={`${process.env.NEXT_PUBLIC_SANITY_CDN_URL}${post.mainImage.asset._ref}`
-                        .replace("-jpg", ".jpg")
-                        .replace("image-", "")}
-                      alt="BlogPhoto"
-                      width={413}
-                      height={192}
-                      layout="responsive"
-                      priority={true}
-                    />
-                  </a>
+                  <Image
+                    className="object-cover"
+                    src={`${process.env.NEXT_PUBLIC_SANITY_CDN_URL}${post.mainImage.asset._ref}`
+                      .replace("-jpg", ".jpg")
+                      .replace("image-", "")}
+                    alt="BlogPhoto"
+                    width={413}
+                    height={192}
+                    layout="responsive"
+                    priority={true}
+                  />
                 </Link>
               </div>
               <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                 <div className="flex-1">
                   <p className="text-sm font-medium text-blue-light">
-                    <Link href={"#"} className="hover:underline" legacyBehavior>
-                      <a>Article</a>
+                    <Link href={"#"} className="hover:underline" passHref>
+                      <span>Article</span>
                     </Link>
                   </p>
                   <Link
@@ -94,16 +92,15 @@ export default function Posts({ data }) {
                       pathname: `/posts/[slug]`,
                       query: { slug: post.slug.current },
                     }}
-                    legacyBehavior
+                    className="block mt-2"
+                    passHref
                   >
-                    <a className="block mt-2">
-                      <p className="text-xl font-semibold text-gray-dark">
-                        {post.title}
-                      </p>
-                      <p className="mt-3 text-base text-gray-medium">
-                        {post.excerpt}
-                      </p>
-                    </a>
+                    <p className="text-xl font-semibold text-gray-dark">
+                      {post.title}
+                    </p>
+                    <p className="mt-3 text-base text-gray-medium">
+                      {post.excerpt}
+                    </p>
                   </Link>
                 </div>
                 <div className="mt-6 flex items-center">
@@ -118,9 +115,9 @@ export default function Posts({ data }) {
                       <Link
                         href={"/about-me"}
                         className="hover:underline"
-                        legacyBehavior
+                        passHref
                       >
-                        <a>{post.author}</a>
+                        {post.author}
                       </Link>
                     </p>
                     <div className="flex space-x-1 text-sm text-gray-medium">
