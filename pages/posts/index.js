@@ -65,6 +65,7 @@ export default function Posts({ data }) {
                     pathname: `/posts/[slug]`,
                     query: { slug: post.slug.current },
                   }}
+                  legacyBehavior
                 >
                   <a>
                     <Image
@@ -84,7 +85,7 @@ export default function Posts({ data }) {
               <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                 <div className="flex-1">
                   <p className="text-sm font-medium text-blue-light">
-                    <Link href={"#"} className="hover:underline">
+                    <Link href={"#"} className="hover:underline" legacyBehavior>
                       <a>Article</a>
                     </Link>
                   </p>
@@ -93,6 +94,7 @@ export default function Posts({ data }) {
                       pathname: `/posts/[slug]`,
                       query: { slug: post.slug.current },
                     }}
+                    legacyBehavior
                   >
                     <a className="block mt-2">
                       <p className="text-xl font-semibold text-gray-dark">
@@ -113,7 +115,11 @@ export default function Posts({ data }) {
                   </div>
                   <div className="ml-3">
                     <p className="text-sm font-medium text-gray-dark">
-                      <Link href={"/about-me"} className="hover:underline">
+                      <Link
+                        href={"/about-me"}
+                        className="hover:underline"
+                        legacyBehavior
+                      >
                         <a>{post.author}</a>
                       </Link>
                     </p>

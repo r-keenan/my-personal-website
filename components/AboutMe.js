@@ -55,7 +55,7 @@ export default function AboutMe() {
 
           <div className="mt-10">
             <div className="mt-10">
-              <Link href="/contact">
+              <Link href="/contact" legacyBehavior>
                 <a className="text-base font-medium text-blue-light">
                   {" "}
                   Reach out to me <span aria-hidden="true">&rarr;</span>{" "}

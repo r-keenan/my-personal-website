@@ -74,7 +74,7 @@ export default function Qualifications() {
         </dl>
         <div className="grid content-center place-content-center mt-10">
           <div className="mt-10">
-            <Link href="/skills">
+            <Link href="/skills" legacyBehavior>
               <a className="text-base font-medium text-blue-light">
                 {" "}
                 Check out the details of my skills{" "}

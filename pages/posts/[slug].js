@@ -66,7 +66,7 @@ export default function BlogPost({ post }) {
             </div>
             <div className="my-1">
               <div className="grid grid-cols-1 justify-items-center">
-                <Link href="/posts">
+                <Link href="/posts" legacyBehavior>
                   <a className="text-base font-medium text-blue-light">
                     {" "}
                     <span aria-hidden="true"> &larr;</span> Back to Posts{" "}

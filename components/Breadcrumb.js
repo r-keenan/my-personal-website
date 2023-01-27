@@ -14,7 +14,7 @@ export default function Breadcrumb({ title, slug }) {
       >
         <li className="flex">
           <div className="flex items-center">
-            <Link href="/">
+            <Link href="/" legacyBehavior>
               <a className="text-gray-400 hover:text-gray-500">
                 <HomeIcon
                   className="flex-shrink-0 h-5 w-5"
