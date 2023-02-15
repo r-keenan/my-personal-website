@@ -1,6 +1,6 @@
 import ReCAPTCHA from "react-google-recaptcha";
 import { useState } from "react";
-import { supabase } from "supabaseClient";
+import { supabase } from "lib/supabaseClient";
 import Link from "next/link";
 import { useEffect } from "react";
 import * as Yup from "yup";
