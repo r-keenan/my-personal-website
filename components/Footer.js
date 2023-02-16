@@ -8,7 +8,7 @@ const navigation = {
   ],
 };
 
-import SocialsIconsRow from "./SocialsIconsRow";
+import { social } from "../config";
 
 export default function Footer() {
   return (
@@ -29,7 +29,20 @@ export default function Footer() {
             </div>
           ))}
         </nav>
-        <SocialsIconsRow />
+        <div className="mt-8 flex justify-center space-x-6">
+          {social.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              target={item.target}
+              rel={item.rel}
+              className="text-gray-400 hover:text-gray-500"
+            >
+              <span className="sr-only">{item.name}</span>
+              <item.icon className="h-6 w-6" aria-hidden="true" />
+            </a>
+          ))}
+        </div>
         <p className="mt-8 text-center text-base text-gray-dark">
           &copy; {new Date().getFullYear()} Ross Keenan. All rights reserved.
         </p>
