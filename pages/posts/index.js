@@ -2,7 +2,7 @@ import Avatar from "@/components/Avatar";
 import Link from "next/link";
 import Image from "next/legacy/image";
 import client from "../../lib/sanity";
-import { months } from "../../config/index";
+import { months } from "@/config/index";
 
 function formatBlogDate(dateTime) {
   let dateStr = "";

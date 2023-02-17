@@ -1,6 +1,6 @@
 import { CheckIcon } from "@heroicons/react/outline";
 import Link from "next/link";
-import { qualifications } from "../config/index";
+import { qualifications } from "@/config/index";
 
 export default function Qualifications() {
   return (

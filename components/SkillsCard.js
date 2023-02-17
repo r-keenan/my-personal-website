@@ -1,4 +1,4 @@
-import { skills } from "../config";
+import { skills } from "@/config/index";
 
 export default function SkillsCard() {
   return (

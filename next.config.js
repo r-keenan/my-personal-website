@@ -6,4 +6,9 @@ module.exports = {
   images: {
     domains: ["images.unsplash.com", "cdn.sanity.io"],
   },
+  baseUrl: ".",
+  paths: {
+    "@components/*": ["components/*"],
+    "@config/*": ["config/*"],
+  },
 };
