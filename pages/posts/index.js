@@ -24,6 +24,7 @@ function formatBlogDate(dateTime) {
 
 export default function Posts({ data }) {
   const { posts } = data;
+  console.log(posts);
   return (
     <div className="relative bg-white pb-20 px-4 sm:px-6 sm:py-24 lg:pt-12 lg:px-8 lg:pb-">
       <div className="absolute inset-0">
@@ -126,7 +127,7 @@ export default function Posts({ data }) {
 
 const postsPreviewQuery = `*[_type == "post" && !(_id in path('drafts.**'))] {
   slug, title, excerpt, dateTime, publishedAt, readingTime, mainImage, "author": author->name, mainImage, _id, createdAt
-} | order(_createdAt desc)`;
+} | order(publishedAt desc)`;
 
 export async function getStaticProps() {
   const posts = await client.fetch(postsPreviewQuery);
