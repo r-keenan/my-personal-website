@@ -1,8 +1,11 @@
 import { CheckIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 import { qualifications } from "@/config/index";
+import client from "../lib/sanity";
 
-export default function Qualifications() {
+export default function Qualifications({ data }) {
+  //const { quals } = data;
+  //console.log(data);
   return (
     <div className="bg-white">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
@@ -48,4 +51,18 @@ export default function Qualifications() {
       </div>
     </div>
   );
+}
+
+const qualificationsPreviewQuery = `*[_type == "qualification"] | order(order)`;
+
+export async function getStaticProps() {
+  const qualifications = await client.fetch(qualificationsPreviewQuery);
+  const data = { qualifications };
+
+  return {
+    props: {
+      data,
+    },
+    revalidate: 1,
+  };
 }

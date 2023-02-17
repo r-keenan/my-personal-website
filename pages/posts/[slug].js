@@ -2,7 +2,7 @@ import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
 import Image from "next/legacy/image";
 import Avatar from "@/components/Avatar";
-import client from "../../lib/sanityClient";
+import client from "../../lib/sanity";
 import React from "react";
 
 export default function BlogPost({ post }) {
