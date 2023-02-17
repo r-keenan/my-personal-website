@@ -5,7 +5,6 @@ import Link from "next/link";
 
 export default function Home({ data }) {
   const { qualifications } = data;
-  console.log(qualifications);
   return (
     <>
       <LandingPage />
@@ -61,7 +60,6 @@ const qualificationsPreviewQuery = `*[_type == "qualification"] | order(order)`;
 
 export async function getStaticProps() {
   const qualifications = await client.fetch(qualificationsPreviewQuery);
-  //console.log(qualifications);
   const data = { qualifications };
 
   return {
