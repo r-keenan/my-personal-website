@@ -1,3 +1,5 @@
+import { social } from "@/config/index";
+
 const navigation = {
   main: [
     { name: "Posts", href: "/posts" },
@@ -7,8 +9,6 @@ const navigation = {
     { name: "Contact", href: "/contact" },
   ],
 };
-
-import { social } from "@/config/index";
 
 export default function Footer() {
   return (
