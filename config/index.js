@@ -122,46 +122,6 @@ export const skills = [
   },
 ];
 
-export const qualifications = [
-  {
-    name: "Front End Development",
-    description:
-      "Working with straight HTML5 and CSS3, or a component based framework like React, Vue, or Angular.",
-  },
-  {
-    name: "Backend Development",
-    description:
-      "Writing server side code to meet project and business requirements.",
-  },
-  {
-    name: "Data Engineering",
-    description:
-      "Cleaning and transforming data from sources like CSV, Excel, or PDF files. Scripting clean data into the database.",
-  },
-  {
-    name: "API/API Integrations",
-    description:
-      "Developing APIs or API Integration solutions. Staying up to date on API documentation changes.",
-  },
-  {
-    name: "Database Development",
-    description: "Creating and updating tables. Scripting in data when needed.",
-  },
-  {
-    name: "Cloud Providers",
-    description:
-      "Working with large ecosystems like AWS or smaller ones such as Digital Ocean or Vercel.",
-  },
-  {
-    name: "Programming Methodologies",
-    description: "Working primarily in Agile or Waterfall environments.",
-  },
-  {
-    name: "Platform Development",
-    description: "Working with new and older Content Management Systems.",
-  },
-];
-
 export const social = [
   {
     name: "LinkedIn",
