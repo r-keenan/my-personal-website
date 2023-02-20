@@ -324,6 +324,26 @@
   "resolved" "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   "version" "0.2.3"
 
+"@datadog/browser-core@4.34.1":
+  "integrity" "sha512-xZUMxSEUlzXVGU8fvIG5J4xGGBShrxgTTmCd9p7Ju/rUPnWV0hTqhPIXwSgbMvHgmX1vNwoNvydmlzhNVpKr3g=="
+  "resolved" "https://registry.npmjs.org/@datadog/browser-core/-/browser-core-4.34.1.tgz"
+  "version" "4.34.1"
+
+"@datadog/browser-rum-core@4.34.1":
+  "integrity" "sha512-s1nHAXREKRlTl2EOn+J/786D7pvQ2lg9MunhmC5Juh9DeNrYrmAooxbrXCaCy0gKRBHbm68HM4h59FXuA5iNGg=="
+  "resolved" "https://registry.npmjs.org/@datadog/browser-rum-core/-/browser-rum-core-4.34.1.tgz"
+  "version" "4.34.1"
+  dependencies:
+    "@datadog/browser-core" "4.34.1"
+
+"@datadog/browser-rum@^4.34.1":
+  "integrity" "sha512-fKw1EUwlPNliUJnOftsIgNGbW70+pZGwt2BbiUsWxp+CBHsw+MRFENUJybAK2l4PqNm+AZKVkvultiCDGvo3gg=="
+  "resolved" "https://registry.npmjs.org/@datadog/browser-rum/-/browser-rum-4.34.1.tgz"
+  "version" "4.34.1"
+  dependencies:
+    "@datadog/browser-core" "4.34.1"
+    "@datadog/browser-rum-core" "4.34.1"
+
 "@eslint/eslintrc@^0.4.3":
   "integrity" "sha512-J6KFFz5QCYUJq3pf0mjEcCJVERbzv71PUIDczuh9JkwGEzced6CO5ADLHB1rbf/+oPBtoPfMYNOpGDzCANlbXw=="
   "resolved" "https://registry.npmjs.org/@eslint/eslintrc/-/eslintrc-0.4.3.tgz"
