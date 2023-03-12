@@ -4,9 +4,12 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { datadogLogs } from "@datadog/browser-logs";
 
 export default function ContactForm() {
   const notifySuccess = () => toast("Your information has been submitted!");
+
+  datadogLogs.logger.info("Button clicked", { name: "buttonName", id: 123 });
 
   function cleanPhone(phoneNumber) {
     const regexPattern = /[^0-9]+/g;

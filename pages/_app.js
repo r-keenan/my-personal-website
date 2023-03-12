@@ -3,6 +3,7 @@ import "tailwindcss/tailwind.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { datadogRum } from "@datadog/browser-rum";
+import { datadogLogs } from "@datadog/browser-logs";
 
 datadogRum.init({
   applicationId: process.env.NEXT_PUBLIC_DATADOG_APPLICATION_ID,
@@ -16,6 +17,13 @@ datadogRum.init({
   premiumSampleRate: 100,
   trackUserInteractions: true,
   defaultPrivacyLevel: "mask-user-input",
+});
+
+datadogLogs.init({
+  clientToken: process.env.NEXT_PUBLIC_DATADOG_CLIENT_TOKEN,
+  site: process.env.NEXT_PUBLIC_DATADOG_SITE,
+  forwardErrorsToLogs: true,
+  sessionSampleRate: 100,
 });
 
 datadogRum.startSessionReplayRecording();

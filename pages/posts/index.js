@@ -125,7 +125,7 @@ export default function Posts({ data }) {
 }
 
 const postsPreviewQuery = `*[_type == "post" && !(_id in path('drafts.**'))] {
-  slug, title, excerpt, dateTime, publishedAt, readingTime, mainImage, "author": author->name, mainImage, _id, createdAt
+  slug, title, excerpt, dateTime, publishedAt, readingTime, mainImage, "author": author->name, "mainImage" : image.asset-> , _id, createdAt
 } | order(publishedAt desc)`;
 
 export async function getStaticProps() {
