@@ -61,7 +61,6 @@ export default function Posts({ data }) {
                     alt="BlogPhoto"
                     width={413}
                     height={192}
-                    layout="responsive"
                     priority={true}
                   />
                 </Link>

@@ -12,7 +12,6 @@ export default function HomeBackground() {
         src={mainBackground}
         alt="Header Background"
         className="heroImage"
-        layout="intrinsic"
       />
     </div>
   );

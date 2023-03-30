@@ -13,7 +13,6 @@ export default function ThankYou() {
             priority={true}
             width={657}
             height={305}
-            layout="responsive"
           />
           <p className="text-center text-gray-medium mt-10">
             Thank you for filling out the form. I will be in contact with you in

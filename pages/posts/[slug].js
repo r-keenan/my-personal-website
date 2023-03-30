@@ -28,7 +28,6 @@ export default function BlogPost({ post }) {
               priority={true}
               width={1239}
               height={576}
-              layout="responsive"
             />
           </div>
 
