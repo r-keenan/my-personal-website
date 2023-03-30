@@ -23,6 +23,7 @@ function formatBlogDate(dateTime) {
 }
 
 export default function Posts({ data }) {
+  console.log(data);
   const { posts } = data;
   return (
     <div className="relative bg-white pb-20 px-4 sm:px-6 sm:py-24 lg:pt-12 lg:px-8 lg:pb-">
@@ -55,7 +56,7 @@ export default function Posts({ data }) {
                 >
                   <Image
                     className="object-cover"
-                    src={`${process.env.NEXT_PUBLIC_SANITY_CDN_URL}${post.mainImage.asset._ref}`
+                    src={`${process.env.NEXT_PUBLIC_SANITY_CDN_URL}${post.mainImage.asset._ref}?auto=format&fit=min`
                       .replace("-jpg", ".jpg")
                       .replace("image-", "")}
                     alt="BlogPhoto"

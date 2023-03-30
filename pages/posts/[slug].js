@@ -21,7 +21,7 @@ export default function BlogPost({ post }) {
           <div className="pt-24">
             <Image
               className="object-cover rounded-md"
-              src={`${process.env.NEXT_PUBLIC_SANITY_CDN_URL}${post.mainImage.asset._ref}`
+              src={`${process.env.NEXT_PUBLIC_SANITY_CDN_URL}${post.mainImage.asset._ref}?auto=format&fit=min`
                 .replace("-jpg", ".jpg")
                 .replace("image-", "")}
               alt=""
