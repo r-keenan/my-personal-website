@@ -8,12 +8,11 @@ export default function HomeBackground() {
         <p className="heroText break-words">WELCOME TO MY WEBSITE!</p>
       </span>
       <Image
+        priority
         src={mainBackground}
         alt="Header Background"
         className="heroImage"
         layout="intrinsic"
-        loading="eager"
-        priority={true}
       />
     </div>
   );
