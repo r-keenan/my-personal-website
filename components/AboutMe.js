@@ -16,11 +16,10 @@ export default function AboutMe() {
           <div className="relative mx-auto max-w-md px-10 py-4 sm:max-w-max sm:px-6 lg:px-16 lg:max-w-max lg:py-20">
             <div className="grid justify-items-center rounded-2xl shadow-xl overflow-hidden">
               <Image
+                priority
                 className="absolute inset-0 h-full w-full object-cover rounded-2xl"
                 src={aboutMePic2}
                 alt="Me"
-                priority={true}
-                loading="eager"
               />
             </div>
           </div>
