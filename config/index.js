@@ -77,7 +77,7 @@ export const skills = [
   {
     name: "Database Development",
     icon: DatabaseIcon,
-    listItems: ["Postgres", "Microsoft SQL Server", "MySQL"],
+    listItems: ["Postgres", "Microsoft SQL Server", "MySQL", "MongoDB"],
   },
   {
     name: "Platform Development",
@@ -85,7 +85,7 @@ export const skills = [
     listItems: ["Shopify", "WordPress"],
   },
   {
-    name: "IDEs/Text Editors/SQL",
+    name: "Development Tools",
     icon: CodeIcon,
     listItems: [
       "Visual Studio Code",
@@ -108,6 +108,7 @@ export const skills = [
       "BitBucket",
       "Swagger",
       "Postman",
+      "Azure DevOps (ADO)",
     ],
   },
   {
@@ -118,7 +119,7 @@ export const skills = [
   {
     name: "Methodologies",
     icon: BeakerIcon,
-    listItems: ["Agile", "Waterfall"],
+    listItems: ["Agile", "Scrum", "SAFe", "Waterfall"],
   },
 ];
 
