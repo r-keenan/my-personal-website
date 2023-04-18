@@ -110,7 +110,7 @@ export default function ContactForm() {
   });
 
   return (
-    <div className="bg-white mt-10">
+    <div className="min-h-screen bg-white mt-10">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:py-32">
         <div className="relative bg-white shadow-xl">
           <h2 className="sr-only">Contact Me</h2>
