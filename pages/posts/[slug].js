@@ -7,7 +7,7 @@ import React from "react";
 
 export default function BlogPost({ post }) {
   return (
-    <div className="relative pt-20 bg-white overflow-hidden sm:mt-10 md:pt-10">
+    <div className="min-h-screen relative pt-20 bg-white overflow-hidden sm:mt-10 md:pt-10">
       <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
         <div
           className="relative h-full text-lg max-w-prose mx-auto"
