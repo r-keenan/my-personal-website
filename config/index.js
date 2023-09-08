@@ -48,18 +48,18 @@ export const skills = [
     name: "Backend Development",
     icon: ServerIcon,
     listItems: [
-      "Node.js",
+      "Node.js/Express.js",
       "Java",
       "C#/.Net",
       "SQL",
-      "Express.js",
+      "Nest.js",
       "PHP",
       "Ruby on Rails",
       "Linux Servers",
     ],
   },
   {
-    name: "Data Engineering",
+    name: "Data Engineering/Analysis",
     icon: ServerIcon,
     listItems: [
       "Web Scrapers (Python)",
@@ -114,12 +114,12 @@ export const skills = [
   {
     name: "Cloud Platforms",
     icon: CloudIcon,
-    listItems: ["AWS", "Digital Ocean", "Vercel"],
+    listItems: ["AWS", "Azure", "Digital Ocean", "Vercel"],
   },
   {
     name: "Methodologies",
     icon: BeakerIcon,
-    listItems: ["Agile", "Scrum", "SAFe", "Waterfall"],
+    listItems: ["Agile", "Kanban", "Scrum", "SAFe", "Waterfall"],
   },
 ];
 
