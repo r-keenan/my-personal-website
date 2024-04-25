@@ -4,12 +4,9 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { datadogLogs } from "@datadog/browser-logs";
 
 export default function ContactForm() {
   const notifySuccess = () => toast("Your information has been submitted!");
-
-  datadogLogs.logger.info("Button clicked", { name: "buttonName", id: 123 });
 
   function cleanPhone(phoneNumber) {
     const regexPattern = /[^0-9]+/g;
@@ -32,15 +29,6 @@ export default function ContactForm() {
       return desiredPhoneFormat;
     } else {
       return newPhoneNumber;
-    }
-  }
-
-  const sitekey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-  let captchaValue = "";
-
-  function handleRecaptcha(value) {
-    if (value !== null && value !== "") {
-      captchaValue = value;
     }
   }
 
@@ -67,6 +55,7 @@ export default function ContactForm() {
       companyWebsite: "",
       email: "",
       phone: "",
+      botHoneyPot: "",
       subject: "",
       message: "",
     },
@@ -396,6 +385,7 @@ export default function ContactForm() {
                     ) : null}
                   </div>
                 </div>
+
                 <div>
                   <div className="flex justify-between">
                     <label
@@ -427,6 +417,39 @@ export default function ContactForm() {
                       <div>
                         <p style={{ color: "red", fontSize: ".75rem" }}>
                           {formik.errors.phone}
+                        </p>
+                      </div>
+                    ) : null}
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between">
+                    <label
+                      htmlFor="botHoneyPot"
+                      className="block text-sm font-medium text-gray-dark"
+                    >
+                      Honey Pot
+                    </label>
+                    <span id="bot-hp" className="text-sm text-gray-medium">
+                      Optional
+                    </span>
+                  </div>
+                  <div className="mt-1">
+                    <input
+                      type="text"
+                      value={formik.values.botHoneyPot}
+                      onChange={formik.handleChange}
+                      {...formik.getFieldProps("botHoneyPot")}
+                      name="botHoneyPot"
+                      id="botHoneyPot"
+                      autoComplete="tel"
+                      className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                      aria-describedby="botHP"
+                    />
+                    {formik.touched.botHoneyPot && formik.errors.botHoneyPot ? (
+                      <div>
+                        <p style={{ color: "red", fontSize: ".75rem" }}>
+                          {formik.errors.botHoneyPot}
                         </p>
                       </div>
                     ) : null}
@@ -493,22 +516,13 @@ export default function ContactForm() {
                   </div>
                 </div>
                 <div className="grid justify-items-center justify-self-center sm:col-span-2 sm:flex sm:justify-end">
-                  <ReCAPTCHA
-                    size="normal"
-                    sitekey={sitekey}
-                    onChange={handleRecaptcha}
-                  />
-                </div>
-                <div className="grid justify-items-center justify-self-center sm:col-span-2 sm:flex sm:justify-end">
                   <button
                     type="submit"
                     className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-light hover:bg-blue-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     onClick={(e) => {
-                      if (captchaValue === null || captchaValue === "") {
+                      if (formik.values.botHoneyPot.length > 0) {
                         e.preventDefault();
-                        document.getElementById(
-                          "recaptchaError"
-                        ).style.display = "block";
+                        console.log("blocked");
                         return;
                       }
                     }}
@@ -517,12 +531,6 @@ export default function ContactForm() {
                   </button>
                 </div>
               </form>
-              <div
-                id="recaptchaError"
-                className="grid grid-cols-1 text-center pt-5 text-red-warning text-sm hidden"
-              >
-                <p>You must pass the captcha before submitting the form.</p>
-              </div>
             </div>
           </div>
         </div>
