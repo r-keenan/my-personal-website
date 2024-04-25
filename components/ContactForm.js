@@ -421,7 +421,7 @@ export default function ContactForm() {
                     ) : null}
                   </div>
                 </div>
-                <div>
+                <div className="hidden">
                   <div className="flex justify-between">
                     <label
                       htmlFor="botHoneyPot"
