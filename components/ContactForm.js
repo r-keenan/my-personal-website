@@ -1,4 +1,3 @@
-import ReCAPTCHA from "react-google-recaptcha";
 import { supabase } from "lib/supabaseClient";
 import * as Yup from "yup";
 import { useFormik } from "formik";
