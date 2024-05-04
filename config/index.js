@@ -37,6 +37,7 @@ export const skills = [
       "CSS3",
       "JavaScript (ES6)",
       "TypeScript",
+      "Svelte/Sveltekit",
       "React",
       "Angular",
       "Vue.js",
@@ -56,6 +57,7 @@ export const skills = [
       "PHP",
       "Ruby on Rails",
       "Linux Servers",
+      "Python",
     ],
   },
   {
@@ -80,7 +82,7 @@ export const skills = [
     listItems: ["Postgres", "Microsoft SQL Server", "MySQL", "MongoDB"],
   },
   {
-    name: "Platform Development",
+    name: "CMS Development",
     icon: CogIcon,
     listItems: ["Shopify", "WordPress"],
   },
@@ -88,6 +90,7 @@ export const skills = [
     name: "Development Tools",
     icon: CodeIcon,
     listItems: [
+      "Neovim",
       "Visual Studio Code",
       "JetBrains Rider",
       "Visual Studio",
@@ -102,9 +105,11 @@ export const skills = [
     listItems: [
       "Jira",
       "Confluence",
+      "Basecamp",
       "Kanban",
       "Git",
       "Github",
+      "Gitlab",
       "BitBucket",
       "Swagger",
       "Postman",

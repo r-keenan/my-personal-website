@@ -31,7 +31,7 @@ export default function AboutMe() {
               Ross Keenan
             </h2>
             <h3 className="text-2xl text-gray-dark font-bold tracking-tight pt-2 sm:text-2xl">
-              Lead Full Stack Developer
+              Senior Software Consultant
             </h3>
             <div className="mt-6 text-gray-medium space-y-6">
               <p className="text-base leading-7">
