@@ -3,33 +3,10 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { cleanPhone } from "../utils/UtilityFunctions";
 
 export default function ContactForm() {
   const notifySuccess = () => toast("Your information has been submitted!");
-
-  function cleanPhone(phoneNumber) {
-    const regexPattern = /[^0-9]+/g;
-    const newPhoneNumber = phoneNumber.replace(regexPattern, "");
-    let desiredPhoneFormat = "";
-    if (newPhoneNumber.length == 10) {
-      const areaCode = newPhoneNumber.slice(0, 3);
-      const cityCode = newPhoneNumber.slice(3, 6);
-      const lastFour = newPhoneNumber.slice(6);
-      desiredPhoneFormat = `(${areaCode}) ${cityCode}-${lastFour}`;
-    } else if (newPhoneNumber.length == 11) {
-      const countryCode = newPhoneNumber.slice(0, 1);
-      const areaCode = newPhoneNumber.slice(1, 4);
-      const cityCode = newPhoneNumber.slice(4, 7);
-      const lastFour = newPhoneNumber.slice(7);
-      desiredPhoneFormat = `${countryCode} (${areaCode}) ${cityCode}-${lastFour}`;
-    }
-
-    if (desiredPhoneFormat.length > newPhoneNumber.length) {
-      return desiredPhoneFormat;
-    } else {
-      return newPhoneNumber;
-    }
-  }
 
   async function postToDb(values) {
     const { data } = await supabase.from("ContactForm").insert([
