@@ -26,9 +26,9 @@ export default function BlogPost({ post }) {
                 .replace("-jpg", ".jpg")
                 .replace("image-", "")}
               alt=""
-              priority={true}
               width={1239}
               height={576}
+              priority
             />
           </div>
 

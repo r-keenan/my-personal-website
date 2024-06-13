@@ -43,7 +43,7 @@ export default function Posts({ data }) {
                     alt="BlogPhoto"
                     width={413}
                     height={192}
-                    priority={true}
+                    priority
                   />
                 </Link>
               </div>
