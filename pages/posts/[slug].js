@@ -4,6 +4,7 @@ import Image from "next/legacy/image";
 import Avatar from "@/components/Avatar";
 import client from "../../lib/sanity";
 import React from "react";
+import { formatBlogDate } from "utils/UtilityFunctions";
 
 export default function BlogPost({ post }) {
   return (
