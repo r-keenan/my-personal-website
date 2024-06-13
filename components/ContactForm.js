@@ -498,7 +498,6 @@ export default function ContactForm() {
                     onClick={(e) => {
                       if (formik.values.botHoneyPot.length > 0) {
                         e.preventDefault();
-                        console.log("blocked");
                         return;
                       }
                     }}

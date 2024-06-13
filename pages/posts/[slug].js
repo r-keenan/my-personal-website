@@ -4,26 +4,6 @@ import Image from "next/legacy/image";
 import Avatar from "@/components/Avatar";
 import client from "../../lib/sanity";
 import React from "react";
-import { months } from "@/config/index";
-
-function formatBlogDate(dateTime) {
-  let dateStr = "";
-
-  console.log(dateTime);
-  try {
-    let dtSplit = dateTime.split("-");
-    let dateSplit = dtSplit[2].split("T");
-    let month = months[parseInt(dtSplit[1] - 1)];
-    let day = dateSplit[0];
-    let year = dtSplit[0];
-
-    dateStr = `${month} ${day}, ${year}`;
-  } catch (error) {
-    console.log(error);
-  }
-
-  return dateStr;
-}
 
 export default function BlogPost({ post }) {
   return (
@@ -57,15 +37,14 @@ export default function BlogPost({ post }) {
               {post.title}
             </span>
           </h1>
-           <p className="mt-5 text-2xl text-gray-medium text-center">
-                      {post.excerpt}
-           </p>
+          <p className="mt-5 text-2xl text-gray-medium text-center">
+            {post.excerpt}
+          </p>
           <div className="pt-3 text-center text-xl text-gray-medium">
-                      <time dateTime={post.datetime}>
-                        {formatBlogDate(post.publishedAt)}
-                      </time>
-                    </div>
- 
+            <time dateTime={post.datetime}>
+              {formatBlogDate(post.publishedAt)}
+            </time>
+          </div>
         </div>
         <div className="grid">
           <div className="grid-1 items-center justify-center">
@@ -114,7 +93,7 @@ export async function getServerSideProps(context) {
   const { slug = "" } = context.params;
   const post = await client.fetch(
     `*[_type == "post" && slug.current == $slug][0]`,
-    { slug }
+    { slug },
   );
 
   return {

@@ -2,25 +2,7 @@ import Avatar from "@/components/Avatar";
 import Link from "next/link";
 import Image from "next/legacy/image";
 import client from "../../lib/sanity";
-import { months } from "@/config/index";
-
-function formatBlogDate(dateTime) {
-  let dateStr = "";
-
-  try {
-    let dtSplit = dateTime.split("-");
-    let dateSplit = dtSplit[2].split("T");
-    let month = months[parseInt(dtSplit[1] - 1)];
-    let day = dateSplit[0];
-    let year = dtSplit[0];
-
-    dateStr = `${month} ${day}, ${year}`;
-  } catch (error) {
-    console.log(error);
-  }
-
-  return dateStr;
-}
+import { formatBlogDate } from "utils/UtilityFunctions";
 
 export default function Posts({ data }) {
   const { posts } = data;
