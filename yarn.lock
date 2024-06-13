@@ -324,33 +324,6 @@
   resolved "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@datadog/browser-core@4.35.0":
-  version "4.35.0"
-  resolved "https://registry.npmjs.org/@datadog/browser-core/-/browser-core-4.35.0.tgz"
-  integrity sha512-ou5En1+G0IBgEQHs2A7iyPpjVE/Q7w5oNYm6IsAArGPWeWqaUI4Bimm+QXmh7u8qMZEbm+9OnVdictwLxpevsQ==
-
-"@datadog/browser-logs@^4.35.0", "@datadog/browser-logs@4.35.0":
-  version "4.35.0"
-  resolved "https://registry.npmjs.org/@datadog/browser-logs/-/browser-logs-4.35.0.tgz"
-  integrity sha512-vR1EPcfHKOKvUIv6fONZsyP3E5MBCCqTgu06NGUpMk9pYcxOaodwaPeuR9n6ks+asQJKTcZuXNN43ZjcH8XCBw==
-  dependencies:
-    "@datadog/browser-core" "4.35.0"
-
-"@datadog/browser-rum-core@4.35.0":
-  version "4.35.0"
-  resolved "https://registry.npmjs.org/@datadog/browser-rum-core/-/browser-rum-core-4.35.0.tgz"
-  integrity sha512-xFRpSio9M4IPcjM/jRa4xxXfR+KAArXPyhHg13+ulobGRYAcUYcsVhTtrtG7RZTOLx/HFw7rmlDrJCH9bmXtdQ==
-  dependencies:
-    "@datadog/browser-core" "4.35.0"
-
-"@datadog/browser-rum@^4.34.1", "@datadog/browser-rum@4.35.0":
-  version "4.35.0"
-  resolved "https://registry.npmjs.org/@datadog/browser-rum/-/browser-rum-4.35.0.tgz"
-  integrity sha512-9Ajp/JTjnC3J8xtcKwwUyiA6289Ybj3nSQnBT/yxCw2D3wf3hH/yEbszfgqSsCZIXIg3YCh8MQLD5Cw10ndY/g==
-  dependencies:
-    "@datadog/browser-core" "4.35.0"
-    "@datadog/browser-rum-core" "4.35.0"
-
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"
   resolved "https://registry.npmjs.org/@eslint/eslintrc/-/eslintrc-0.4.3.tgz"

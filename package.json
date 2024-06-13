@@ -10,8 +10,6 @@
     "test": "jest --watch"
   },
   "dependencies": {
-    "@datadog/browser-logs": "^4.35.0",
-    "@datadog/browser-rum": "^4.34.1",
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.4",
     "@prismicio/client": "^5.1.0",
