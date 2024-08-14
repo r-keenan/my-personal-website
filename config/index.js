@@ -84,7 +84,7 @@ export const skills = [
   {
     name: "CMS Development",
     icon: CogIcon,
-    listItems: ["Shopify", "WordPress"],
+    listItems: ["Sanity", "Shopify", "WordPress"],
   },
   {
     name: "Development Tools",
