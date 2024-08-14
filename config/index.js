@@ -131,7 +131,7 @@ export const skills = [
 export const social = [
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/ross-k-2123a1201/",
+    href: "https://www.linkedin.com/in/r-keenan",
     target: "_blank",
     rel: "noopener noreferrer",
     icon: (props) => (
