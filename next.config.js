@@ -11,4 +11,7 @@ module.exports = {
     "@components/*": ["components/*"],
     "@config/*": ["config/*"],
   },
+  experimental: {
+    isrMemoryCacheSize: 0,
+  },
 };
