@@ -2,7 +2,7 @@ import Avatar from "@/components/Avatar";
 import Link from "next/link";
 import Image from "next/legacy/image";
 import client from "../../lib/sanity";
-import { formatBlogDate } from "utils/UtilityFunctions";
+import { formatBlogDate, formatImageUrl } from "utils/UtilityFunctions";
 
 export default function Posts({ data }) {
   const { posts } = data;
@@ -37,9 +37,7 @@ export default function Posts({ data }) {
                 >
                   <Image
                     className="object-cover"
-                    src={`${process.env.NEXT_PUBLIC_SANITY_CDN_URL}${post.mainImage.asset._ref}?auto=format&fit=min`
-                      .replace("-jpg", ".jpg")
-                      .replace("image-", "")}
+                    src={formatImageUrl(post.mainImage.asset._ref)}
                     alt="BlogPhoto"
                     width={413}
                     height={192}
