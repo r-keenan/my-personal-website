@@ -17,6 +17,13 @@ export function cleanPhone(phoneNumber: string): string {
     desiredPhoneFormat = `${countryCode} (${areaCode}) ${cityCode}-${lastFour}`;
   }
 
+  if (newPhoneNumber.length > 11) {
+    throw new Error("Max length for a phone number is 11 digits");
+  }
+  if (newPhoneNumber.length < 10) {
+    throw new Error("Min length for a phone number is 10 digits");
+  }
+
   if (desiredPhoneFormat.length > newPhoneNumber.length) {
     return desiredPhoneFormat;
   } else {

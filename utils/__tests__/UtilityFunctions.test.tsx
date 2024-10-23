@@ -1,5 +1,41 @@
 import { describe, it, expect } from "vitest";
-import { formatBlogDate, formatImageUrl } from "../UtilityFunctions";
+import {
+  cleanPhone,
+  formatBlogDate,
+  formatImageUrl,
+} from "../UtilityFunctions";
+
+describe("format phone number", () => {
+  it("should return desired phone format with 10 digits", () => {
+    const inputPhoneNumber = "555 555 5555";
+
+    const result = cleanPhone(inputPhoneNumber);
+
+    expect(result).toBe("(555) 555-5555");
+  });
+
+  it("should return desired phone format with 11 digits", () => {
+    const inputPhoneNumber = "+1 (555) 555-5555";
+
+    const result = cleanPhone(inputPhoneNumber);
+
+    expect(result).toBe("1 (555) 555-5555");
+  });
+  it("should throw with 12 digits", () => {
+    const inputPhoneNumber = "+11 (555) 555-5555";
+
+    expect(() => cleanPhone(inputPhoneNumber)).toThrow(
+      "Max length for a phone number is 11 digits"
+    );
+  });
+  it("should throw with 9 digits", () => {
+    const inputPhoneNumber = "+ (55) 555-5555";
+
+    expect(() => cleanPhone(inputPhoneNumber)).toThrow(
+      "Min length for a phone number is 10 digits"
+    );
+  });
+});
 
 describe("format blog date", () => {
   it("should return month day year string", () => {
