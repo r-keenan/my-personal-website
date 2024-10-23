@@ -1,8 +1,6 @@
 import { socials } from "./Socials";
 import { SocialIcon } from "../utils/types/types";
 
-console.log(socials);
-
 export default function SocialsIconsRow() {
   return (
     <div className="mt-8 flex justify-center space-x-6">

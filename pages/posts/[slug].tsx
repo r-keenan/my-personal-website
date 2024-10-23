@@ -11,7 +11,6 @@ import { Post } from "@/utils/types/types";
 import { PortableTextBlock } from "@portabletext/types";
 
 export default function BlogPost({ post }: { post: Post }) {
-  console.log(post);
   return (
     <div className="min-h-screen relative pt-20 bg-white overflow-hidden sm:mt-10 md:pt-10">
       <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">

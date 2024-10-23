@@ -1,11 +1,5 @@
 import { FC, SVGProps } from "react";
-import type {
-  SanityDocument,
-  Reference,
-  Slug,
-  ImageAsset,
-} from "@sanity/types";
-import Qualifications from "../../components/Qualifications";
+import type { SanityDocument, Reference, Slug } from "@sanity/types";
 import { PortableTextBlock } from "@portabletext/types";
 
 export type SocialIcon = {
