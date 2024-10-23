@@ -2,9 +2,14 @@ import LandingPage from "@/components/LandingPage";
 import client from "../lib/sanity";
 import { CheckIcon } from "@heroicons/react/outline";
 import Link from "next/link";
+import { revalidationTime } from "@/utils/Constants";
+import { Qualification } from "@/utils/types/types";
 
-export default function Home({ data }: { data: any }) {
-  const { qualifications } = data;
+export default function Home({
+  qualifications,
+}: {
+  qualifications: Qualification[];
+}) {
   return (
     <>
       <LandingPage />
@@ -20,7 +25,7 @@ export default function Home({ data }: { data: any }) {
             </p>
           </div>
           <dl className="mt-12 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4 lg:gap-x-8">
-            {qualifications.map((qualification: any) => (
+            {qualifications.map((qualification: Qualification) => (
               <div key={qualification._id} className="relative">
                 <dt>
                   <CheckIcon
@@ -33,7 +38,7 @@ export default function Home({ data }: { data: any }) {
                 </dt>
 
                 <dd className="mt-2 ml-9 text-base text-gray-medium">
-                  {qualification.description[0].children[0].text}
+                  {qualification.description[0].children[0].text.toString()}
                 </dd>
               </div>
             ))}
@@ -59,13 +64,14 @@ export default function Home({ data }: { data: any }) {
 const qualificationsPreviewQuery = `*[_type == "qualification"] | order(order)`;
 
 export async function getStaticProps() {
-  const qualifications = await client.fetch(qualificationsPreviewQuery);
-  const data = { qualifications };
+  const qualifications: Qualification[] = await client.fetch(
+    qualificationsPreviewQuery
+  );
 
   return {
     props: {
-      data,
+      qualifications,
     },
-    revalidate: 1,
+    revalidate: revalidationTime,
   };
 }

@@ -2,6 +2,7 @@ import { CheckIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 import client from "../lib/sanity";
 import { Qualification } from "@/utils/types/types";
+import { revalidationTime } from "@/utils/Constants";
 
 export default function Qualifications({
   qualifications,
@@ -33,7 +34,7 @@ export default function Qualifications({
                 </p>
               </dt>
               <dd className="mt-2 ml-9 text-base text-gray-medium">
-                {qualification.description}
+                {qualification.description.toString()}
               </dd>
             </div>
           ))}
@@ -66,6 +67,6 @@ export async function getStaticProps() {
     props: {
       qualifications,
     },
-    revalidate: 1,
+    revalidate: revalidationTime,
   };
 }

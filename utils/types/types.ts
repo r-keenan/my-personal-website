@@ -37,7 +37,8 @@ export type Post = PostPreview & {
   body: PortableTextBlock[];
 };
 
-export type Qualification = {
+export type Qualification = SanityDocument & {
   name: string;
-  description: string;
+  description: PortableTextBlock[];
+  category: string;
 };
