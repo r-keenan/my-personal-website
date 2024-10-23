@@ -1,5 +1,21 @@
 import { describe, it, expect } from "vitest";
-import { formatImageUrl } from "../UtilityFunctions";
+import { formatBlogDate, formatImageUrl } from "../UtilityFunctions";
+
+describe("format blog date", () => {
+  it("should return month day year string", () => {
+    const today = new Date(Date.UTC(2024, 9, 23, 0, 30, 0)).toISOString();
+
+    const result = formatBlogDate(today);
+
+    expect(result).toBe("Oct 23, 2024");
+  });
+
+  it("should return an error when formatting invalid date format", () => {
+    const today = new Date(Date.UTC(2024, 9, 23, 0, 30, 0)).toString();
+
+    expect(() => formatBlogDate(today)).toThrow("Invalid date format");
+  });
+});
 
 describe("format image url", () => {
   const originalEnv = { ...process.env };

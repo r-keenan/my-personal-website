@@ -26,6 +26,7 @@ export function cleanPhone(phoneNumber: string): string {
 
 export function formatBlogDate(dateTime: string): string {
   let dateStr = "";
+  console.log(dateTime);
 
   try {
     let dtSplit = dateTime.split("-");
@@ -36,7 +37,8 @@ export function formatBlogDate(dateTime: string): string {
 
     dateStr = `${month} ${day}, ${year}`;
   } catch (error) {
-    // Todo: add logging
+    console.error("Invalid date format");
+    throw new Error("Invalid date format");
   }
 
   return dateStr;
