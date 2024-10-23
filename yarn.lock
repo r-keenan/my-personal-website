@@ -654,6 +654,26 @@
     tiny-glob "^0.2.9"
     tslib "^2.4.0"
 
+"@portabletext/react@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.npmjs.org/@portabletext/react/-/react-3.1.0.tgz"
+  integrity sha512-ZGHlvS+NvId9RSqnflN8xF2KVZgAgD399dK1GaycurnGNZGZYTd5nZmc8by1yL76Ar8n/dbVtouUDJIkO4Tupw==
+  dependencies:
+    "@portabletext/toolkit" "^2.0.15"
+    "@portabletext/types" "^2.0.13"
+
+"@portabletext/toolkit@^2.0.15":
+  version "2.0.15"
+  resolved "https://registry.npmjs.org/@portabletext/toolkit/-/toolkit-2.0.15.tgz"
+  integrity sha512-KRNEUAd6eOxE9y591qC0sE24ZG2q27OHXe0dsPclj4IoEzf8aEuDcHR64wfFtB0aHq9Wdx3pIinmhZZcl35/vg==
+  dependencies:
+    "@portabletext/types" "^2.0.13"
+
+"@portabletext/types@^2.0.13":
+  version "2.0.13"
+  resolved "https://registry.npmjs.org/@portabletext/types/-/types-2.0.13.tgz"
+  integrity sha512-5xk5MSyQU9CrDho3Rsguj38jhijhD36Mk8S6mZo3huv6PM+t4M/5kJN2KFIxgvt4ONpvOEs1pVIZAV0cL0Vi+Q==
+
 "@prismicio/client@^5.1.0":
   version "5.1.1"
   resolved "https://registry.npmjs.org/@prismicio/client/-/client-5.1.1.tgz"
@@ -4588,7 +4608,7 @@ react-toastify@^9.1.1:
   dependencies:
     clsx "^1.1.1"
 
-"react@^16 || ^17 || ^18", react@^18.0.0, react@^18.2.0, "react@>= 16", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", react@>=16, react@>=16.0.0, react@>=16.14.0, react@>=16.4.1, react@>=16.8.0:
+"react@^16 || ^17 || ^18", "react@^17 || ^18 || >=19.0.0-rc", react@^18.0.0, react@^18.2.0, "react@>= 16", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", react@>=16, react@>=16.0.0, react@>=16.14.0, react@>=16.4.1, react@>=16.8.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==

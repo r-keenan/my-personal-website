@@ -7,8 +7,10 @@ import React from "react";
 import { formatBlogDate, formatImageUrl } from "utils/UtilityFunctions";
 import { notFound } from "next/navigation";
 import { revalidationTime } from "utils/Constants";
+import { Post } from "@/utils/types/types";
 
-export default function BlogPost({ post }: { post: any }) {
+export default function BlogPost({ post }: { post: Post }) {
+  console.log(post);
   return (
     <div className="min-h-screen relative pt-20 bg-white overflow-hidden sm:mt-10 md:pt-10">
       <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
@@ -42,7 +44,7 @@ export default function BlogPost({ post }: { post: any }) {
             {post.excerpt}
           </p>
           <div className="pt-3 text-center text-xl text-gray-medium">
-            <time dateTime={post.datetime}>
+            <time dateTime={post.datetime?.toString()}>
               {formatBlogDate(post.publishedAt)}
             </time>
           </div>
@@ -63,7 +65,7 @@ export default function BlogPost({ post }: { post: any }) {
             <div className="my-10">
               <div className="mt-10 grid grid-cols-1 justify-items-center">
                 <a
-                  href={post.url}
+                  href={post.url?.toString()}
                   className="text-base font-medium text-blue-light"
                   target="_blank"
                   rel="noreferrer"
@@ -107,7 +109,7 @@ export async function getStaticProps({
   params: { slug?: string };
 }) {
   const { slug = "" } = params;
-  const post = await client.fetch(
+  const post: Post = await client.fetch(
     `*[_type == "post" && slug.current == $slug][0]`,
     { slug }
   );

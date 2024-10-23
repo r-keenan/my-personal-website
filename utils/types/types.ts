@@ -6,6 +6,7 @@ import type {
   ImageAsset,
 } from "@sanity/types";
 import Qualifications from "../../components/Qualifications";
+import { PortableTextBlock } from "@portabletext/types";
 
 export type SocialIcon = {
   name: string;
@@ -30,6 +31,10 @@ export type PostPreview = SanityDocument & {
   readingTime: string;
 };
 
-export type Post = {};
+export type Post = PostPreview & {
+  urlDescription: string;
+  url: string;
+  body: PortableTextBlock[];
+};
 
 export type Qualifications = {};
