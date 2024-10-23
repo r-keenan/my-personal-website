@@ -1,8 +1,13 @@
 import { CheckIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 import client from "../lib/sanity";
+import { Qualification } from "@/utils/types/types";
 
-export default function Qualifications({ data }: { data: any }) {
+export default function Qualifications({
+  qualifications,
+}: {
+  qualifications: Qualification[];
+}) {
   return (
     <div className="bg-white">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
@@ -16,7 +21,7 @@ export default function Qualifications({ data }: { data: any }) {
           </p>
         </div>
         <dl className="mt-12 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4 lg:gap-x-8">
-          {data.qualifications.map((qualification: any) => (
+          {qualifications.map((qualification: Qualification) => (
             <div key={qualification.name} className="relative">
               <dt>
                 <CheckIcon
@@ -53,12 +58,13 @@ export default function Qualifications({ data }: { data: any }) {
 const qualificationsPreviewQuery = `*[_type == "qualification"] | order(order)`;
 
 export async function getStaticProps() {
-  const qualifications = await client.fetch(qualificationsPreviewQuery);
-  const data = { qualifications };
+  const qualifications: Qualification[] = await client.fetch(
+    qualificationsPreviewQuery
+  );
 
   return {
     props: {
-      data,
+      qualifications,
     },
     revalidate: 1,
   };

@@ -37,4 +37,7 @@ export type Post = PostPreview & {
   body: PortableTextBlock[];
 };
 
-export type Qualifications = {};
+export type Qualification = {
+  name: string;
+  description: string;
+};

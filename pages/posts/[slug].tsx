@@ -8,6 +8,7 @@ import { formatBlogDate, formatImageUrl } from "utils/UtilityFunctions";
 import { notFound } from "next/navigation";
 import { revalidationTime } from "utils/Constants";
 import { Post } from "@/utils/types/types";
+import { PortableTextBlock } from "@portabletext/types";
 
 export default function BlogPost({ post }: { post: Post }) {
   console.log(post);
@@ -52,7 +53,7 @@ export default function BlogPost({ post }: { post: Post }) {
         <div className="grid">
           <div className="grid-1 items-center justify-center">
             <div className="grid mt-10 prose prose-indigo prose-lg text-gray-medium sm:mx-20 lg:mx-80">
-              {post.body.map((el: any) => (
+              {post.body.map((el: PortableTextBlock) => (
                 <React.Fragment key={el._key}>
                   <div className="grid grid-cols-1">
                     <div>{el.children[0].text}</div>
