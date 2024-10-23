@@ -2,10 +2,11 @@ import Avatar from "@/components/Avatar";
 import Link from "next/link";
 import Image from "next/legacy/image";
 import client from "../../lib/sanity";
-import { formatBlogDate, formatImageUrl } from "utils/UtilityFunctions";
-import { revalidationTime } from "utils/Constants";
+import { formatBlogDate, formatImageUrl } from "@utils/UtilityFunctions";
+import { revalidationTime } from "@utils/Constants";
+import { PostPreview } from "@/utils/types/types";
 
-export default function Posts({ posts }) {
+export default function Posts({ posts }: { posts: PostPreview[] }) {
   return (
     <div className="relative bg-white pb-20 px-4 sm:px-6 sm:py-24 lg:pt-12 lg:px-8 lg:pb-">
       <div className="absolute inset-0">
@@ -22,7 +23,7 @@ export default function Posts({ posts }) {
           </p>
         </div>
         <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-          {posts.map((post) => (
+          {posts.map((post: PostPreview) => (
             <div
               key={post._id}
               className="flex flex-col rounded-lg shadow-lg overflow-hidden"
@@ -86,7 +87,7 @@ export default function Posts({ posts }) {
                       </Link>
                     </p>
                     <div className="flex space-x-1 text-sm text-gray-medium">
-                      <time dateTime={post.datetime}>
+                      <time dateTime={post.datetime?.toString()}>
                         {formatBlogDate(post.publishedAt)}
                       </time>
                       <span aria-hidden="true">&middot;</span>
@@ -108,7 +109,7 @@ const postsPreviewQuery = `*[_type == "post" && !(_id in path('drafts.**'))] {
 } | order(publishedAt desc)`;
 
 export async function getStaticProps() {
-  const posts = await client.fetch(postsPreviewQuery);
+  const posts: PostPreview[] = await client.fetch(postsPreviewQuery);
 
   return {
     props: {

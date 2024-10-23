@@ -3,7 +3,7 @@ import client from "../lib/sanity";
 import { CheckIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 
-export default function Home({ data }) {
+export default function Home({ data }: { data: any }) {
   const { qualifications } = data;
   return (
     <>
@@ -20,7 +20,7 @@ export default function Home({ data }) {
             </p>
           </div>
           <dl className="mt-12 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4 lg:gap-x-8">
-            {qualifications.map((qualification) => (
+            {qualifications.map((qualification: any) => (
               <div key={qualification._id} className="relative">
                 <dt>
                   <CheckIcon

@@ -8,7 +8,7 @@ import { cleanPhone } from "../utils/UtilityFunctions";
 export default function ContactForm() {
   const notifySuccess = () => toast("Your information has been submitted!");
 
-  async function postToDb(values) {
+  async function postToDb(values: any) {
     const { data } = await supabase.from("ContactForm").insert([
       {
         firstName: values.firstName,
@@ -214,10 +214,7 @@ export default function ContactForm() {
                   <div className="mt-1">
                     <input
                       type="text"
-                      value={formik.values.firstName}
-                      onChange={formik.handleChange}
                       {...formik.getFieldProps("firstName")}
-                      name="firstName"
                       id="first-name"
                       autoComplete="given-name"
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
@@ -242,10 +239,7 @@ export default function ContactForm() {
                   <div className="mt-1">
                     <input
                       type="text"
-                      value={formik.values.lastName}
-                      onChange={formik.handleChange}
                       {...formik.getFieldProps("lastName")}
-                      name="lastName"
                       id="last-name"
                       autoComplete="family-name"
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
@@ -278,10 +272,7 @@ export default function ContactForm() {
                   <div className="mt-1">
                     <input
                       type="text"
-                      value={formik.values.companyName}
-                      onChange={formik.handleChange}
                       {...formik.getFieldProps("companyName")}
-                      name="companyName"
                       id="company-name"
                       autoComplete="company-name"
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
@@ -314,10 +305,7 @@ export default function ContactForm() {
                   <div className="mt-1">
                     <input
                       type="url"
-                      value={formik.values.companyWebsite}
-                      onChange={formik.handleChange}
                       {...formik.getFieldProps("companyWebsite")}
-                      name="companyWebsite"
                       id="company-website"
                       autoComplete="company-name"
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
@@ -343,10 +331,7 @@ export default function ContactForm() {
                   <div className="mt-1">
                     <input
                       id="email"
-                      value={formik.values.email}
-                      onChange={formik.handleChange}
                       {...formik.getFieldProps("email")}
-                      name="email"
                       type="email"
                       autoComplete="email"
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
@@ -380,10 +365,7 @@ export default function ContactForm() {
                   <div className="mt-1">
                     <input
                       type="text"
-                      value={formik.values.phone}
-                      onChange={formik.handleChange}
                       {...formik.getFieldProps("phone")}
-                      name="phone"
                       id="phone"
                       autoComplete="tel"
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
@@ -413,10 +395,7 @@ export default function ContactForm() {
                   <div className="mt-1">
                     <input
                       type="text"
-                      value={formik.values.botHoneyPot}
-                      onChange={formik.handleChange}
                       {...formik.getFieldProps("botHoneyPot")}
-                      name="botHoneyPot"
                       id="botHoneyPot"
                       autoComplete="tel"
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
@@ -441,10 +420,7 @@ export default function ContactForm() {
                   <div className="mt-1">
                     <input
                       type="text"
-                      value={formik.values.subject}
-                      onChange={formik.handleChange}
                       {...formik.getFieldProps("subject")}
-                      name="subject"
                       id="subject"
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                       required
@@ -473,9 +449,6 @@ export default function ContactForm() {
                   <div className="mt-1">
                     <textarea
                       id="message"
-                      name="message"
-                      value={formik.values.message}
-                      onChange={formik.handleChange}
                       {...formik.getFieldProps("message")}
                       rows={4}
                       className="py-3 px-4 block w-full shadow-sm text-gray-dark focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"

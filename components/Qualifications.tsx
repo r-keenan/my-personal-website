@@ -1,9 +1,8 @@
 import { CheckIcon } from "@heroicons/react/outline";
 import Link from "next/link";
-import { qualifications } from "@/config/index";
 import client from "../lib/sanity";
 
-export default function Qualifications({ data }) {
+export default function Qualifications({ data }: { data: any }) {
   return (
     <div className="bg-white">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
@@ -17,7 +16,7 @@ export default function Qualifications({ data }) {
           </p>
         </div>
         <dl className="mt-12 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4 lg:gap-x-8">
-          {qualifications.map((qualification) => (
+          {data.qualifications.map((qualification: any) => (
             <div key={qualification.name} className="relative">
               <dt>
                 <CheckIcon

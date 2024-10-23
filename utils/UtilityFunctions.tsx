@@ -1,6 +1,6 @@
 import { months } from "@/config/index";
 
-export function cleanPhone(phoneNumber) {
+export function cleanPhone(phoneNumber: string) {
   const regexPattern = /[^0-9]+/g;
   const newPhoneNumber = phoneNumber.replace(regexPattern, "");
   let desiredPhoneFormat = "";
@@ -24,13 +24,13 @@ export function cleanPhone(phoneNumber) {
   }
 }
 
-export function formatBlogDate(dateTime) {
+export function formatBlogDate(dateTime: string): string {
   let dateStr = "";
 
   try {
     let dtSplit = dateTime.split("-");
     let dateSplit = dtSplit[2].split("T");
-    let month = months[parseInt(dtSplit[1] - 1)];
+    let month = months[Number(dtSplit[1]) - 1];
     let day = dateSplit[0];
     let year = dtSplit[0];
 
@@ -42,7 +42,7 @@ export function formatBlogDate(dateTime) {
   return dateStr;
 }
 
-export function formatImageUrl(image) {
+export function formatImageUrl(image: string): string {
   let imageUrl = `${process.env.NEXT_PUBLIC_SANITY_CDN_URL}${image}?auto=format&fit=min`;
 
   if (imageUrl.includes("-jpg")) imageUrl = imageUrl.replace("-jpg", ".jpg");

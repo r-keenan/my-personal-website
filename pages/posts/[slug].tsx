@@ -8,7 +8,7 @@ import { formatBlogDate, formatImageUrl } from "utils/UtilityFunctions";
 import { notFound } from "next/navigation";
 import { revalidationTime } from "utils/Constants";
 
-export default function BlogPost({ post }) {
+export default function BlogPost({ post }: { post: any }) {
   return (
     <div className="min-h-screen relative pt-20 bg-white overflow-hidden sm:mt-10 md:pt-10">
       <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
@@ -50,7 +50,7 @@ export default function BlogPost({ post }) {
         <div className="grid">
           <div className="grid-1 items-center justify-center">
             <div className="grid mt-10 prose prose-indigo prose-lg text-gray-medium sm:mx-20 lg:mx-80">
-              {post.body.map((el) => (
+              {post.body.map((el: any) => (
                 <React.Fragment key={el._key}>
                   <div className="grid grid-cols-1">
                     <div>{el.children[0].text}</div>
@@ -95,14 +95,17 @@ export async function getStaticPaths() {
   const paths = await client.fetch(
     `*[_type == "post" && defined(slug.current)][].slug.current`
   );
-
   return {
-    paths: paths.map((slug) => ({ params: { slug } })),
+    paths: paths.map((slug: string) => ({ params: { slug } })),
     fallback: "blocking",
   };
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({
+  params,
+}: {
+  params: { slug?: string };
+}) {
   const { slug = "" } = params;
   const post = await client.fetch(
     `*[_type == "post" && slug.current == $slug][0]`,

@@ -12,11 +12,11 @@ const navigation = [
   { name: "Contact", href: "/contact", current: false },
 ];
 
-function classNames(...classes) {
+function classNames(...classes: string[]): string {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Header(props) {
+export default function Header(props: any) {
   const headerStyle = `bg-blue-dark text-white ${props.styleConditional}`;
   return (
     <div className="fixed top-0 z-10 w-full">
