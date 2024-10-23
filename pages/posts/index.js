@@ -3,9 +3,9 @@ import Link from "next/link";
 import Image from "next/legacy/image";
 import client from "../../lib/sanity";
 import { formatBlogDate, formatImageUrl } from "utils/UtilityFunctions";
+import { revalidationTime } from "utils/Constants";
 
-export default function Posts({ data }) {
-  const { posts } = data;
+export default function Posts({ posts }) {
   return (
     <div className="relative bg-white pb-20 px-4 sm:px-6 sm:py-24 lg:pt-12 lg:px-8 lg:pb-">
       <div className="absolute inset-0">
@@ -110,12 +110,10 @@ const postsPreviewQuery = `*[_type == "post" && !(_id in path('drafts.**'))] {
 export async function getStaticProps() {
   const posts = await client.fetch(postsPreviewQuery);
 
-  const data = { posts };
-
   return {
     props: {
-      data,
+      posts,
     },
-    revalidate: 1,
+    revalidate: revalidationTime,
   };
 }

@@ -5,6 +5,8 @@ import Avatar from "@/components/Avatar";
 import client from "../../lib/sanity";
 import React from "react";
 import { formatBlogDate, formatImageUrl } from "utils/UtilityFunctions";
+import { notFound } from "next/navigation";
+import { revalidationTime } from "utils/Constants";
 
 export default function BlogPost({ post }) {
   return (
@@ -88,16 +90,33 @@ export default function BlogPost({ post }) {
   );
 }
 
-export async function getServerSideProps(context) {
-  const { slug = "" } = context.params;
+export async function getStaticPaths() {
+  // Fetch all post slugs
+  const paths = await client.fetch(
+    `*[_type == "post" && defined(slug.current)][].slug.current`
+  );
+
+  return {
+    paths: paths.map((slug) => ({ params: { slug } })),
+    fallback: "blocking",
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const { slug = "" } = params;
   const post = await client.fetch(
     `*[_type == "post" && slug.current == $slug][0]`,
-    { slug },
+    { slug }
   );
+
+  if (!post) {
+    return { notFound: true };
+  }
 
   return {
     props: {
       post,
     },
+    revalidate: revalidationTime,
   };
 }
