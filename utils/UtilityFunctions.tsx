@@ -1,6 +1,6 @@
-import { months } from "@/config/index";
+import { months } from "../config/index";
 
-export function cleanPhone(phoneNumber: string) {
+export function cleanPhone(phoneNumber: string): string {
   const regexPattern = /[^0-9]+/g;
   const newPhoneNumber = phoneNumber.replace(regexPattern, "");
   let desiredPhoneFormat = "";
