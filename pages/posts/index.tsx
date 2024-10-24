@@ -5,8 +5,16 @@ import client from "../../lib/sanity";
 import { formatBlogDate, formatImageUrl } from "@utils/UtilityFunctions";
 import { revalidationTime } from "@utils/Constants";
 import { PostPreview } from "@/utils/types/types";
+import { useRouter } from "next/router";
 
 export default function Posts({ posts }: { posts: PostPreview[] }) {
+  const router = useRouter();
+
+  const handleMouseEnter = (url: string) => {
+    // Prefetch URL on Mouser enter
+    router.prefetch(url);
+  };
+
   return (
     <div className="relative bg-white pb-20 px-4 sm:px-6 sm:py-24 lg:pt-12 lg:px-8 lg:pb-">
       <div className="absolute inset-0">
@@ -35,6 +43,9 @@ export default function Posts({ posts }: { posts: PostPreview[] }) {
                     query: { slug: post.slug.current },
                   }}
                   passHref
+                  onMouseEnter={() =>
+                    handleMouseEnter(`/posts/${post.slug.current}`)
+                  }
                 >
                   <Image
                     className="object-cover"
@@ -60,6 +71,9 @@ export default function Posts({ posts }: { posts: PostPreview[] }) {
                     }}
                     className="block mt-2"
                     passHref
+                    onMouseEnter={() =>
+                      handleMouseEnter(`/posts/${post.slug.current}`)
+                    }
                   >
                     <p className="text-xl font-semibold text-gray-dark">
                       {post.title}

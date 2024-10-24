@@ -33,7 +33,6 @@ export function formatPhone(phoneNumber: string): string {
 
 export function formatBlogDate(dateTime: string): string {
   let dateStr = "";
-  console.log(dateTime);
 
   try {
     let dtSplit = dateTime.split("-");
