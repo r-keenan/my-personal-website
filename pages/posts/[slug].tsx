@@ -10,8 +10,11 @@ import { oneDay } from "utils/Constants";
 import { Post } from "@/utils/types/types";
 import { PortableTextBlock } from "@portabletext/types";
 import { MonthFormat } from "@/utils/enums/enums";
+import { useRouter } from "next/router";
 
 export default function BlogPost({ post }: { post: Post }) {
+  const router = useRouter();
+
   return (
     <div className="min-h-screen relative pt-20 bg-white overflow-hidden sm:mt-10 md:pt-10">
       <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
@@ -21,7 +24,11 @@ export default function BlogPost({ post }: { post: Post }) {
         ></div>
       </div>
       <div className="relative px-14 mb-10 sm:px-6 sm:mb-20 md:mb-32 lg:px-8 lg:py-5 lg:mb-40">
-        <Breadcrumb title={post.title} slug={post.slug.current} />
+        <Breadcrumb
+          title={post.title}
+          slug={post.slug.current}
+          router={router}
+        />
 
         <div className="text-lg max-w-prose mx-auto">
           <div className="pt-24">

@@ -4,14 +4,21 @@ import Link from "next/link";
 export default function Breadcrumb({
   title,
   slug,
+  router,
 }: {
   title: string;
   slug: string;
+  router: any;
 }) {
   const pages = [
     { name: "Posts", href: "/posts", current: false },
     { name: title, href: slug, current: true },
   ];
+
+  const handleMouseEnter = (url: string) => {
+    // Prefetch URL on Mouser enter
+    router.prefetch(url);
+  };
   return (
     <nav className="flex" aria-label="Breadcrumb">
       <ol
@@ -24,6 +31,7 @@ export default function Breadcrumb({
               href="/"
               className="text-gray-400 hover:text-gray-500"
               passHref
+              onMouseEnter={() => handleMouseEnter("/")}
             >
               <HomeIcon className="flex-shrink-0 h-5 w-5" aria-hidden="true" />
               <span className="sr-only">Home</span>
@@ -47,6 +55,7 @@ export default function Breadcrumb({
                 href={page.href}
                 className="ml-4 text-sm font-medium text-blue-light hover:text-gray-700"
                 aria-current={page.current ? "page" : undefined}
+                onMouseEnter={() => handleMouseEnter(page.href)}
               >
                 {page.name}
               </a>
