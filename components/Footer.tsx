@@ -1,5 +1,4 @@
 import { socials } from "@/components/Socials";
-import type { NextRouter } from "next/router";
 
 const navigation = {
   main: [

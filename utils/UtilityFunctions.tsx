@@ -1,4 +1,5 @@
-import { months } from "../config/index";
+import { monthsAbbreviated, monthsFull } from "../config/index";
+import { MonthFormat } from "./enums/enums";
 
 export function formatPhone(phoneNumber: string): string {
   const regexPattern = /[^0-9]+/g;
@@ -31,13 +32,19 @@ export function formatPhone(phoneNumber: string): string {
   }
 }
 
-export function formatBlogDate(dateTime: string): string {
+export function formatBlogDate(
+  dateTime: string,
+  monthFormat: MonthFormat
+): string {
   let dateStr = "";
 
   try {
     let dtSplit = dateTime.split("-");
     let dateSplit = dtSplit[2].split("T");
-    let month = months[Number(dtSplit[1]) - 1];
+    let month =
+      monthFormat === MonthFormat.ABBREVIATED_MONTH
+        ? monthsAbbreviated[Number(dtSplit[1]) - 1]
+        : monthsFull[Number(dtSplit[1]) - 1];
     let day = dateSplit[0];
     let year = dtSplit[0];
 

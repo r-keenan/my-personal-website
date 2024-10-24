@@ -9,6 +9,7 @@ import { notFound } from "next/navigation";
 import { revalidationTime } from "utils/Constants";
 import { Post } from "@/utils/types/types";
 import { PortableTextBlock } from "@portabletext/types";
+import { MonthFormat } from "@/utils/enums/enums";
 
 export default function BlogPost({ post }: { post: Post }) {
   return (
@@ -45,7 +46,7 @@ export default function BlogPost({ post }: { post: Post }) {
           </p>
           <div className="pt-3 text-center text-xl text-gray-medium">
             <time dateTime={post.datetime?.toString()}>
-              {formatBlogDate(post.publishedAt)}
+              {formatBlogDate(post.publishedAt, MonthFormat.FULL_MONTH)}
             </time>
           </div>
         </div>

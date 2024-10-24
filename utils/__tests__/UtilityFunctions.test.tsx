@@ -4,6 +4,7 @@ import {
   formatBlogDate,
   formatImageUrl,
 } from "../UtilityFunctions";
+import { MonthFormat } from "../enums/enums";
 
 describe("format phone number", () => {
   it("should return desired phone format with 10 digits", () => {
@@ -38,12 +39,20 @@ describe("format phone number", () => {
 });
 
 describe("format blog date", () => {
-  it("should return month day year string", () => {
+  it("should return month day year string with abbreviated month name", () => {
     const today = new Date(Date.UTC(2024, 9, 23, 0, 30, 0)).toISOString();
 
-    const result = formatBlogDate(today);
+    const result = formatBlogDate(today, MonthFormat.ABBREVIATED_MONTH);
 
     expect(result).toBe("Oct 23, 2024");
+  });
+
+  it("should return month day year string with full month name", () => {
+    const today = new Date(Date.UTC(2024, 9, 23, 0, 30, 0)).toISOString();
+
+    const result = formatBlogDate(today, MonthFormat.FULL_MONTH);
+
+    expect(result).toBe("October 23, 2024");
   });
 
   it("should return an error when formatting invalid date format", () => {

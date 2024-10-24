@@ -6,6 +6,7 @@ import { formatBlogDate, formatImageUrl } from "@utils/UtilityFunctions";
 import { revalidationTime } from "@utils/Constants";
 import { PostPreview } from "@/utils/types/types";
 import { useRouter } from "next/router";
+import { MonthFormat } from "@/utils/enums/enums";
 
 export default function Posts({ posts }: { posts: PostPreview[] }) {
   const router = useRouter();
@@ -102,7 +103,10 @@ export default function Posts({ posts }: { posts: PostPreview[] }) {
                     </p>
                     <div className="flex space-x-1 text-sm text-gray-medium">
                       <time dateTime={post.datetime?.toString()}>
-                        {formatBlogDate(post.publishedAt)}
+                        {formatBlogDate(
+                          post.publishedAt,
+                          MonthFormat.ABBREVIATED_MONTH
+                        )}
                       </time>
                       <span aria-hidden="true">&middot;</span>
                       <span>{post.readingTime} read</span>
