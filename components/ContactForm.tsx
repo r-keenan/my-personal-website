@@ -1,4 +1,3 @@
-import { supabase } from "lib/supabaseClient";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { ToastContainer, toast } from "react-toastify";
@@ -8,6 +7,7 @@ import { formatPhone } from "../utils/UtilityFunctions";
 export default function ContactForm() {
   const notifySuccess = () => toast("Your information has been submitted!");
 
+  /*
   async function postToDb(values: any) {
     const { data } = await supabase.from("ContactForm").insert([
       {
@@ -21,7 +21,7 @@ export default function ContactForm() {
         message: values.message,
       },
     ]);
-  }
+  }*/
 
   const formik = useFormik({
     initialValues: {
@@ -69,7 +69,7 @@ export default function ContactForm() {
         .required("Required"),
     }),
     onSubmit: (values) => {
-      postToDb(values);
+      //postToDb(values);
       notifySuccess();
     },
   });
