@@ -60,7 +60,10 @@ export function formatBlogDate(
 export function formatImageUrl(image: string): string {
   let imageUrl = `${process.env.NEXT_PUBLIC_SANITY_CDN_URL}${image}?auto=format&fit=min`;
 
+  if (imageUrl.includes("-jpeg")) imageUrl = imageUrl.replace("-jpeg", ".jpeg");
   if (imageUrl.includes("-jpg")) imageUrl = imageUrl.replace("-jpg", ".jpg");
+  if (imageUrl.includes("-png")) imageUrl = imageUrl.replace("-png", ".png");
+  if (imageUrl.includes("-webp")) imageUrl = imageUrl.replace("-webp", ".webp");
   if (imageUrl.includes("image-")) imageUrl = imageUrl.replace("image-", "");
 
   return imageUrl;

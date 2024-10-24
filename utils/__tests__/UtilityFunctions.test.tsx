@@ -82,6 +82,30 @@ describe("format image url", () => {
     expect(result).toBe("https://google.com/new.jpg?auto=format&fit=min");
   });
 
+  it("should return url with .jpeg", () => {
+    const url = "image-new-jpeg";
+
+    const result = formatImageUrl(url);
+
+    expect(result).toBe("https://google.com/new.jpeg?auto=format&fit=min");
+  });
+
+  it("should return url with .png", () => {
+    const url = "image-new-png";
+
+    const result = formatImageUrl(url);
+
+    expect(result).toBe("https://google.com/new.png?auto=format&fit=min");
+  });
+
+  it("should return url with .webp", () => {
+    const url = "image-new-webp";
+
+    const result = formatImageUrl(url);
+
+    expect(result).toBe("https://google.com/new.webp?auto=format&fit=min");
+  });
+
   it("should remove -image from url", () => {
     const url = "-image-new-dog-jpg";
 
