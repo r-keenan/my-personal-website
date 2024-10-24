@@ -59,7 +59,7 @@ export default function BlogPost({ post }: { post: Post }) {
         </div>
         <div className="grid">
           <div className="grid-1 items-center justify-center">
-            <div className="grid mt-10 prose prose-indigo prose-lg text-gray-medium sm:mx-20 lg:mx-80">
+            <div className="grid mt-10 prose prose-indigo prose-lg text-gray-medium sm:mx-20 lg:mx-80 2xl:mx-auto w-1/3">
               {post.body.map((el: PortableTextBlock) => (
                 <React.Fragment key={el._key}>
                   <div className="grid grid-cols-1">
