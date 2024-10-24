@@ -32,6 +32,9 @@ jobs:
         run: npm run build
         env:
           NEXT_PUBLIC_SANITY_PROJECT_ID: ${{secrets.NEXT_PUBLIC_SANITY_PROJECT_ID}}
+          NEXT_PUBLIC_SANITY_DATASET: ${{secrets.NEXT_PUBLIC_SANITY_DATASET}}
+          NEXT_PUBLIC_SANITY_CDN_URL: ${{secrets.NEXT_PUBLIC_SANITY_CDN_URL}}
+          NEXT_PUBLIC_SANITY_TOKEN: ${{secrets.NEXT_PUBLIC_SANITY_TOKEN}}
 
       - name: Run tests
         run: npm run test
