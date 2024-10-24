@@ -1,4 +1,5 @@
 import { socials } from "@/components/Socials";
+import type { NextRouter } from "next/router";
 
 const navigation = {
   main: [
@@ -10,7 +11,11 @@ const navigation = {
   ],
 };
 
-export default function Footer() {
+export default function Footer(props: any) {
+  const handleMouseEnter = (url: string) => {
+    // Prefetch URL on Mouser enter
+    props.router.prefetch(url);
+  };
   return (
     <footer className="bg-gray-light">
       <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
@@ -23,6 +28,7 @@ export default function Footer() {
               <a
                 href={item.href}
                 className="text-base text-gray-dark hover:text-blue-light"
+                onMouseEnter={() => handleMouseEnter(item.href)}
               >
                 {item.name}
               </a>
@@ -37,6 +43,7 @@ export default function Footer() {
               target={item.target}
               rel={item.rel}
               className="text-gray-400 hover:text-gray-500"
+              onMouseEnter={() => handleMouseEnter(item.href)}
             >
               <span className="sr-only">{item.name}</span>
               <item.icon className="h-6 w-6" aria-hidden="true" />
