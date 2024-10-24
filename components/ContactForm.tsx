@@ -46,19 +46,19 @@ export default function ContactForm() {
         .required("Required"),
       companyName: Yup.string()
         .min(2, "Company Name must be at least 2 characters")
-        .max(100, "Last Name must not exceed 10 characters"),
+        .max(100, "Last Name must not exceed 100 characters"),
       companyWebsite: Yup.string()
         .url("Invalid URL. Format must be: https://www.yourwebsite.com")
-        .min(6, "Company Website must be at least 2 characters")
-        .max(100, "Company Website must not exceed 10 characters"),
+        .min(6, "Company Website must be at least 6 characters")
+        .max(100, "Company Website must not exceed 100 characters"),
       email: Yup.string()
         .email("Must be formatted like: hello@email.com")
-        .min(8, "Email Address must be at least 2 characters")
+        .min(8, "Email Address must be at least 8 characters")
         .max(75, "Email Address must not exceed 75 characters")
         .required("Required"),
       phone: Yup.string()
-        .min(8, "Email Address must be at least 10 characters")
-        .max(20, "Email Address must be at least 10 characters"),
+        .min(10, "Email Address must be at least 10 characters")
+        .max(20, "Email Address must be at least 20 characters long"),
       subject: Yup.string()
         .min(10, "Subject must be at least 10 characters")
         .max(100, "Subject must be at least 100 characters")
