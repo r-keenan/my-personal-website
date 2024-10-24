@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { cleanPhone } from "../utils/UtilityFunctions";
+import { formatPhone } from "../utils/UtilityFunctions";
 
 export default function ContactForm() {
   const notifySuccess = () => toast("Your information has been submitted!");
@@ -16,7 +16,7 @@ export default function ContactForm() {
         companyName: values.companyName,
         companyWebsite: values.companyWebsite,
         email: values.email,
-        phone: cleanPhone(values.phone),
+        phone: formatPhone(values.phone),
         subject: values.subject,
         message: values.message,
       },
