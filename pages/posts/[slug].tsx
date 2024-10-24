@@ -6,7 +6,7 @@ import client from "../../lib/sanity";
 import React from "react";
 import { formatBlogDate, formatImageUrl } from "utils/UtilityFunctions";
 import { notFound } from "next/navigation";
-import { revalidationTime } from "utils/Constants";
+import { oneDay } from "utils/Constants";
 import { Post } from "@/utils/types/types";
 import { PortableTextBlock } from "@portabletext/types";
 import { MonthFormat } from "@/utils/enums/enums";
@@ -123,6 +123,6 @@ export async function getStaticProps({
     props: {
       post,
     },
-    revalidate: revalidationTime,
+    revalidate: oneDay,
   };
 }

@@ -2,7 +2,7 @@ import LandingPage from "@/components/LandingPage";
 import client from "../lib/sanity";
 import { CheckIcon } from "@heroicons/react/outline";
 import Link from "next/link";
-import { revalidationTime } from "@/utils/Constants";
+import { oneDay } from "@/utils/Constants";
 import { Qualification } from "@/utils/types/types";
 
 export default function Home({
@@ -72,6 +72,6 @@ export async function getStaticProps() {
     props: {
       qualifications,
     },
-    revalidate: revalidationTime,
+    revalidate: oneDay,
   };
 }

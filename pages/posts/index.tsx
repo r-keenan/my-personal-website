@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/legacy/image";
 import client from "../../lib/sanity";
 import { formatBlogDate, formatImageUrl } from "@utils/UtilityFunctions";
-import { revalidationTime } from "@utils/Constants";
+import { oneDay } from "@utils/Constants";
 import { PostPreview } from "@/utils/types/types";
 import { useRouter } from "next/router";
 import { MonthFormat } from "@/utils/enums/enums";
@@ -133,6 +133,6 @@ export async function getStaticProps() {
     props: {
       posts,
     },
-    revalidate: revalidationTime,
+    revalidate: oneDay,
   };
 }
