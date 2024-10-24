@@ -17,6 +17,9 @@ function classNames(...classes: string[]): string {
 }
 
 export default function Header(props: any) {
+  const handleMouseEnter = (url: string) => {
+    props.router.prefetch(url);
+  };
   const headerStyle = `bg-blue-dark text-white ${props.styleConditional}`;
   return (
     <div className="fixed top-0 z-10 w-full">
@@ -60,6 +63,7 @@ export default function Header(props: any) {
                             "px-3 py-2 rounded-md text-md font-medium"
                           )}
                           aria-current={item.current ? "page" : undefined}
+                          onMouseEnter={() => handleMouseEnter(item.href)}
                         >
                           {item.name}
                         </a>
@@ -144,6 +148,7 @@ export default function Header(props: any) {
                       "block px-3 py-2 rounded-md text-base font-medium"
                     )}
                     aria-current={item.current ? "page" : undefined}
+                    onMouseEnter={() => handleMouseEnter(item.href)}
                   >
                     {item.name}
                   </a>
