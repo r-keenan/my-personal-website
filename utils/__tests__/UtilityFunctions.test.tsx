@@ -58,7 +58,9 @@ describe("format blog date", () => {
   it("should return an error when formatting invalid date format", () => {
     const today = new Date(Date.UTC(2024, 9, 23, 0, 30, 0)).toString();
 
-    expect(() => formatBlogDate(today)).toThrow("Invalid date format");
+    expect(() => formatBlogDate(today, MonthFormat.FULL_MONTH)).toThrow(
+      "Invalid date format"
+    );
   });
 });
 
