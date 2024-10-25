@@ -98,37 +98,3 @@ export default function PostPage({ post }: { post: Post }) {
     </div>
   );
 }
-
-export async function getStaticPaths() {
-  // Fetch all post slugs
-  const paths = await client.fetch(
-    `*[_type == "post" && defined(slug.current)][].slug.current`,
-  );
-  return {
-    paths: paths.map((slug: string) => ({ params: { slug } })),
-    fallback: "blocking",
-  };
-}
-
-export async function getStaticProps({
-  params,
-}: {
-  params: { slug?: string };
-}) {
-  const { slug = "" } = params;
-  const post: Post = await client.fetch(
-    `*[_type == "post" && slug.current == $slug][0]`,
-    { slug },
-  );
-
-  if (!post) {
-    return { notFound: true };
-  }
-
-  return {
-    props: {
-      post,
-    },
-    revalidate: oneDay,
-  };
-}
