@@ -34,7 +34,7 @@ export function formatPhone(phoneNumber: string): string {
 
 export function formatBlogDate(
   dateTime: string,
-  monthFormat: MonthFormat
+  monthFormat: MonthFormat,
 ): string {
   let dateStr = "";
 

@@ -103,7 +103,7 @@ export default function BlogPost({ post }: { post: Post }) {
 export async function getStaticPaths() {
   // Fetch all post slugs
   const paths = await client.fetch(
-    `*[_type == "post" && defined(slug.current)][].slug.current`
+    `*[_type == "post" && defined(slug.current)][].slug.current`,
   );
   return {
     paths: paths.map((slug: string) => ({ params: { slug } })),
@@ -119,7 +119,7 @@ export async function getStaticProps({
   const { slug = "" } = params;
   const post: Post = await client.fetch(
     `*[_type == "post" && slug.current == $slug][0]`,
-    { slug }
+    { slug },
   );
 
   if (!post) {

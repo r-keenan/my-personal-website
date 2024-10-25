@@ -105,7 +105,7 @@ export default function Posts({ posts }: { posts: PostPreview[] }) {
                       <time dateTime={post.datetime?.toString()}>
                         {formatBlogDate(
                           post.publishedAt,
-                          MonthFormat.ABBREVIATED_MONTH
+                          MonthFormat.ABBREVIATED_MONTH,
                         )}
                       </time>
                       <span aria-hidden="true">&middot;</span>

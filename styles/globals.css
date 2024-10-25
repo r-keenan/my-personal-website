@@ -221,7 +221,8 @@ body {
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
   background-color: rgba(64, 64, 64, 0.5);
-  animation: animated-text 4s steps(29, end) 1s 1 normal both,
+  animation:
+    animated-text 4s steps(29, end) 1s 1 normal both,
     animated-cursor 600ms steps(29, end) infinite;
 }
 
@@ -268,7 +269,8 @@ body {
     -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     background-color: rgba(64, 64, 64, 0.5);
-    animation: animated-text 4s steps(29, end) 1s 1 normal both,
+    animation:
+      animated-text 4s steps(29, end) 1s 1 normal both,
       animated-cursor 600ms steps(29, end) infinite;
   }
 
@@ -316,7 +318,8 @@ body {
     -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     background-color: rgba(64, 64, 64, 0.5);
-    animation: animated-text 4s steps(29, end) 1s 1 normal both,
+    animation:
+      animated-text 4s steps(29, end) 1s 1 normal both,
       animated-cursor 600ms steps(29, end) infinite;
   }
 
@@ -364,7 +367,8 @@ body {
     -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     background-color: rgba(64, 64, 64, 0.5);
-    animation: animated-text 4s steps(29, end) 1s 1 normal both,
+    animation:
+      animated-text 4s steps(29, end) 1s 1 normal both,
       animated-cursor 600ms steps(29, end) infinite;
   }
 

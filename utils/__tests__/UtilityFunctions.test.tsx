@@ -26,14 +26,14 @@ describe("format phone number", () => {
     const inputPhoneNumber = "+11 (555) 555-5555";
 
     expect(() => formatPhone(inputPhoneNumber)).toThrow(
-      "Max length for a phone number is 11 digits"
+      "Max length for a phone number is 11 digits",
     );
   });
   it("should throw with 9 digits", () => {
     const inputPhoneNumber = "+ (55) 555-5555";
 
     expect(() => formatPhone(inputPhoneNumber)).toThrow(
-      "Min length for a phone number is 10 digits"
+      "Min length for a phone number is 10 digits",
     );
   });
 });
@@ -59,7 +59,7 @@ describe("format blog date", () => {
     const today = new Date(Date.UTC(2024, 9, 23, 0, 30, 0)).toString();
 
     expect(() => formatBlogDate(today, MonthFormat.FULL_MONTH)).toThrow(
-      "Invalid date format"
+      "Invalid date format",
     );
   });
 });

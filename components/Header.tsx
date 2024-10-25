@@ -60,7 +60,7 @@ export default function Header(props: any) {
                             item.current
                               ? "bg-gray-900 text-blue-light"
                               : "text-blue-light hover:bg-gray-700 hover:text-white",
-                            "px-3 py-2 rounded-md text-md font-medium"
+                            "px-3 py-2 rounded-md text-md font-medium",
                           )}
                           aria-current={item.current ? "page" : undefined}
                           onMouseEnter={() => handleMouseEnter(item.href)}
@@ -95,7 +95,7 @@ export default function Header(props: any) {
                               href="#"
                               className={classNames(
                                 active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-sm text-gray-700"
+                                "block px-4 py-2 text-sm text-gray-700",
                               )}
                             >
                               Your Profile
@@ -108,7 +108,7 @@ export default function Header(props: any) {
                               href="#"
                               className={classNames(
                                 active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-sm text-gray-700"
+                                "block px-4 py-2 text-sm text-gray-700",
                               )}
                             >
                               Settings
@@ -121,7 +121,7 @@ export default function Header(props: any) {
                               href="#"
                               className={classNames(
                                 active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-sm text-gray-700"
+                                "block px-4 py-2 text-sm text-gray-700",
                               )}
                             >
                               Sign out
@@ -145,7 +145,7 @@ export default function Header(props: any) {
                       item.current
                         ? "bg-gray-900 text-white"
                         : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                      "block px-3 py-2 rounded-md text-base font-medium"
+                      "block px-3 py-2 rounded-md text-base font-medium",
                     )}
                     aria-current={item.current ? "page" : undefined}
                     onMouseEnter={() => handleMouseEnter(item.href)}

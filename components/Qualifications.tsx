@@ -60,7 +60,7 @@ const qualificationsPreviewQuery = `*[_type == "qualification"] | order(order)`;
 
 export async function getStaticProps() {
   const qualifications: Qualification[] = await client.fetch(
-    qualificationsPreviewQuery
+    qualificationsPreviewQuery,
   );
 
   return {
