@@ -91,16 +91,21 @@ export default function PostsPage({ posts }: { posts: PostPreview[] }) {
                 </div>
                 <div className="mt-6 flex items-center">
                   <div className="flex-shrink-0">
-                    <a href={"/about-me"}>
+                    <Link
+                      href={"/about-me"}
+                      onMouseEnter={() => handleMouseEnter("/about-me")}
+                      passHref
+                    >
                       <span className="sr-only">{post.author}</span>
                       <Avatar />
-                    </a>
+                    </Link>
                   </div>
                   <div className="ml-3">
                     <p className="text-sm font-medium text-gray-dark">
                       <Link
                         href={"/about-me"}
                         className="hover:underline"
+                        onMouseEnter={() => handleMouseEnter("/about-me")}
                         passHref
                       >
                         {post.author}

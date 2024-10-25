@@ -2,10 +2,8 @@
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
 import Image from "next/legacy/image";
-import client from "@/lib/sanity";
 import React from "react";
 import { formatBlogDate, formatImageUrl } from "utils/UtilityFunctions";
-import { oneDay } from "utils/Constants";
 import { Post } from "@/utils/types/types";
 import { PortableTextBlock } from "@portabletext/types";
 import { MonthFormat } from "@/utils/enums/enums";
@@ -13,6 +11,11 @@ import { useRouter } from "next/navigation";
 
 export default function PostPage({ post }: { post: Post }) {
   const router = useRouter();
+
+  const handleMouseEnter = (url: string) => {
+    // Prefetch URL on Mouser enter
+    router.prefetch(url);
+  };
 
   return (
     <div className="min-h-screen relative pt-20 bg-white overflow-hidden sm:mt-10 md:pt-10">
@@ -84,8 +87,9 @@ export default function PostPage({ post }: { post: Post }) {
             <div className="my-1">
               <div className="grid grid-cols-1 justify-items-center">
                 <Link
-                  href="/posts"
+                  href={"/posts"}
                   className="text-base font-medium text-blue-light"
+                  onMouseEnter={() => handleMouseEnter("/posts")}
                   passHref
                 >
                   <span aria-hidden="true"> &larr;</span> Back to Posts
