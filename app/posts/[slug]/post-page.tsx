@@ -1,16 +1,17 @@
+"use client";
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
 import Image from "next/legacy/image";
-import client from "../../lib/sanity";
+import client from "@/lib/sanity";
 import React from "react";
 import { formatBlogDate, formatImageUrl } from "utils/UtilityFunctions";
 import { oneDay } from "utils/Constants";
 import { Post } from "@/utils/types/types";
 import { PortableTextBlock } from "@portabletext/types";
 import { MonthFormat } from "@/utils/enums/enums";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
-export default function BlogPost({ post }: { post: Post }) {
+export default function PostPage({ post }: { post: Post }) {
   const router = useRouter();
 
   return (

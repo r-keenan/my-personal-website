@@ -1,6 +1,6 @@
 import SkillsCard from "@/components/SkillsCard";
 
-export default function Skills() {
+export default function SkillsPage() {
   return (
     <div>
       <SkillsCard />

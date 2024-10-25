@@ -1,19 +1,22 @@
+"use client";
 import Avatar from "@/components/Avatar";
 import Link from "next/link";
 import Image from "next/legacy/image";
-import client from "../../lib/sanity";
 import { formatBlogDate, formatImageUrl } from "@utils/UtilityFunctions";
-import { oneDay } from "@utils/Constants";
 import { PostPreview } from "@/utils/types/types";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { MonthFormat } from "@/utils/enums/enums";
 
-export default function Posts({ posts }: { posts: PostPreview[] }) {
+export default function PostsPage({ posts }: { posts: PostPreview[] }) {
   const router = useRouter();
 
   const handleMouseEnter = (url: string) => {
     // Prefetch URL on Mouser enter
     router.prefetch(url);
+  };
+
+  const handleNavigation = (slug: string) => {
+    router.push(`/posts/${slug}`);
   };
 
   return (
@@ -39,11 +42,12 @@ export default function Posts({ posts }: { posts: PostPreview[] }) {
             >
               <div className="flex-shrink-0">
                 <Link
-                  href={{
-                    pathname: `/posts/[slug]`,
-                    query: { slug: post.slug.current },
-                  }}
+                  href={`/post/${post.slug.current}`}
                   passHref
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation(post.slug.current);
+                  }}
                   onMouseEnter={() =>
                     handleMouseEnter(`/posts/${post.slug.current}`)
                   }
@@ -66,12 +70,13 @@ export default function Posts({ posts }: { posts: PostPreview[] }) {
                     </Link>
                   </p>
                   <Link
-                    href={{
-                      pathname: `/posts/[slug]`,
-                      query: { slug: post.slug.current },
-                    }}
+                    href={`/posts/${post.slug.current}`}
                     className="block mt-2"
                     passHref
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavigation(post.slug.current);
+                    }}
                     onMouseEnter={() =>
                       handleMouseEnter(`/posts/${post.slug.current}`)
                     }
@@ -120,19 +125,4 @@ export default function Posts({ posts }: { posts: PostPreview[] }) {
       </div>
     </div>
   );
-}
-
-const postsPreviewQuery = `*[_type == "post" && !(_id in path('drafts.**'))] {
-  slug, title, excerpt, dateTime, publishedAt, readingTime,  "author": author->name, mainImage, _id, createdAt
-} | order(publishedAt desc)`;
-
-export async function getStaticProps() {
-  const posts: PostPreview[] = await client.fetch(postsPreviewQuery);
-
-  return {
-    props: {
-      posts,
-    },
-    revalidate: oneDay,
-  };
 }

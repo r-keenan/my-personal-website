@@ -1,4 +1,4 @@
-export default function Projects() {
+export default function ProjectsPage() {
   return (
     <div className="mt-20">
       <h1>Projects</h1>

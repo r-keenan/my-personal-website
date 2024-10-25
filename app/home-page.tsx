@@ -1,11 +1,11 @@
+"use client";
+
 import LandingPage from "@/components/LandingPage";
-import client from "../lib/sanity";
+import { Qualification } from "@/utils/types/types";
 import { CheckIcon } from "@heroicons/react/outline";
 import Link from "next/link";
-import { oneDay } from "@/utils/Constants";
-import { Qualification } from "@/utils/types/types";
 
-export default function Home({
+export default function HomePage({
   qualifications,
 }: {
   qualifications: Qualification[];
@@ -59,19 +59,4 @@ export default function Home({
       </div>
     </>
   );
-}
-
-const qualificationsPreviewQuery = `*[_type == "qualification"] | order(order)`;
-
-export async function getStaticProps() {
-  const qualifications: Qualification[] = await client.fetch(
-    qualificationsPreviewQuery,
-  );
-
-  return {
-    props: {
-      qualifications,
-    },
-    revalidate: oneDay,
-  };
 }
