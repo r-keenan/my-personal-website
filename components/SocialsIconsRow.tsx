@@ -1,4 +1,4 @@
-import { socials } from "./Socials";
+import { socials } from "@config/index";
 import { SocialIcon } from "../utils/types/types";
 
 export default function SocialsIconsRow() {
