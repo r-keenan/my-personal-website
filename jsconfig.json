@@ -2,11 +2,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["components/*"],
-      "@/styles/*": ["styles/*"],
-      "@/config/*": ["config/*"],
-      "@/pages/*": ["pages/*"],
-      "@/public/images/*": ["public/images/*"]
+      "@components/*": ["components/*"],
+      "@styles/*": ["styles/*"],
+      "@config/*": ["config/*"],
+      "@public/images/*": ["public/images/*"],
+      "@utils/*": ["utils/*"]
     }
   }
 }

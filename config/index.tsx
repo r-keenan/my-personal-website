@@ -1,4 +1,4 @@
-import { GitHubIcon, LinkedInIcon } from "@/components/SocialIcons";
+import { GitHubIcon, LinkedInIcon } from "@components/SocialIcons";
 import { Skill, SocialIcon } from "@/utils/types/types";
 import {
   CogIcon,
