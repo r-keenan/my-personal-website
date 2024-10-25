@@ -1,4 +1,4 @@
-import { socials } from "@/components/Socials";
+import { socials } from "@config/index";
 
 const navigation = {
   main: [

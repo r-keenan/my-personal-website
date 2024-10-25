@@ -1,6 +1,6 @@
 "use client";
 
-import LandingPage from "@/components/LandingPage";
+import HomeBackground from "@/components/HomeBackground";
 import { Qualification } from "@/utils/types/types";
 import { CheckIcon } from "@heroicons/react/outline";
 import Link from "next/link";
@@ -12,7 +12,7 @@ export default function HomePage({
 }) {
   return (
     <>
-      <LandingPage />
+      <HomeBackground />
       <div className="bg-white">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
