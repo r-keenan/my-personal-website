@@ -1,4 +1,4 @@
-import { monthsAbbreviated, monthsFull } from "../config/index";
+import { monthsAbbreviated, monthsFull } from "@config/index";
 import { MonthFormat } from "./enums/enums";
 
 export function formatPhone(phoneNumber: string): string {
