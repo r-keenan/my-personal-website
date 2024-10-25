@@ -1,4 +1,3 @@
-import { skills } from "@/config/index";
 import { Skill } from "@/utils/types/types";
 
 export default function SkillsCard(skill: Skill) {
