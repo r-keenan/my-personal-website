@@ -1,11 +1,9 @@
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
 import Image from "next/legacy/image";
-import Avatar from "@/components/Avatar";
 import client from "../../lib/sanity";
 import React from "react";
 import { formatBlogDate, formatImageUrl } from "utils/UtilityFunctions";
-import { notFound } from "next/navigation";
 import { oneDay } from "utils/Constants";
 import { Post } from "@/utils/types/types";
 import { PortableTextBlock } from "@portabletext/types";
