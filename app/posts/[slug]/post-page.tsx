@@ -58,11 +58,11 @@ export default function PostPage({ post }: { post: Post }) {
         </div>
         <div className="grid">
           <div className="grid-1 items-center justify-center">
-            <div className="grid mt-10 prose prose-indigo prose-lg text-gray-medium sm:mx-20 lg:mx-80 2xl:mx-auto w-1/3">
+            <div className="grid mt-10 prose prose-indigo prose-lg text-gray-medium sm:mx-20 lg:mx-80 2xl:mx-auto 2xl:w-1/3 ">
               {post.body.map((el: PortableTextBlock) => (
                 <React.Fragment key={el._key}>
-                  <div className="grid grid-cols-1">
-                    <div>{el.children[0].text}</div>
+                  <div className="grid grid-cols-1 w-100">
+                    <div className="w-100">{el.children[0].text}</div>
                     <br />
                   </div>
                 </React.Fragment>
