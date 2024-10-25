@@ -1,8 +1,17 @@
+"use client";
 import aboutMePic2 from "public/images/meQuarterHeight.jpg";
 import Image from "next/legacy/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function AboutMePage() {
+  const router = useRouter();
+
+  const handleMouseEnter = (url: string) => {
+    // Prefetch URL on Mouser enter
+    router.prefetch(url);
+  };
+
   return (
     <div>
       <div className="min-h-screen relative bg-white py-8 sm:py-20  lg:pt-50 lg:pb-72">
@@ -25,7 +34,6 @@ export default function AboutMePage() {
               </div>
             </div>
           </div>
-
           <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0">
             <div className="pt-12 sm:pt-16 lg:pt-20">
               <h2 className="text-3xl text-gray-dark font-extrabold tracking-tight sm:text-4xl">
@@ -56,8 +64,9 @@ export default function AboutMePage() {
             <div className="mt-10">
               <div>
                 <Link
-                  href="/contact"
+                  href={"/contact"}
                   className="text-base font-medium text-blue-light"
+                  onMouseEnter={() => handleMouseEnter("/contact")}
                   passHref
                 >
                   Reach out to me <span aria-hidden="true">&rarr;</span>

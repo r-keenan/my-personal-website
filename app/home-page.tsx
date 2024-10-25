@@ -4,12 +4,20 @@ import HomeBackground from "@/components/HomeBackground";
 import { Qualification } from "@/utils/types/types";
 import { CheckIcon } from "@heroicons/react/outline";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function HomePage({
   qualifications,
 }: {
   qualifications: Qualification[];
 }) {
+  const router = useRouter();
+
+  const handleMouseEnter = (url: string) => {
+    // Prefetch URL on Mouser enter
+    router.prefetch(url);
+  };
+
   return (
     <>
       <HomeBackground />
@@ -48,6 +56,7 @@ export default function HomePage({
               <Link
                 href="/skills"
                 className="text-base font-medium text-blue-light"
+                onMouseEnter={() => handleMouseEnter("/skills")}
                 passHref
               >
                 Check out the details of my skills
