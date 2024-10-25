@@ -1,5 +1,5 @@
 import { GitHubIcon, LinkedInIcon } from "@/components/SocialIcons";
-import { SocialIcon } from "@/utils/types/types";
+import { Skill, SocialIcon } from "@/utils/types/types";
 import {
   CogIcon,
   DesktopComputerIcon,
@@ -45,7 +45,7 @@ export const monthsFull: string[] = [
   "December",
 ];
 
-export const skills = [
+export const skills: Skill[] = [
   {
     name: "Front End Development",
     icon: DesktopComputerIcon,

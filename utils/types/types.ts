@@ -2,6 +2,12 @@ import { FC, SVGProps } from "react";
 import type { SanityDocument, Reference, Slug } from "@sanity/types";
 import { PortableTextBlock } from "@portabletext/types";
 
+export type Skill = {
+  name: string;
+  icon: React.ComponentType<SVGProps<SVGSVGElement>>;
+  listItems: string[];
+};
+
 export type SocialIcon = {
   name: string;
   href: string;
