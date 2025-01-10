@@ -226,6 +226,12 @@ body {
     animated-cursor 600ms steps(29, end) infinite;
 }
 
+#nvimText {
+  font-family: "Source Code Pro", monospace;
+  font-size: 4rem;
+  color: rgba(50, 205, 50, 1.7);
+}
+
 @keyframes animated-text {
   from {
     width: 0%;

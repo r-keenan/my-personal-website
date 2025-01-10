@@ -5,7 +5,9 @@ export default function HomeBackground() {
   return (
     <div className="heroContainer">
       <span>
-        <p className="heroText break-words">WELCOME TO MY WEBSITE!</p>
+        <p className="heroText break-words">
+          <span id="nvimText">nvim</span> my-personal-website
+        </p>
       </span>
       <Image
         priority
