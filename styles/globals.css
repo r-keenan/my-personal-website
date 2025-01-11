@@ -280,6 +280,12 @@ body {
       animated-cursor 600ms steps(29, end) infinite;
   }
 
+  #nvimText {
+    font-family: "Source Code Pro", monospace;
+    font-size: 1.5rem;
+    color: rgba(50, 205, 50, 1.7);
+  }
+
   @keyframes animated-text {
     from {
       width: 0%;
@@ -329,6 +335,12 @@ body {
       animated-cursor 600ms steps(29, end) infinite;
   }
 
+  #nvimText {
+    font-family: "Source Code Pro", monospace;
+    font-size: 2rem;
+    color: rgba(50, 205, 50, 1.7);
+  }
+
   @keyframes animated-text {
     from {
       width: 0%;
@@ -376,6 +388,12 @@ body {
     animation:
       animated-text 4s steps(29, end) 1s 1 normal both,
       animated-cursor 600ms steps(29, end) infinite;
+  }
+
+  #nvimText {
+    font-family: "Source Code Pro", monospace;
+    font-size: 1.75rem;
+    color: rgba(50, 205, 50, 1.7);
   }
 
   @keyframes animated-text {
