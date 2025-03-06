@@ -58,7 +58,13 @@ export function formatBlogDate(
 }
 
 export function formatImageUrl(image: string): string {
-  let imageUrl = `${process.env.NEXT_PUBLIC_SANITY_CDN_URL}${image}?auto=format&fit=min`;
+  let imageUrl: URL | string = new URL(
+    `${process.env.NEXT_PUBLIC_SANITY_CDN_URL}${image}`,
+  );
+  imageUrl.searchParams.append("auto", "format");
+  imageUrl.searchParams.append("fit", "min");
+
+  imageUrl = imageUrl.toString();
 
   if (imageUrl.includes("-jpeg")) imageUrl = imageUrl.replace("-jpeg", ".jpeg");
   if (imageUrl.includes("-jpg")) imageUrl = imageUrl.replace("-jpg", ".jpg");
